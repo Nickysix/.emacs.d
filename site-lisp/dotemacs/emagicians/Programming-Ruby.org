@@ -1,0 +1,95 @@
+#+title: Ruby
+#+LINK_UP: Programming.html 
+* Interface
+** Completion
+#+begin_src emacs-lisp 
+(use-package company-inf-ruby)
+#+end_src
+
+* Tools 
+** Bundler
+#+begin_src emacs-lisp 
+(use-package bundler
+  :load-path "~/projects/emacs/bundler.el")
+#+end_src
+** Rspec
+#+begin_src emacs-lisp 
+(use-package rspec-mode)
+#+end_src
+** Yari
+#+begin_src emacs-lisp 
+(use-package yari)
+#+end_src
+*** Making it work
+Get the base ruby documentation here
+#+begin_src sh :tangle no
+gem install rdoc-data
+rdoc-data --install
+#+end_src
+
+This gets all the rdoc for your installed gems
+#+begin_src sh :tangle no
+gem rdoc --all --ri
+#+end_src
+
+* Mode 
+
+
+** Ruby Block mode
+This is gone?!?
+#+begin_src emacs-lisp :tangle no
+(use-package ruby-block
+  :diminish "[R] "
+  :ensure t
+  :init
+  (setq ruby-block-highlight-toggle t)
+  :config)
+#+end_src
+** Rinari
+  Rinari Is Not A Rails Ide.  ESPRYGAA!  (Emagicians Starter Pack Rejects Your Goofy Acronym Assertion!)
+
+#+begin_src emacs-lisp 
+(use-package rinari
+  :ensure t
+  :diminish "🚅 ")
+#+end_src
+** Robe
+#+begin_src emacs-lisp 
+(use-package robe
+  :ensure t)
+#+end_src
+      
+** Mode setup
+
+  Thanks to the emacs starter kit classic for the list of ode files list. [fn:1]
+
+#+begin_src emacs-lisp 
+(use-package ruby-mode
+  :interpreter "ruby"
+  :mode 
+  (("\\.rake$" . ruby-mode)
+   ("\\.task$" . ruby-mode)
+   ("\\.thor$" . ruby-mode)
+   ("\\.gemspec$" . ruby-mode)
+   ("\\.rb$" . ruby-mode)
+   ("\\.ru$" . ruby-mode)
+   ("Rakefile$" . ruby-mode)
+   ("Thorfile$" . ruby-mode)
+   ("Gemfile$" . ruby-mode)
+   ("Capfile$" . ruby-mode)
+   ("Vagrantfile$" . ruby-mode))
+  :init
+  (use-package ruby-tools)
+  (emagician/minor-in-major-mode ruby-tools-mode ruby-mode-hook))
+#+end_src
+
+* Environment
+** Add RBEnv path                                                                         :disabled:
+This used to be required to make rbenv work, but not any more. 
+#+begin_src emacs-lisp :tangle no
+  (emagician/add-to-path (concat (getenv "HOME") "/.rbenv/shims") t)
+#+end_src
+
+* Footnotes
+
+[fn:1] https://github.com/technomancy/emacs-starter-kit/blob/v2/modules/starter-kit-ruby.el

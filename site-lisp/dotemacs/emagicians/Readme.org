@@ -1,0 +1,86 @@
+#+title: Read Me
+* 🐰-(hello!)
+
+#+HTML: <img src="assets/images/Screenshot.png" alt="Screenshot.png" class="fullwidth">
+
+* Project Status
+
+  Fit for other humans to tell me "hey, it's broken", and I can fix it.
+
+  But Not Even Alpha.
+
+
+*  Five 'W's and 2 'Y's. 
+** Who am I?
+   I'm Jonnay! [[mn:1][file:./assets/images/burning-bunny-transparent.png]]
+
+   I've been using Emacs since 2007.  I make [[http://www.jonnay.net][Music, Art and Video
+   Blogs]].  I'm a front-end narwhal (a Canadian coder who can do UX
+   and design as well).  Professionally I have used many
+   languages—including P/LB—but my favorite is Scheme, and my current
+   is ruby.
+
+** What is this? A starter kit for magicians.
+  The Emagicians Starter Kit is a set of org-mode files that are
+  automagikally tangled into Emacs Lisp on startup.
+
+  I got tired of my old .emacs file and poorly maintained collection
+  of extensions. It was working less and less well the more and more
+  time went on and on.  
+
+  But it's more than that.  It's a set of lessons learned, ramblings
+  of a lisp fanatic, and something of a personal great work.
+
+** Why?
+
+  I Love the idea of the starter kits, but I found they made
+  assumptions and just wasn't fit for what I needed.  I also have a
+  bit of a "not-invented-here" problem.  It's minor and I cope pretty
+  well. However with regards to emacs: (and to paraphrase Douglas
+  McArther Shaftoe from the Neal Stephenson novel /Cryptonomicon/.)
+
+  #+begin_quote
+  This is my Emacs.  There are plenty like it, but this one is mine.
+  #+end_quote
+
+  Additionally, there is real value in people explaining their emacs
+  setup, especially in easily digestible forms.
+
+** How 
+
+   Everything is in Org-Mode.  If you want to join in all the fun,
+   there is an [[file:./Emagician-Install.org]] file that you can follow
+   along with.  It will get you moving into basic configurations, all
+   the way through testing the result before making the emagician
+   starter kit your actual init file.
+    
+** When
+
+   March 2012.  It got commited to a git repo later that year.
+
+** Where
+   In an airplane across the Atlantic I made the first version of the Emagicians Starter Kit.
+    
+* A note about tone
+  
+  If your primary tool, as both hobby and vocation is your text
+  editor, does it not then follow that it is one of the fundamentally
+  important things in your life?
+
+  But then, would that not put it on the same footing as ones spirituality?
+
+  What if ones spirituality is Militant Agnostic Zenarchic Discordianism?
+
+  Then you would write an Emagicians Startup Kit full of tongue in
+  cheek references to the western magickal tradition, and venerate Eris constantly.
+
+  That's what.
+
+* Dedication
+ 
+  To My Wife:  Shell Arkell.  The most important person in my life,
+  who outshines all other people, like the noon-day sun outshines the
+  stars.
+
+  🌞 I Love you. 🌞
+

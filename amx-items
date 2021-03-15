@@ -1,0 +1,16 @@
+
+;; ----- amx-history -----
+(
+ all-the-icons-install-fonts
+ cd
+ 5x5
+ amx
+ arp
+ dbx
+ dig
+)
+
+;; ----- amx-data -----
+(
+ (all-the-icons-install-fonts . 1)
+)

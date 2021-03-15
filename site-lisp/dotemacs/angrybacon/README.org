@@ -1,0 +1,86 @@
+#+TITLE: DotEmacs
+#+AUTHOR: Mathieu Marques
+
+This repository contains my personal Emacs configuration.
+
+* What the .el
+
+If you are wondering where has gone all of the Lisp, fear not, for it is
+automagically tangled from an Org file into a Lisp file.
+
+* Installation
+
+** Dependencies
+
+#+BEGIN_QUOTE
+Tested on macOS only.
+
+I trust your Google-fu to make the most of the below instructions.
+#+END_QUOTE
+
+| =jansson=  | Enable native JSON parsing              |
+| =libvterm= | Used by terminal emulation within Emacs |
+| =pinentry= | Let Emacs prompt for passphrases        |
+| =ripgrep=  | Prefer =rg= over =grep=                 |
+
+** Emacs
+
+*** Arch
+
+See [[ARCH.org#Emacs][ARCH]].
+
+*** MacOS
+
+Install Emacs 27 or above. I prefer
+[[https://github.com/d12frosted/homebrew-emacs-plus][ =emacs-plus= ]] for its
+additional compilation flags, specifically the ability not to have a title bar
+ie. fake fullscreen since it has its downsides on macOS.
+
+#+BEGIN_SRC sh
+brew tap d12frosted/emacs-plus
+brew install emacs-plus@28 --with-no-titlebar
+#+END_SRC
+
+Clone the repository into your user directory.
+
+#+BEGIN_SRC sh
+git clone https://github.com/angrybacon/dotemacs.git ~/.config/emacs/
+#+END_SRC
+
+** Flycheck
+
+I use =flycheck= as linter framework to display syntax warnings and errors
+within each buffer. It is recommended to have your linting dependencies
+version-controlled next to your code. Assuming that's correctly set up, Emacs
+will find them automatically so that your linting corresponds to that of your
+team.
+
+However, if you needed linting feedback outside of a collaborative project, you
+would need to install the following dependencies globally.
+
+#+BEGIN_SRC sh
+npm install -g eslint                   # JavaScript
+npm install -g jsonlint                 # JSON
+npm install -g stylelint                # SCSS
+#+END_SRC
+
+** Icons
+
+The mode-line utilizes features from =all-the-icons=.
+
+Run the following when Emacs starts for the first time in order to download the
+required fonts.
+
+#+BEGIN_SRC
+M-x all-the-icons-install-fonts RET
+#+END_SRC
+
+** Language Servers
+
+In order for Emacs to connect to the LSP servers, install the language-specific
+dependencies.
+
+#+BEGIN_SRC
+M-x lsp-install-server RET eslint RET
+M-x lsp-install-server RET ts-ls RET
+#+END_SRC

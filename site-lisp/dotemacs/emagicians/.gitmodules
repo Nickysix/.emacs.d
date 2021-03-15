@@ -1,0 +1,18 @@
+[submodule "eshell-prompt-extras"]
+	path = eshell-prompt-extras
+	url = git@github.com:jonnay/eshell-prompt-extras.git
+[submodule "themes/org-beautify-theme"]
+	path = themes/org-beautify-theme
+	url = git@github.com:jonnay/org-beautify-theme.git
+[submodule "melpa"]
+	path = melpa
+	url = git@github.com:jonnay/melpa.git
+[submodule "fix-muscle-memory"]
+	path = fix-muscle-memory
+	url = git@github.com:jonnay/fix-muscle-memory.git
+[submodule "gh-pages"]
+	path = gh-pages
+	url = ./gh-pages
+[submodule "assets/tufte-css"]
+	path = assets/tufte-css
+	url = https://github.com/edwardtufte/tufte-css

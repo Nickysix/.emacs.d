@@ -1,0 +1,155 @@
+;;; init.el --- skeleton config  -*- lexical-binding: t; coding:utf-8; fill-column: 119 -*-
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; This fixed garbage collection, makes emacs start up faster ;;;;;;;
+
+(setq gc-cons-threshold 402653184
+      gc-cons-percentage 0.6)
+
+(defvar startup/file-name-handler-alist file-name-handler-alist)
+(setq file-name-handler-alist nil)
+
+(defun startup/revert-file-name-handler-alist ()
+  (setq file-name-handler-alist startup/file-name-handler-alist))
+
+(defun startup/reset-gc ()
+  (setq gc-cons-threshold 50000000
+	gc-cons-percentage 0.1))
+
+(add-hook 'emacs-startup-hook 'startup/revert-file-name-handler-alist)
+(add-hook 'emacs-startup-hook 'startup/reset-gc)
+
+;; 16777216
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
+(setq-default lexical-binding t)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; * Initialize package.el
+
+(require 'package)
+
+(setq package-archives '(("ELPA"  . "http://tromey.com/elpa/")
+			 ("gnu"   . "http://elpa.gnu.org/packages/")
+			 ("melpa" . "https://melpa.org/packages/")
+			 ("org"   . "https://orgmode.org/elpa/")))
+
+(package-initialize)
+
+;; Initialise the packages, avoiding a re-initialisation.
+;;(unless (bound-and-true-p package--initialized)
+;;  (setq package-enable-at-startup nil)
+;;  (package-initialize))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; * Bootstrap `use-package'
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(setq-default use-package-always-ensure t         ; Auto-download package if not exists
+              use-package-always-defer t          ; Always defer load package to speed up startup
+              use-package-verbose nil             ; Don't report loading details
+              use-package-expand-minimally t      ; make the expanded code as minimal as possible
+              use-package-enable-imenu-support t) ; Let imenu finds use-package definitions
+
+(eval-when-compile
+  (require 'use-package))
+;;(require 'diminish)
+(require 'bind-key)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; * hyperbole
+
+(unless (package-installed-p 'hyperbole)
+  (package-refresh-contents)
+  (package-install 'hyperbole))
+(require 'hyperbole)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; * orgmode
+
+;;; Load org mode early to ensure that the orgmode ELPA version gets picked up,
+;;; not the shipped version 
+
+(use-package org-plus-contrib
+  :pin org)
+
+(use-package org
+  :ensure org-plus-contrib
+  :pin org)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; * custom-file setup
+
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+  (when (file-exists-p custom-file)
+  (load custom-file))
+
+
+(use-package jazz-theme)
+
+(tool-bar-mode -1)
+
+(menu-bar-mode 1)
+
+(scroll-bar-mode 1)
+
+(setq frame-resize-pixelwise t)
+
+(add-to-list 'load-path "~/.emacs.d/start-lisp/")
+
+(load "functions")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

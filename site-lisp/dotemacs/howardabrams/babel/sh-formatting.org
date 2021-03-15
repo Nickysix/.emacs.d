@@ -1,0 +1,86 @@
+#+TITLE:  Shell Output Formatting
+#+AUTHOR: Howard Abrams
+#+EMAIL:  howard.abrams@gmail.com
+#+DATE:   2015 Jul 31
+#+TAGS:   technical shell linux emacs
+
+This is part of my Library of Babel collection. Remember to hit the
+=C-c C-v i= to add these sections.
+
+* Table by Separator
+
+  The following is a simple approach looking for a regular expression
+  that works on *every* row. We also run every line we separate
+  through a filter to remove any blank entries... maybe that should be
+  configurable option.
+
+  #+NAME: table
+  #+BEGIN_SRC elisp :results value table :var data=example-table regex="  +"
+    (flet ((split-the-line (line)
+                       (filter (lambda (cell) (not (string-empty-p cell)))
+                               (split-string (string-trim line) regex))))
+      (if (stringp data)
+          (mapcar 'split-the-line (split-string data "[\n\r]+" t))
+        data))   ;; Not a string? Just return the value...
+  #+END_SRC
+
+  #+RESULTS: table
+  | a | b       | c |
+  | d | ei ei o | f |
+  | g | h       | i |
+
+  Let’s try with a different type of table, formatted more like a CSV:
+
+  #+HEADER: :post table(data=*this*, regex=",")
+  #+BEGIN_SRC sh :results output
+    echo "a, b,c"
+    echo "doh,ei ei o,f"
+    echo "g,h, i"
+  #+END_SRC
+
+  #+RESULTS:
+  | a   | b       | c |
+  | doh | ei ei o | f |
+  | g   | h       | i |
+
+  Once more, but this time with output that is already in some sort of
+  strange table output (can you say nova?):
+
+  #+HEADER: :post table(data=*this*, regex="[\|\+]")
+  #+BEGIN_SRC sh :results output
+    echo "| a   | b       | c |"
+    echo "| doh | ei ei o | f |"
+    echo "| g   | h       | i |"
+  #+END_SRC
+
+  #+RESULTS:
+  | a   | b       | c |
+  | doh | ei ei o | f |
+  | g   | h       | i |
+
+  Need a real world example, so call =docker= to get some tabular data:
+
+  #+HEADER: :prologue $(/usr/local/bin/boot2docker shellinit)
+  #+BEGIN_SRC sh :results output
+     docker images
+  #+END_SRC
+
+  #+RESULTS:
+  : REPOSITORY                  TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+  : tomcat                      6.0                 8c4e1a4ca737        4 weeks ago         345.8 MB
+  : rand/docker-clojurescript   latest              f6e0e40b4408        7 months ago        1.091 GB
+
+  Now, let’s see if we really have something good here:
+
+  #+HEADER: :prologue $(/usr/local/bin/boot2docker shellinit)
+  #+BEGIN_SRC sh :post table(data=*this*) :results output
+    docker images
+  #+END_SRC
+
+  #+RESULTS:
+  | REPOSITORY                | TAG    | IMAGE ID     | CREATED      | VIRTUAL SIZE |
+  | tomcat                    | 6.0    | 8c4e1a4ca737 | 4 weeks ago  | 345.8 MB     |
+  | rand/docker-clojurescript | latest | f6e0e40b4408 | 7 months ago | 1.091 GB     |
+
+  Now, if we can just teach org-mode that the first line is a header,
+  we’d be golden.

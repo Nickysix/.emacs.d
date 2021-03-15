@@ -1,0 +1,120 @@
+#+title:Eshell Magick
+
+* About the name...
+
+If this file is called ~eshell.org~, it weaves into ~eshell.el~, and
+then ~require~ gets problematic.
+
+#+begin_src emacs-lisp 
+(add-hook 'emacs-startup-hook 'eshell)
+#+end_src
+
+* Fixes
+** Jigger path so that jamf won't break shit
+   jamf adds a symlink to the path, which makes completion barf when starting eshell.
+
+   ¯\_(ツ)_/¯
+
+   So we will jiggery poke the path.
+#+begin_src emacs-lisp 
+(setenv "PATH"
+        (replace-regexp-in-string ":/usr/local/bin/jamf"
+                                                ""
+                                                (getenv "PATH")))
+#+end_src
+** Execute an eshell Command Programmatically [fn:1]
+
+   #+begin_src emacs-lisp
+   (defun emagician/eshell-command (cmd) 
+     (with-current-buffer "*eshell*"
+        (eshell-return-to-prompt)
+        (insert cmd)
+        (eshell-send-input)))
+   #+end_src
+
+** Use helm for history
+
+#+begin_src emacs-lisp 
+(use-package eshell
+  :demand 
+  :bind (:map eshell-mode-map
+         ("M-S-r" . helm-eshell-history)))
+#+end_src
+   
+** Fix an issue with running commands remotely through tramp
+
+http://emacs.stackexchange.com/questions/2107/run-application-in-cwd-on-remote-host-from-within-eshell
+
+This is apparently still an issue. 
+
+#+begin_src emacs-lisp
+(defadvice eshell-gather-process-output (before absolute-cmd (command args) act)
+  (setq command (file-truename command)))
+
+(add-to-list 'tramp-remote-path 'tramp-own-remote-path)
+#+end_src
+
+** Pager 😻
+Use cat as a pager.  Fixes all kinds of things.
+
+#+begin_src emacs-lisp 
+(setenv "PAGER" "cat")
+#+end_src
+
+
+* Interface 
+** Set Prompt
+#+begin_src emacs-lisp 
+(use-package eshell-prompt-extras
+  :init
+  (setq eshell-highlight-prompt nil
+        eshell-prompt-function 'emagician/epe-theme))
+#+end_src
+
+** Use my own theme 
+#+begin_src emacs-lisp 
+(defun emagician/epe-theme ()
+  "Emagician Eshell Prompt Extras theme."
+  (setq eshell-prompt-regexp "^[^#\n🐰]*[#🐰]) ")
+  (concat
+   "\n"
+   (epe-colorize-with-face "\n" 'mode-line)
+   (when (epe-remote-p)
+     (epe-colorize-with-face "[ Remote ]"
+                             'epe-remote-face))
+   (epe-colorize-with-face (eshell/pwd) 'epe-dir-face)
+   (when (epe-git-p)
+     (concat
+      (epe-colorize-with-face ":" 'epe-dir-face)
+      (epe-colorize-with-face
+       (concat (epe-git-branch)
+               (epe-git-dirty)
+               (epe-git-untracked)
+               (let ((unpushed (epe-git-unpushed-number)))
+                 (unless (= unpushed 0)
+                   (concat ":" (number-to-string unpushed)))))
+       'epe-git-face)))
+   (epe-colorize-with-face "\n 🐰)" 'epe-symbol-face)
+   (epe-colorize-with-face (if (= (user-uid) 0) "#" "") 'epe-sudo-symbol-face)
+   " "))
+#+end_src
+
+** Did you mean?
+#+begin_src emacs-lisp 
+(use-package eshell-did-you-mean 
+  :demand
+  :config
+  (eshell-did-you-mean-setup))
+#+end_src
+
+** Show fringe
+#+begin_src emacs-lisp 
+(use-package eshell-fringe-status
+  :init
+  (add-hook 'eshell-mode-hook 'eshell-fringe-status-mode))
+#+end_src
+
+* Footnotes
+
+[fn:1] Thank you [[https://emacs.stackexchange.com/questions/7617/how-to-programmatically-execute-a-command-in-eshell][wasamasa]]
+

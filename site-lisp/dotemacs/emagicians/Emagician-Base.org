@@ -1,0 +1,523 @@
+#+title: Emagician-Base
+#+SETUPFILE: Org-Include.setup
+* Bassline / Baseline
+
+  A baseline set of functions that are helpers for the rest of the Emagician Starter Kit.
+
+  - Basic helpers in case there is a problem loading
+  - Extend emacs lisp evaluation environment 
+  - emagick-🐰 functions to further extend emacs lisp 
+  - Emagician helpers to make configuration much easier.
+
+* Basic helpers
+  Just enough to make editing in a broken environment not a pain,
+
+#+begin_src emacs-lisp 
+  (require 'ffap)  ; Will be superceeded, but important when stuff gets broke.
+#+end_src
+
+* Emacs Lisp Evaluation Environment
+
+There are helpers funcitons and variables that just make working with Emacs Lisp that much nicer.
+
+** Garbage Collection
+#+name: Motherfucker-past-jonnay
+#+begin_quote
+50 Megs, or 10 percent of the heap.  Seems legit.  It's original value is 800000.  Which seems like a lot, but its' really only 800 K.
+#+end_quote
+
+Resulting in this abomination:
+
+#+begin_src emacs-lisp :tangle no
+(setq gc-cons-threshold (* 500 1024 1024))
+#+end_src
+
+There was even a little voice in my head that said "Maybe Jonnay, maybe you shouldn't fuck with the garbage collector?"
+
+Which gave me these lessons:
+
+- Listen to that little voice, and
+- don't fuck around with garbage collection unless you know what you're doing and what you're setting.
+
+One thing you can do is to set Garbage Collection to a high value during startup or execution of commands, and then set it back down to a reasonable value afterwards.  That doesn't change the timing of garbage collection only forstalls it for one big stoppa-tha-world.
+
+Another option is to handle the setting of the GC value after a period of idle time.  This would be great for startup, but kinda horrible for command execution. 
+
+http://bling.github.io/blog/2016/01/18/why-are-you-changing-gc-cons-threshold/
+
+#+begin_src emacs-lisp :tangle yes
+(defvar lou-the-gc-max (* 512 1024 1024)
+  "Maximum Size of garbage collector.  Half gig seems reasonable.
+This value is basically not sane.")
+
+(defvar lou-the-gc-sane (car (get 'gc-cons-threshold 'standard-value))
+  "Sane GC Value, straight from The Yaks Mouth.")
+
+(defvar lou-is-chatty t
+  "Whether or not Lou is chatty about debug messages")
+
+(defun lou-the-gc-go-crazy ()
+  "Tell Lou the garbage collector to use maximum garbage size"
+  (when lou-is-chatty
+    (with-current-buffer (messages-buffer)
+      (let ((inhibit-read-only t))
+        (goto-char (point-max))
+        (insert "\nLou is going crazy!"))))
+  (setq gc-cons-threshold lou-the-gc-max))
+
+(defun lou-the-gc-be-sane ()
+  "Tell Lou to stop acting crazy and use a sane garbage collection ammount"
+  (when lou-is-chatty
+    (with-current-buffer (messages-buffer)
+      (let ((inhibit-read-only t))
+        (goto-char (point-max))
+        (insert "\nLou is sane again."))))
+
+  (setq gc-cons-threshold lou-the-gc-sane))
+
+(unless after-init-time
+  (lou-the-gc-go-crazy)
+  (add-hook 'emacs-startup-hook #'lou-the-gc-be-sane t))
+
+(add-hook 'minibuffer-setup-hook #'lou-the-gc-go-crazy)
+(add-hook 'minibuffer-exit-hook #'lou-the-gc-be-sane)
+#+end_src
+
+
+** Prefer new files
+#+begin_src emacs-lisp 
+(setq load-prefer-newer t)
+#+end_src
+
+** Lexical Evaluation
+#+begin_src emacs-lisp 
+  (defmacro lexically (&rest forms)
+    "Lexically execute forms"
+    `(eval '(progn ,@forms) t))
+#+end_src
+
+#+begin_src emacs-lisp 
+(ert-deftest lexially () 
+  (should (equal (macroexpand '(lexically t t t)) '(eval (quote (progn t t t)) t)))) 
+#+end_src
+
+** Common Lisp
+
+Sometimes the depricated CL environment is still required.  One day
+this can go away. That day isn't today.
+
+#+begin_src emacs-lisp 
+  (require 'cl)
+#+end_src
+
+** Evaluation and Printing
+
+#+begin_src emacs-lisp
+  (setq eval-expression-print-length 9000
+        print-length 90000
+        eval-expression-print-level 20
+        print-level 900)
+#+end_src
+
+** Anaphoric Goodness
+#+begin_src emacs-lisp 
+(use-package anaphora)
+#+end_src
+
+** Asyc
+
+   Run commands asyncronously. 
+
+#+begin_src emacs-lisp 
+(use-package async)
+#+end_src
+
+** Testing
+   ERT for testing.  Of course.
+
+   El-mock is too damn rubylike.  
+
+   Fakir is cool ass, but I don't need it.  yet.  Also, a great name
+
+#+begin_src emacs-lisp 
+(use-package noflet)
+#+end_src
+
+** Memory Usage
+#+begin_src emacs-lisp 
+(use-package memory-usage)
+#+end_src
+
+* emagick-🐰 Extensions to Emacs Lisp
+** Test suite
+#+begin_src emacs-lisp 
+(defun emagician/meta/run-all-emagick-tests ()
+  "Run all tests for emagick-🐰" 
+  (interactive)
+  (ert-run-tests-interactively "emagick"))
+#+end_src
+
+** alist-set: Change element in list
+#+begin_src emacs-lisp 
+(defun emagick-🐰/alist-set (key value alist &optional use-proper-list)
+  "Sets or adds KEY with VALUE on ALIST, and return the list.
+If USE-PROPER-LIST is true then instead of a (dotted . list) a
+(proper list) is constructed insted."
+  (let ((list-frag (funcall (if use-proper-list #'list #'cons)
+                            key
+                            value)))
+    (if (not (null alist))
+        (cons list-frag
+              (assq-delete-all key alist))
+      (list list-frag))))
+
+(ert-deftest emagick-🐰/alist-set-on-empty-list ()
+  ""
+  (should (equal (emagick-🐰/alist-set 'foo 'bar '())
+                 '((foo . bar))))
+  (should (equal (emagick-🐰/alist-set 'foo 'bar '() t)
+                 '((foo bar)))))
+
+(ert-deftest emagick-🐰/alist-set-on-list-with-element ()
+  ""
+  (should (equal (emagick-🐰/alist-set 'baz 'blarg '((foo . bar)))
+                 '((baz . blarg)(foo . bar))))
+  (should (equal (emagick-🐰/alist-set 'baz 'blarg '((foo bar)) t)
+                 '((baz blarg)(foo bar)))))
+
+(ert-deftest emagick-🐰/alist-set-on-list-without-element ()
+  ""
+  (should (equal (emagick-🐰/alist-set 'foo 'bar '((foo . baz)))
+                 '((foo . bar))))
+  (should (equal (emagick-🐰/alist-set 'foo 'bar '((foo baz)) t)
+                 '((foo bar)))))
+#+end_src
+
+* Emagician Helpers
+** Hook Helpers
+*** Minor In Major
+  
+  Kinda one of those things that I am surprised is not a thing.
+
+#+begin_src emacs-lisp
+(defmacro emagician/minor-in-major-mode (minor-mode major-mode-hook)
+  (let ((turn-on-symbol (intern (concat "turn-on-" (symbol-name minor-mode)))))
+    (list 
+     'progn 
+     `(defun ,turn-on-symbol ()
+        "Automagickally generated by emagicians starter kit."
+        (interactive)
+        (,minor-mode +1))
+     `(add-hook (quote ,major-mode-hook) (quote ,turn-on-symbol)))))
+
+(ert-deftest emagician/test-minor-in-major-mode ()
+  "emagician-minor-in-major macro test"
+  (should (equal (macroexpand '(emagician/minor-in-major-mode paredit-mode elisp-mode-hook))
+                 '(progn
+                    (defun turn-on-paredit-mode ()
+                      "Automagickally generated by emagicians starter kit."
+                      (interactive)
+                      (paredit-mode +1))
+                    (add-hook 'elisp-mode-hook 'turn-on-paredit-mode))))
+  (let ((mode-hook '())
+        (executed 0))
+    (flet ((emagician-minor-test (arg) (setq executed (1+ executed))))
+      (emagician/minor-in-major-mode emagician-minor-test mode-hook)
+      (emagician/minor-in-major-mode emagician-minor-test mode-hook)
+      (run-hooks 'mode-hook)
+      (should (= 1 executed))
+      (should (fboundp 'turn-on-emagician-minor-test))
+      (fmakunbound 'turn-on-emagician-minor-test))))
+
+
+(ert-deftest emagician/defhook-does-not-add-when-existant ()
+  (let ((hook '())
+        (executed 0))
+    (emagician/defhook test-hook hook
+      (setq executed (1+ executed)))
+    (emagician/defhook test-hook hook
+      (setq executed (1+ executed)))
+    (run-hooks 'hook)
+    (should (= 1 executed))
+    (fmakunbound 'test-hook)))
+#+end_src
+
+*** Def hook
+#+begin_src emacs-lisp
+(defmacro emagician/defhook (name hook &rest b)
+  (declare (indent 2))
+  (let* ((docp (stringp (car b)))
+         (body (if docp (cdr b) b)))
+    `(progn 
+       (defun ,name () 
+         ,(concat (if docp (car b) "Not Documented\n") "\nEmagically defined with emagician/defhook.")
+         ,@body)
+       (when (or (not (boundp (quote ,hook)))
+                 (not (member (quote ,name) ,hook)))
+         (add-hook (quote ,hook) (quote ,name))))))
+#+end_src
+
+**** Unit tests
+#+begin_src emacs-lisp 
+(ert-deftest emagician/defhook-defines-hook-and-adds-it ()
+  "Basic test to make sure it defines the hook function and adds it."
+  (let ((hook '())
+        (executed nil))
+    (emagician/defhook test-hook hook
+      (setq executed t))
+    (run-hooks 'hook)
+    (should (fboundp 'test-hook))
+    (should executed)
+    (fmakunbound 'test-hook)))
+
+(ert-deftest emagician/defhook-redefines-when-bound ()
+  (let ((hook '())
+        (executed nil)
+        (rebound nil))
+    (flet ((test-hook () (setq rebound nil)))
+      (emagician/defhook test-hook hook
+        (setq executed t)
+        (setq rebound t))
+      (run-hooks 'hook)
+      (should executed)
+      (should rebound)
+      (fmakunbound 'test-hook))))
+
+(ert-deftest emagician/defhook-does-not-add-when-existant ()
+  (let ((hook '())
+        (executed 0))
+    (emagician/defhook test-hook hook
+      (setq executed (1+ executed)))
+    (emagician/defhook test-hook hook
+      (setq executed (1+ executed)))
+    (run-hooks 'hook)
+    (should (= 1 executed))
+    (fmakunbound 'test-hook)))
+#+end_src
+
+** Backtrace Magick
+HOLY SHIT. This worked better than I expected. 
+
+This function snarfs the backtrace when called and returns it as a list.   This is used primarily for initialization testing.
+
+(load-file-name or buffer-file-name)
+
+#+begin_src emacs-lisp 
+  (defun emagician/snarf-backtrace ()
+    "Snarfs the backtrace as a list"
+    (let ((num 3)
+          (frames (cons (backtrace-frame 3) nil)))
+      (while (car frames)
+        (when (> num 50) (error "Too many frames %S" (pp frames)))
+        (setq num (1+ num))
+        (setq frames (cons (backtrace-frame (+ 3 num)) frames)))
+      (cdr frames)))
+
+  (ert-deftest emagician/snarf-backtrace ()
+    (should (equal '(t emagician/snarf-backtrace) (car (last (emagician/snarf-backtrace))))))
+#+end_src
+  
+** Sanitize File name
+
+A bit of a naive version of this for now.
+
+#+begin_src emacs-lisp 
+(defun emagician/sanitize-file-name (str)
+  (replace-regexp-in-string "[/~\000]" "-" str))
+
+#+end_src
+
+#+begin_src emacs-lisp 
+  (ert-deftest emagician/sanitize-file-name ()
+    (should (equal "" (emagician/sanitize-file-name "")))
+    (should (equal "foo" (emagician/sanitize-file-name "foo")))
+    (should (equal "-foo" (emagician/sanitize-file-name "/foo")))
+    (should (equal "-foo" (emagician/sanitize-file-name "~foo"))))
+#+end_src
+
+** Expect Dir
+
+  Make sure a dirs exist.
+
+#+begin_src emacs-lisp
+(defun emagician/expect-dir (dir &optional pathroot) 
+  "Ensures that the named directory exists."
+  (let ((path (expand-file-name dir
+                                (or pathroot emagician/dir))))
+    (when (not (file-directory-p path))
+      (when (file-exists-p path)
+        (error "Cannot Create %s, it already exists and is a file." path))
+      (make-directory path nil))
+    path))
+
+#+end_src
+
+#+begin_src emacs-lisp
+(ert-deftest emagician/expect-dir ()
+  (let ((tdir "emagician-expect-dir-scratch-monkey"))   
+    (should (not (file-directory-p tdir)))
+    (should (file-directory-p (emagician/expect-dir "emagician-expect-dir-dummy-test-dir")))
+    (should (file-directory-p (emagician/expect-dir "emagician-expect-dir-dummy-test-dir")))
+    (should (progn (delete-directory tdir) (not (file-directory-p tdir))))
+    (should-error (emagician/expect-dir "foo/bar/baz/notexisting")))
+  (should-error (emagician/expect-dir "Emagician.org")))
+
+(ert-deftest emagician/expect-dir-with-extra-arg ()
+  (let* ((dirname "emagician-expect-dir-scratch-monkey")
+         (tdir (concat temporary-file-directory dirname)))
+    (should (not (file-directory-p tdir)))
+    (should (file-directory-p (emagician/expect-dir dirname
+                                                    temporary-file-directory)))
+    (should (progn (delete-directory tdir)
+                   (not (file-directory-p tdir))))))
+#+end_src
+
+** Add to Path
+#+begin_src emacs-lisp
+    (defun emagician/add-to-path (path &rest front)
+      "Adds PATH to the PATH env variable, eshell-path-env as well as exec-path.
+  If FRONT is non nil, then PATH will be prepended to the env and shell vars.  
+  The exec-path always will always have it prepended. "
+      (let ((shell-path (concat 
+                         (if front 
+                             path
+                           (getenv "PATH"))
+                         ":"
+                         (if front
+                             (getenv "PATH")
+                           path))))
+        (setenv "PATH" shell-path)
+        (setq eshell-path-env shell-path)
+        (setq exec-path (cons path exec-path))))
+    
+#+end_src
+
+** Final Emagician Scratch
+
+When the starter kit is loaded we want to display the scratch buffer
+with a new and improved scratch buffer giving some statistics, showing
+inspirational messages, dire warnings, and apocalyptic screeds.
+
+We also show a set of quick elisp commands that can be immediately run
+by moving the point to the relevant line of elisp, and executing. 
+
+This exemplifies everything that is good with Emacs. 
+
+If you want to add items, you can do so through the
+~emagician/scratch-links~ variable.
+
+#+begin_src emacs-lisp 
+  (defvar emagician/scratch-links `((magit-status ,emagician/dir))
+    "A list of elisp that is inserted in the scratch buffer at startup.")
+#+end_src
+
+*** Scratchify
+#+begin_src emacs-lisp 
+  (defun emagician/scratchify-text (text-or-list)
+    "Takes a chunk of text, and at the newline boundary inserts ;;;
+If it's a list, then scratchify the list members."
+    (cond
+     ((null text-or-list) nil)
+     ((and (stringp text-or-list) (equal "" text-or-list))
+      ";;;\n")
+     ((listp text-or-list)
+      (mapconcat 'emagician/scratchify-text text-or-list ""))
+     ((stringp text-or-list)
+      (mapconcat (lambda (line)
+                   (format ";;; %s\n" line))
+                 (split-string text-or-list "\n")
+                 ""))))
+#+end_src
+
+#+begin_src emacs-lisp 
+(ert-deftest emagician/scratchify-text-props ()
+  (should (equal ";;; foo\n" (emagician/scratchify-text (propertize "foo" 'face '(:foreground "red"))))))
+
+(ert-deftest emagician/scratchify-text ()
+  (should (equal ";;; foo\n" (emagician/scratchify-text "foo")))
+  (should (equal ";;; Topes\n;;; \n" (emagician/scratchify-text "Topes\n"))))
+
+(ert-deftest emagician/scratchify-list ()
+  (should (equal ";;; foo\n" (emagician/scratchify-text '("foo"))))
+  (should (equal ";;; foo\n;;; bar\n" (emagician/scratchify-text '("foo" "bar")))))
+
+(ert-deftest emagician/scratchify-list-in-list ()
+  (should (equal ";;; foo\n;;; bar\n" (emagician/scratchify-text '("foo" ("bar"))))))
+
+(ert-deftest emagician/scratchify-empty ()
+  (should (equal ";;;\n" (emagician/scratchify-text ""))))
+#+end_src
+
+*** Reset Scratch
+#+begin_src emacs-lisp 
+(defun emagician/reset-scratch (str)
+  (with-current-buffer "*scratch*"
+    (lisp-interaction-mode)
+    (font-lock-mode -1)
+    (whitespace-mode -1)
+    (erase-buffer)
+    (insert str)))
+#+end_src
+
+*** Main Scratch Initiation
+#+begin_src emacs-lisp 
+(defun emagician/initiate-thee-scratch ()
+  (flet ((with-bg-fg (str bg fg)
+           (propertize str
+                       'face
+                       (list :background bg :foreground fg)))
+         (with-fg (str fg)
+           (propertize str
+                       'face
+                       (list :foreground fg))))
+    (let* ((banner-color "DarkViolet")
+           (info-label "DeepSkyBlue")
+           (info-value "cyan" )
+           (banner-line (with-fg (make-string 72 ?█) banner-color))
+           (header
+            `(,banner-line
+              ,(with-bg-fg "████            🐰-|-+-|- Sekrut Alien Technology -|-+-|-🐰         ███" info-label banner-color)
+              ,banner-line
+              ""
+              "     It is with the Quill of Echinda I scratch upon the beat mesa."
+              ""
+              ,banner-line
+              ,(concat (with-fg "Emacs Version:     " info-label)
+                       (with-fg emacs-version info-value))
+              ,(concat (with-fg "Emagician Verison: " info-label)
+                       (with-fg emagician/version info-value))))
+           (startup-time
+            `(,banner-line
+              ,(if before-init-time
+                   (concat (with-fg "🕚 Startup Time:   " info-label)
+                           (with-fg (format "%.2f" (- (float-time)
+                                                      (float-time before-init-time)))
+                                    info-value))
+                 (propertize "⁇ before-init-time is null!" :face 'error-face))
+              ,(mapcar (lambda (s) (format "  %65s %.2f" (car s) (cdr s)))
+                       emagician/slow-loaders)))
+           (chaotic-wisdom
+            `(,banner-line
+              ,(emagician/cookie-from-file "assets/collected-works-ov-chaos.lines")))
+           (minor-lamp-invocation
+            `(,banner-line
+              ,(emagician/cookie-from-file "assets/minor-lamp-invocation.lines")))
+           (tools
+            (mapconcat (lambda (link )
+                         (format "%S\n" link))
+                       emagician/scratch-links
+                       "")))
+      (emagician/reset-scratch
+       (concat (emagician/scratchify-text
+                (list header
+                      startup-time
+                      chaotic-wisdom
+                      minor-lamp-invocation
+                      banner-line))
+               "\n"
+               tools
+               "\n"
+               (emagician/scratchify-text banner-line))))))
+#+end_src
+
+ 

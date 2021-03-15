@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# group: angular
+# key: aservice
+# --
+${1:module}.service('$2', function($3) {
+  var self = this;
+  $0
+  return self;
+});

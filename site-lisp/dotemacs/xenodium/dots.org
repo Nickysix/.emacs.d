@@ -1,0 +1,439 @@
+* Git
+** .gitconfig file
+
+#+begin_src gitconfig :tangle ~/.gitconfigC-SPC
+  [core]
+          editor = emacsclient -t
+
+  [rerere]
+          enabled = true
+
+  [color]
+          ui = auto
+
+  [merge]
+          conflictStyle = diff3
+
+  [diff]
+          # Remove `a/` and `b/` prefixes from diffs.
+          noprefix = true
+#+end_src
+
+** Update git author info in history
+
+#+begin_src sh
+  cd path/to/repo
+
+  git filter-branch -f --env-filter '
+
+  OLD_EMAIL="my-old-email@someplace.com"
+  CORRECT_NAME="username"
+  CORRECT_EMAIL="my-new-email@someplace.com"
+
+  if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
+  then
+      export GIT_COMMITTER_NAME="$CORRECT_NAME"
+      export GIT_COMMITTER_EMAIL="$CORRECT_EMAIL"
+  fi
+  if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ]
+  then
+      export GIT_AUTHOR_NAME="$CORRECT_NAME"
+      export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
+  fi
+  ' --tag-name-filter cat -- --branches --tags
+#+end_src
+
+** Force push (updated history)
+
+#+begin_src sh
+  git push --force --tags origin 'refs/heads/*'
+#+end_src
+
+* Mpv
+
+** mpv.conf
+
+#+begin_src conf :mkdirp yes :tangle ~/.config/mpv/mpv.conf
+  ontop
+#+end_src
+
+* Bash
+
+Tangle .bash_overrides blaock and then execute following block to patch .bash_profile and .bashrc.
+
+#+begin_src sh :tangle ~/.bash_overrides
+  export TERM="screen-256color"
+
+  ### Environment variables ### start
+
+  if [[ -z $STUFF_DIR ]]; then
+     export STUFF_DIR=~/stuff
+  fi
+
+  export PATH=~/go/bin:~/stuff/active/code/gopath/bin:~/local/bin:~/miniconda2/bin:~/homebrew/bin:$PATH
+
+  ### Environment variables ### end
+
+  ### Functions ### start
+
+  err() {
+    echo "[$(date +'%Y-%m-%dT%H:%M:%S%z')]: $@">&2
+  }
+
+  get_stuff_dir() {
+    stuff_dir="${STUFF_DIR}"
+    if [[ -z ${stuff_dir} ]]; then
+      err "Error: STUFF_DIR env variable not set."
+      return
+    fi
+
+    echo "${stuff_dir}"
+  }
+
+  cd_stuff() {
+    cd $(get_stuff_dir)
+  }
+
+  get_inactive_dir() {
+    echo "$(get_stuff_dir)/inactive"
+  }
+
+  get_active_dir() {
+    echo "$(get_stuff_dir)/active"
+  }
+
+  get_downloads_dir() {
+    echo "$HOME/Downloads"
+  }
+
+  cd_active() {
+    cd $(get_active_dir)
+  }
+
+  cd_downloads() {
+    cd $(get_downloads_dir)
+  }
+
+  cd_inactive() {
+    cd $(get_inactive_dir)
+  }
+
+  if [ -z "$INSIDE_EMACS" ]; then
+      update_terminal_cwd() {
+   # Identify the directory using a "file:" scheme URL, including
+   # the host name to disambiguate local vs. remote paths.
+
+   # Percent-encode the pathname.
+   local url_path=''
+   {
+       # Use LC_CTYPE=C to process text byte-by-byte. Ensure that
+       # LC_ALL isn't set, so it doesn't interfere.
+       local i ch hexch LC_CTYPE=C LC_ALL=
+       for ((i = 0; i < ${#PWD}; ++i)); do
+    ch="${PWD:i:1}"
+    if [[ "$ch" =~ [/._~A-Za-z0-9-] ]]; then
+        url_path+="$ch"
+    else
+        printf -v hexch "%02X" "'$ch"
+        # printf treats values greater than 127 as
+        # negative and pads with "FF", so truncate.
+        url_path+="%${hexch: -2:2}"
+    fi
+       done
+   }
+
+   printf '\e]7;%s\a' "file://$HOSTNAME$url_path"
+      }
+      PROMPT_COMMAND="update_terminal_cwd${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
+  fi
+
+  ### Functions ### end
+
+  ### Bash History ### start
+
+  # Increase history size.
+  export HISTSIZE=32768
+
+  ### Bash History ### end
+
+  ### Aliases ### start
+
+  alias ec="emacsclient -n"
+  alias a="cd_active"
+  alias d="cd_downloads"
+  alias i="cd_inactive"
+  alias tail_ios="tail -f ~/Library/Logs/iOS\ Simulator/7.1/system.log"
+  alias grep="grep --color=always"
+  alias git_gc="git gc --aggressive --prune=now"
+
+  ### Aliases ### end
+#+end_src
+
+Patch .bash_profile and .bashrc.
+
+#+begin_src bash
+  #!/bin/bash
+
+  if ! grep -q 'bash_overrides' ~/.bash_profile; then
+   echo 'adding .bash_overrides to .bash_profile'
+   echo 'source ~/.bash_overrides' >> ~/.bash_profile
+  fi
+
+  if ! grep -q 'bash_overrides' ~/.bashrc; then
+   echo 'adding .bash_overrides to .bashrc'
+   echo 'source ~/.bash_overrides' >> ~/.bashrc
+  fi
+
+  source ~/.bash_profile
+#+end_src
+
+* Karabiner
+#+begin_src json :mkdirp yes :tangle ~/.config/karabiner/karabiner.json
+  {
+      "global": {
+          "check_for_updates_on_startup": true,
+          "show_in_menu_bar": true,
+          "show_profile_name_in_menu_bar": false
+      },
+      "profiles": [
+          {
+              "complex_modifications": {
+                  "parameters": {
+                      "basic.simultaneous_threshold_milliseconds": 50,
+                      "basic.to_delayed_action_delay_milliseconds": 500,
+                      "basic.to_if_alone_timeout_milliseconds": 1000,
+                      "basic.to_if_held_down_threshold_milliseconds": 500,
+                      "mouse_motion_to_scroll.speed": 100
+                  },
+                  "rules": [
+                      {
+                          "description": "Ctrl-p/n/b/f to arrow up/down/left/right",
+                          "manipulators": [
+                              {
+                                  "from": {
+                                      "key_code": "p",
+                                      "modifiers": {
+                                          "mandatory": [
+                                              "control"
+                                          ]
+                                      }
+                                  },
+                                  "to": [
+                                      {
+                                          "key_code": "up_arrow"
+                                      }
+                                  ],
+                                  "conditions": [
+                                      {
+                                          "type": "frontmost_application_unless",
+                                          "bundle_identifiers": [
+                                              "^org\\.gnu\\.Emacs",
+                                              "^com\\.apple\\.Terminal"
+                                          ]
+                                      }
+                                  ],
+                                  "type": "basic"
+                              },
+                              {
+                                  "from": {
+                                      "key_code": "n",
+                                      "modifiers": {
+                                          "mandatory": [
+                                              "control"
+                                          ]
+                                      }
+                                  },
+                                  "to": [
+                                      {
+                                          "key_code": "down_arrow"
+                                      }
+                                  ],
+                                  "conditions": [
+                                      {
+                                          "type": "frontmost_application_unless",
+                                          "bundle_identifiers": [
+                                              "^org\\.gnu\\.Emacs",
+                                              "^com\\.apple\\.Terminal"
+                                          ]
+                                      }
+                                  ],
+                                  "type": "basic"
+                              },
+                              {
+                                  "from": {
+                                      "key_code": "b",
+                                      "modifiers": {
+                                          "mandatory": [
+                                              "control"
+                                          ]
+                                      }
+                                  },
+                                  "to": [
+                                      {
+                                          "key_code": "left_arrow"
+                                      }
+                                  ],
+                                  "conditions": [
+                                      {
+                                          "type": "frontmost_application_unless",
+                                          "bundle_identifiers": [
+                                              "^org\\.gnu\\.Emacs",
+                                              "^com\\.apple\\.Terminal"
+                                          ]
+                                      }
+                                  ],
+                                  "type": "basic"
+                              },
+                              {
+                                  "from": {
+                                      "key_code": "f",
+                                      "modifiers": {
+                                          "mandatory": [
+                                              "control"
+                                          ]
+                                      }
+                                  },
+                                  "to": [
+                                      {
+                                          "key_code": "right_arrow"
+                                      }
+                                  ],
+                                  "conditions": [
+                                      {
+                                          "type": "frontmost_application_unless",
+                                          "bundle_identifiers": [
+                                              "^org\\.gnu\\.Emacs",
+                                              "^com\\.apple\\.Terminal"
+                                          ]
+                                      }
+                                  ],
+                                  "type": "basic"
+                              }
+                          ]
+                      },
+                      {
+                          "description": "Ctrl-a/Ctrl-e to home/end",
+                          "manipulators": [
+                              {
+                                  "from": {
+                                      "key_code": "a",
+                                      "modifiers": {
+                                          "mandatory": [
+                                              "control"
+                                          ]
+                                      }
+                                  },
+                                  "to": [
+                                      {
+                                          "key_code": "home"
+                                      }
+                                  ],
+                                  "conditions": [
+                                      {
+                                          "type": "frontmost_application_if",
+                                          "bundle_identifiers": [
+                                              "^com\\.google\\.Chrome",
+                                              "^org\\.mozilla\\.firefox"
+                                          ]
+                                      }
+                                  ],
+                                  "type": "basic"
+                              },
+                              {
+                                  "from": {
+                                      "key_code": "e",
+                                      "modifiers": {
+                                          "mandatory": [
+                                              "control"
+                                          ]
+                                      }
+                                  },
+                                  "to": [
+                                      {
+                                          "key_code": "end"
+                                      }
+                                  ],
+                                  "conditions": [
+                                      {
+                                          "type": "frontmost_application_if",
+                                          "bundle_identifiers": [
+                                              "^com\\.google\\.Chrome",
+                                              "^org\\.mozilla\\.firefox"
+                                          ]
+                                      }
+                                  ],
+                                  "type": "basic"
+                              }
+                          ]
+                      },
+                      {
+                          "description": "Ctrl+G to Escape",
+                          "manipulators": [
+                              {
+                                  "description": "Emacs-like escape",
+                                  "from": {
+                                      "key_code": "g",
+                                      "modifiers": {
+                                          "mandatory": [
+                                              "left_control"
+                                          ]
+                                      }
+                                  },
+                                  "to": [
+                                      {
+                                          "key_code": "escape"
+                                      }
+                                  ],
+                                  "conditions": [
+                                      {
+                                          "type": "frontmost_application_unless",
+                                          "bundle_identifiers": [
+                                              "^org\\.gnu\\.Emacs"
+                                          ]
+                                      }
+                                  ],
+                                  "type": "basic"
+                              }
+                          ]
+                      }
+                  ]
+              },
+              "devices": [],
+              "fn_function_keys": [],
+              "name": "Default profile",
+              "parameters": {
+                  "delay_milliseconds_before_open_device": 1000
+              },
+              "selected": true,
+              "simple_modifications": [],
+              "virtual_hid_keyboard": {
+                  "country_code": 0,
+                  "mouse_key_xy_scale": 100
+              }
+          }
+      ]
+  }
+
+#+end_src
+
+* Universal Ctags
+#+begin_src text :tangle ~/.ctags
+  --langdef=swift
+  --langmap=swift:+.swift
+
+  --kinddef-swift=v,variable,variables
+  --kinddef-swift=f,function,functions
+  --kinddef-swift=s,struct,structs
+  --kinddef-swift=c,class,classes
+  --kinddef-swift=p,protocol,protocols
+  --kinddef-swift=e,enum,enums
+  --kinddef-swift=t,typealias,typealiases
+
+  --regex-swift=/(var|let)[ \t]+([^:=]+).*$/\2/v/
+  --regex-swift=/func[ \t]+([^\(\)]+)\([^\(\)]*\)/\1/f/
+  --regex-swift=/struct[ \t]+([^:\{]+).*$/\1/s/
+  --regex-swift=/class[ \t]+([^:\{]+).*$/\1/c/
+  --regex-swift=/protocol[ \t]+([^:\{]+).*$/\1/p/
+  --regex-swift=/enum[ \t]+([^:\{]+).*$/\1/e/
+  --regex-swift=/(typealias)[ \t]+([^:=]+).*$/\2/v/
+#+end_src

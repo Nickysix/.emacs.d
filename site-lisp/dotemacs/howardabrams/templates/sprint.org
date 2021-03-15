@@ -1,0 +1,37 @@
+#+TITLE:  Sprint `(format-time-string "%Y")`-`(sprint-number)`
+#+AUTHOR: `user-full-name`
+#+EMAIL:  `user-mail-address`
+#+DATE:   `(sprint-date-range)`
+
+* Work Issues
+
+  $0
+
+* Meeting Notes
+
+* Scrum Status
+
+* Sprint Demonstration
+
+* Sprint Retrospective
+
+* Notes for Next Sprint
+
+** Support Section
+
+   We should always allow the display of this file for a
+   demonstration.
+
+  #+BEGIN_SRC elisp :results silent
+    (use-package demo-it
+      :config
+      (demo-it-single-presentation (buffer-file-name) 3 :both "Sprint Demonstration"))
+  #+END_SRC
+
+#+DESCRIPTION: Notes taken during Sprint #`(sprint-number)`
+#+PROPERTY:    header-args: :results drawer :tangle no  :eval no-export :comments org
+#+OPTIONS:     num:nil toc:nil todo:nil tasks:nil tags:nil skip:nil author:nil email:nil creator:nil timestamp:nil
+
+;;; Local Variables:
+;;; eval: (org-content 2)
+;;; End:

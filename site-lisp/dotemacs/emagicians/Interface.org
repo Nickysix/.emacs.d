@@ -1,0 +1,1379 @@
+#+Title: User Interface Elements
+* Keystrokes and commands
+** Simple answers plz!
+#+begin_src emacs-lisp 
+(fset 'yes-or-no-p 'y-or-n-p)
+#+end_src
+
+** It used to be that Once in blue moon, vi keys would happen  :history:
+   That was before I really dug into Tramp mode.
+
+   I would launch vim to edit a file on a remote server.  I know just
+   enough vi to add characters and save and get out.  In fact, I would
+   save with: ~<ESC>:w~ and then quit with ~<ESC>:q!~.  Not even
+   ~<ESC>:wq!~
+
+   This would hose my muscle memory though.  And sometimes I would try
+   to do the same in emacs.
+
+   By setting the var ~w~ to the string, when it is evaled with ESC-:
+   the string is evaled instead.
+
+#+begin_src emacs-lisp :tangle no
+  (setq w! "uUuuuuuUUUuuuummmMMMmmmm.  This ain't vim.")
+#+end_src
+
+   Now that I can do most of everything I need through tramp, and the
+   stuff I can't do I can from within a shell inside of emacs, this
+   isn't needed anymore.
+
+   I keep it around (but don't load it) because it's clevar and fun.
+
+** Enable all Disabled commands
+#+begin_src emacs-lisp 
+(setq disabled-command-function nil)
+#+end_src
+
+** Newlines
+   New line AND indent. 
+
+#+begin_src emacs-lisp 
+(global-set-key (kbd "RET") 'newline-and-indent)
+#+end_src
+
+** Kill back to indentation
+
+   From https://github.com/purcell/emacs.d/blob/master/lisp/init-editing-utils.el
+
+#+begin_src emacs-lisp 
+(defun sanityinc/kill-back-to-indentation ()
+  "Kill from point back to the first non-whitespace character on the line."
+  (interactive)
+  (let ((prev-pos (point)))
+    (back-to-indentation)
+    (kill-region (point) prev-pos)))
+
+(bind-key "C-M-<backspace>" 'sanityinc/kill-back-to-indentation)
+
+#+end_src
+* Key UI Pieces
+  Not sure wht to call these.  They're more than display
+** Hydra.
+
+   Code with poetry.
+
+   YIS.
+  
+ #+begin_src emacs-lisp 
+ (use-package hydra)
+ #+end_src
+
+
+* Automated things
+** Midnight  :automation:
+   It's very silent in the background, and just kind of does the right thing.  Clears out old buffers not in use.  I also use it as a next-day scheduler.
+ 
+   I have seen some other Emagicians state that they didn't know why they had this package. See also [[*Diminish][Diminish]].
+
+#+begin_src emacs-lisp 
+(use-package midnight
+  :init
+  (setq clean-buffer-list-kill-never-buffer-names '("*httpd*"))
+  :config
+  (midnight-delay-set 'midnight-delay "4:30am"))
+#+end_src
+
+* Display   :display:
+
+There is an argument that Emacs doesn't need to look pretty.  That all we're really doing is editing text, so why do anything to it beyond a basic theme to give you syntax highlighting.
+
+I call bullshit.  All of us already live in a prison of existential crisis.  Why would we make our text editor any more of a prison?
+
+I eat delicious food, not Soy-lent.
+
+I drink excellent beer I find tasty, not Alberta Genuine Draft. 
+
+ÆＳÞＥTＩC is important.
+
+** Turn of scrollbars, toolbars, menu bars
+
+All that said, there are some shit that is just ... not good.
+
+Scrollbars, Toolbars and Menu Bars. Oh my.
+
+#+begin_src emacs-lisp 
+(dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
+    (when (fboundp mode) (funcall mode -1)))
+#+end_src
+
+** 🛎 Bell 🔔
+   When emacs emits C-g (bell) to the user, it is to signal an error,
+   warning or some other alert.
+
+   When the user types C-g to emacs, it is to signal an error, or a
+   need to quit.
+
+   I rather enjoy that kind of poetry.
+
+   I used to hate the visible bell when it flashed the whole screen,
+   but it has sense gotten a lot better.  It flashes two bars at the
+   top and bottom now rather than the whole screen, and is nice when
+   you don't have the volume up.
+
+#+begin_src emacs-lisp 
+(setq visible-bell t)
+#+end_src
+
+** Fonts
+
+   Font choice is important aesthetically speaking. 
+
+   Of the 4 fonts that came recommended to me, I went with Adobe Source Code Pro.  Here is my reasoning:
+
+   - It looks great.
+   - The o0 li1I handling is good.
+   - The differences between ({[]}) are all super apparent.
+   - It has a great set of weights.
+
+*** Fantasque Sans Mono
+https://github.com/belluzj/fantasque-sans
+
+qqq
+
+What is this guy like?
+
+Amazingly few discotheques provide jukeboxes.
+01234567890 ({[ .,:;"'`*~^ ]}) 
+
+#+begin_src emacs-lisp 
+(set-face-attribute 'default nil :family "Fantasque Sans Mono" :height 170 :weight 'normal)
+#+end_src
+
+file:./assets/images/FantasqueSansMono.png
+ 
+*** Adobe Source Code Pro
+https://github.com/adobe-fonts/source-code-pro 
+
+Trying this guy out for now…
+
+Amazingly few discotheques provide jukeboxes.
+01234567890 ({[ .,:;"'`*~^ ]}) 
+
+[[file:assets/images/AdobeSourceCodePro.png]]
+
+#+begin_src emacs-lisp 
+(set-face-attribute 'default nil :family "Source Code Pro" :height 130 :weight 'normal)
+#+end_src
+
+*** Fira Code 
+
+Amazingly few discotheques provide jukeboxes. 
+01234567890 ({[ .,:;"'`*~^ ]}) 
+
+[[file:assets/images/FiraCode.png]]
+
+#+begin_src emacs-lisp :tangle no
+(set-face-attribute 'default nil :family "Fira Mono" :height 130 :weight 'normal)
+#+end_src
+
+*** Inconsolata
+[[https://fonts.google.com/specimen/Inconsolata]]
+
+This was my usual jam in the older days.  It has become my jam again
+on account of Anonymous Pro's Parenthesis-flaw.
+
+Amazingly few discotheques provide jukeboxes.
+01234567890 ({[ .,:;"'`*~^ ]}) 
+
+[[file:assets/images/Inconsolata.png]]
+
+
+#+begin_src emacs-lisp :tangle no
+(set-face-attribute 'default nil :family "Inconsolata" :height 150)
+#+end_src
+
+*** Anonymous Pro
+http://www.marksimonson.com/fonts/view/anonymous-pro
+
+It's a wide font.  Very wide.  It comes highly regarded, but I am not
+sure about its ÆＳÞＥTＩC yet. It is however easy to read. but it
+does look a little awkward.  It's fundamental flaw is how the
+parenthesis looks like a curly brace.
+
+Amazingly few discotheques provide jukeboxes.
+01234567890 ({[ .,:;"'`*~^ ]}) 
+
+[[file:assets/images/AnonymousPro.png]]
+
+#+begin_src emacs-lisp :tangle no
+(set-face-attribute 'default nil :family "Anonymous Pro" :height 140)
+#+end_src
+
+*** Describe Char
+   Give us all the unicode information for a glyph.
+#+begin_src emacs-lisp 
+(setq describe-char-unidata-list '(name old-name general-category canonical-combining-class bidi-class decomposition decimal-digit-value digit-value numeric-value mirrored uppercase lowercase titlecase))
+#+end_src
+
+*** Unicode
+#+begin_verse
+Unicode
+  |(⁀ₒ⁀)/    ,(   Get all teh characters! )
+#+end_verse
+
+The ~unicode-fonts~ package does a pretty good job of helping you get to a place where all characters can be displayed.  
+
+You'll need a number of fonts to make this work, here is the bare minimum:
+- Symbola :: http://users.teilar.gr/~g1951d/Symbola.zip
+- Quivira :: http://www.quivira-font.com/files/Quivira.ttf
+- Dejavu Sans :: http://sourceforge.net/projects/dejavu/files/dejavu/2.35/dejavu-fonts-ttf-2.35.tar.bz2
+- Noto Sans :: https://github.com/googlei18n/noto-fonts/blob/master/hinted/NotoSans-Regular.ttc?raw=true
+- Noto Sans Symbols :: https://github.com/googlei18n/noto-fonts/blob/master/unhinted/NotoSansSymbols-Regular.ttf?raw=true
+
+Really though, the key here is being able to get all the emoji.
+
+The secret sauce to making sure to get all the emoji is ~(setq unicode-fonts-ignore-overrides t)~
+
+#+begin_verse
+  👯 ,( Get all teh Emoji! )
+#+end_verse
+
+#+begin_src emacs-lisp 
+(defun add-emoji-to-unicode-block (block-name)
+  (let ((block (assoc block-name unicode-fonts-block-font-mapping)))
+    (setf (cdr block) (list (cons "Apple Color Emoji" (cadr block))))))
+
+(use-package unicode-fonts
+  :demand
+  :init
+  (setq unicode-fonts-skip-fonts nil)
+  (setq unicode-fonts-ignore-overrides t)
+  (use-package persistent-soft :demand)
+  :config
+  (add-emoji-to-unicode-block "Enclosed Ideographic Supplement")
+  (add-emoji-to-unicode-block "Miscellaneous Symbols")
+  (add-emoji-to-unicode-block "Miscellaneous Symbols and Arrows")
+  (add-emoji-to-unicode-block "Miscellaneous Technical")
+  (add-emoji-to-unicode-block "Supplemental Symbols and Pictographs")
+  (unicode-fonts-setup))
+#+end_src
+
+** Ansi Color
+
+   ARGH, we were so close to getting away from this until hipsters brought it all back again.
+
+   Thanks Obama.  [[mn:2][file:assets/images/YouAreWelcome.jpg]]
+
+#+begin_src emacs-lisp 
+(require 'ansi-color)
+#+end_src
+
+** Maximize primary window
+
+   This seems to be the best way to get emacs to be maximized on the primary display in a multi monitor setup on OS X.  I want emacs maximized on a single monitor, and not to create it's own OS X screen.
+
+   You'd think that as an old Amiga head I'd enjoy the screen handling of OS X, but it just seems really clunky.  It doesn't have the same charm as the Other Raster Port.
+
+#+begin_src emacs-lisp 
+(setq default-frame-parameters '((fullscreen . maximized)))
+(defun emagician/full-screen ()
+  "Fullscreen mode!"
+  (interactive)
+  (modify-frame-parameters nil '((fullscreen . maximized))))
+(emagician/full-screen)
+#+end_src
+
+** Soft Word Wrap / Visual Line Mode
+
+   "Visual Line Mode" is probably the worst name ever.  
+
+   I prefer movement and killing via logical lines, not visual lines. 
+
+   Also, Indicators Plz!
+
+   Thanks to Wasamasa[fn:3] for the funk of using ~(setcdr)~ on the map.  Brilliant.
+#+begin_src emacs-lisp 
+(setcdr visual-line-mode-map nil)
+(setq visual-line-fringe-indicators t)
+(setq line-move-visual nil)
+(global-visual-line-mode 1)
+#+end_src
+
+** Frame titles
+   Shamelessly snarfed from bbatsov.
+
+   Shows either the full file path or buffer name, and the name of the process when available.  
+
+#+begin_src emacs-lisp 
+(setq frame-title-format
+      '(""
+        invocation-name
+        "  -|-+-|-  "
+        (:eval (if (buffer-file-name)
+                   (abbreviate-file-name (buffer-file-name))
+                 "%b"))
+        (:eval (when (get-buffer-process (current-buffer))
+                 (format "[%s]" (process-name (get-buffer-process (current-buffer))))))))
+#+end_src
+
+** Modeline
+The modeline should show as much information as required, in as small a space as possible.  I am a too-much-info kinda guy.  It's a sickness.
+*** Basics
+#+begin_src emacs-lisp 
+(setq column-number-mode t)
+(setq line-number-mode t)
+#+end_src
+
+*** Diminish
+
+    I am not sure if it is Author: Will Mengarini, or Maintainer:
+    Martin Yrjölä who came up with this, but it is the most poetic
+    commentary in any lisp file I have seen so far:
+
+#+begin_src emacs-lisp :tangle no
+;; When we diminish a mode, we are saying we want it to continue doing its
+;; work for us, but we no longer want to be reminded of it.  It becomes a
+;; night worker, like a janitor; it becomes an invisible man; it remains a
+;; component, perhaps an important one, sometimes an indispensable one, of
+;; the mechanism that maintains the day-people's world, but its place in
+;; their thoughts is diminished, usually to nothing.  As we grow old we
+;; diminish more and more such thoughts, such people, usually to nothing.
+
+;; "The wise man knows that to keep under is to endure."  The diminished
+;; often come to value their invisibility.  We speak--speak--of "the strong
+;; silent type", but only as a superficiality; a stereotype in a movie,
+;; perhaps, but even if an acquaintance, necessarily, by hypothesis, a
+;; distant one.  The strong silent type is actually a process.  It begins
+;; with introspection, continues with judgment, and is shaped by the
+;; discovery that these judgments are impractical to share; there is no
+;; appetite for the wisdom of the self-critical among the creatures of
+;; material appetite who dominate our world.  Their dominance's Darwinian
+;; implications reinforce the self-doubt that is the germ of higher wisdom.
+;; The thoughtful contemplate the evolutionary triumph of the predator.
+;; Gnostics deny the cosmos could be so evil; this must all be a prank; the
+;; thoughtful remain silent, invisible, self-diminished, and discover,
+;; perhaps at first in surprise, the freedom they thus gain, and grow strong.
+#+end_src
+
+So yeah.  It's a great mode to have around, but there's that too.
+
+#+begin_src emacs-lisp 
+(use-package diminish)
+(diminish 'visual-line-mode "↩️ ")
+
+(use-package autorevert
+  :diminish (auto-revert-mode . "🔂 "))
+#+end_src
+
+*** Nyan mode
+Nyan mode conveys information.  It's also Cute AF. 
+#+begin_src emacs-lisp 
+(use-package nyan-mode
+  :init
+  (setq nyan-wavy-trail t)
+  (setq nyan-bar-length 10)
+  (setq nyan-animate-nyancat t))
+#+end_src
+
+*** Turn on column and line numbers; file size
+#+begin_src emacs-lisp 
+(column-number-mode 1)
+(line-number-mode 1)
+(size-indication-mode t)
+#+end_src
+
+*** The EMagician powerline theme
+Inludes Nyan cat powers.
+
+This theme is a beast.  I don't like it.  I love how it looks visually, but I hate how it looks in code. 
+#+begin_src emacs-lisp 
+(defun emagician/powerline-theme ()
+  "Setup the default mode-line."
+  (interactive)
+  (setq-default mode-line-format
+                '("%e"
+                  (:eval
+                   (let* ((active (powerline-selected-window-active))
+                          (mode-line-buffer-id (if active 'mode-line-buffer-id 'mode-line-buffer-id-inactive))
+                          (mode-line (if active 'mode-line 'mode-line-inactive))
+                          (face1 (if active 'powerline-active1 'powerline-inactive1))
+                          (face2 (if active 'powerline-active2 'powerline-inactive2))
+                          (separator-left (intern (format "powerline-%s-%s"
+                                                          (powerline-current-separator)
+                                                          (car powerline-default-separator-dir))))
+                          (separator-right (intern (format "powerline-%s-%s"
+                                                           (powerline-current-separator)
+                                                           (cdr powerline-default-separator-dir))))
+                          (lhs (list (powerline-raw "%*" mode-line 'l)
+                                     (powerline-buffer-size mode-line 'l)
+                                     (powerline-buffer-id mode-line-buffer-id 'l)
+                                     (powerline-raw " ")
+                                     (funcall separator-left mode-line face1)
+                                     (powerline-narrow face1 'l)
+                                     (powerline-vc face1)))
+                          (rhs (list (powerline-raw global-mode-string face1 'r)
+                                     (powerline-raw "%4l" face1 'r)
+                                     (powerline-raw ":" face1)
+                                     (powerline-raw "%3c" face1 'r)
+                                     (funcall separator-right face1 mode-line)
+                                     (powerline-raw " ")
+                                     (powerline-raw "%6p" mode-line 'r)
+                                     (powerline-hud face2 face1)))
+                          (center (list (powerline-raw " " face1)
+                                        (funcall separator-left face1 face2)
+                                        (when (and (boundp 'erc-track-minor-mode) erc-track-minor-mode)
+                                          (powerline-raw erc-modified-channels-object face2 'l))
+                                        (powerline-major-mode face2 'l)
+                                        (powerline-process face2)
+                                        (powerline-raw " :" face2)
+                                        (powerline-minor-modes face2 'l)
+                                        (powerline-raw " " face2)
+                                        (funcall separator-right face2 mode-line)
+                                        (powerline-raw " " mode-line)
+                                        (nyan-create)
+                                        (funcall separator-right mode-line face2)
+                                        (powerline-raw " " face2)
+                                        (funcall separator-right face2 face1))))
+                     (concat (powerline-render lhs)
+                             (powerline-fill-center face1 (/ (powerline-width center) 2.0))
+                             (powerline-render center)
+                             (powerline-fill face1 (powerline-width rhs))
+                             (powerline-render rhs)))))))
+#+end_src
+*** The Separator 
+     Available Separators are:
+  - alternate :: spikey and blurry
+  - 🟏 arrow :: Nice. What it says on the tin too.
+  - arrow-fade :: Burry arrow. Not so nice. 
+  - bar :: Blurry and boring
+  - 🟏 brace :: What it {says} on the tin.
+  - 🟏 butt :: Looks sexy.  Seriously.
+  - 🟏 chamfer :: Looks circuity-cool
+  - contour :: A bit spikey
+  - 🟏 curve :: Round butt. 
+  - 🟏 rounded :: Like a rounded chamfer
+  - 🟏 roundstub :: Like a round butt.
+  - wave :: contour backwards
+  - 🟏 zigzag :: Zig-Zag
+  - utf-8 :: Arrow with utf8 chars?
+
+#+begin_src emacs-lisp 
+(defun emagician/powerline-separator (&optional random-state)
+  "Sets the powerline separator to a random one that is cool."
+  (let ((r-state (or random-state
+                     (make-random-state t)))
+        (faves '(arrow brace butt chamfer curve rounded roundstub zigzag))
+        (day-of-year (string-to-number (format-time-string "%j"))))
+    (nth (% day-of-year
+            (length faves))
+         faves)))
+
+(defun emagician/set-random-powerline-separator ()
+  "Set the powerline separator to something randomly cool"
+  (setq powerline-default-separator (emagician/powerline-separator)))
+
+(use-package powerline
+             :demand
+             :init
+             (emagician/set-random-powerline-separator)
+             (emagician/powerline-theme)
+             (add-hook 'midnight-mode 'emagician/set-random-powerline-separator))
+#+end_src
+
+*** Smart Mode Line                                                                       :disabled:
+    Not sure that this adds anything
+#+begin_src  emacs-lisp :tangle no
+(emagician/expect-package 'smart-mode-line)
+#+end_src
+
+** Echo Area
+   This changes the size of the echo area.
+
+#+begin_src emacs-lisp 
+(with-current-buffer " *Echo Area 0*" (face-remap-add-relative 'default '(:height 2.0)))
+(with-current-buffer " *Echo Area 1*" (face-remap-add-relative 'default '(:height 2.0)))
+#+end_src
+
+** Cursor Info
+   There are a few ways to change the cursor: blinking, shape and
+   color.  Basically this gives us three different dimensions of
+   information available to us.
+
+*** Dimension 1: File status
+  - light blue :: no file or process attached
+  - dark blue :: process attached
+  - yellow :: read only
+  - red :: Important (SSH to production server, etc)
+  - grey :: file visited
+
+*** Dimention 2: Modal Editing
+   - overwrite :: hollow box
+   - 'normal' :: line
+   - god mode :: Horizontal cursor
+
+*** Code
+#+name: cursor-status
+#+begin_src emacs-lisp 
+;; Change cursor color according to mode
+(defvar emagician/set-cursor-color-color "")
+(defvar emagician/set-cursor-color-type nil)
+(defvar emagician/set-cursor-color-buffer "")
+(defvar-local emagician/dangerous-buffer nil)
+
+(defun emagician/set-cursor-color-according-to-mode ()
+  "change cursor color according to some minor modes."
+  ;; set-cursor-color is somewhat costly, so we only call it when needed:
+  (let ((color (cond
+                (emagician/dangerous-buffer "red")
+                ((comint-check-proc (current-buffer)) "blue")
+                (buffer-read-only "white")
+                ((not (equal buffer-file-name nil)) "grey50")
+                (t "cyan")))
+        (type (cond
+               ((and (boundp 'god-local-mode) god-local-mode) '(hbar . 7))
+               (overwrite-mode 'hollow)
+               (t '(bar . 2)))))
+    (unless (and
+             (string= color emagician/set-cursor-color-color)
+             (equal type emagician/set-cursor-color-type)
+             (string= (buffer-name) emagician/set-cursor-color-buffer))
+      (set-cursor-color (setq emagician/set-cursor-color-color color))
+      (setq cursor-type (setq emagician/set-cursor-color-type type))
+      (setq emagician/set-cursor-color-buffer (buffer-name)))))
+
+(add-hook 'post-command-hook 'emagician/set-cursor-color-according-to-mode)
+#+end_src
+
+#+begin_src emacs-lisp 
+(ert-deftest eamagician/set-cursor-dangerous-buffer-test ()
+  (let ((emagician/dangerous-buffer t))
+    (emagician/set-cursor-color-according-to-mode)
+    (should (equal emagician/set-cursor-color-color "red")))
+  (let ((emagician/dangerous-buffer nil))
+    (emagician/set-cursor-color-according-to-mode)
+    (should-not (equal emagician/set-cursor-color-color "red"))))
+#+end_src
+
+*** Command to mark the current buffer dangerous
+#+begin_src emacs-lisp 
+(defun emagician/make-buffer-dangerous ()
+  "Marks the current buffer dangerous"
+  (interactive)
+  (setq emagician/dangerous-buffer t))
+#+end_src
+
+
+** Highlight Line
+#+begin_src emacs-lisp 
+(global-hl-line-mode 1)
+#+end_src
+
+** Beacon 
+
+Similar to highlight line.  Does a nice visual ping.  An under-rated package if you ask me.  As a UI guy this is the kind of interface I appreciate.
+
+#+begin_src emacs-lisp 
+(use-package beacon
+  :demand
+  :config
+  (beacon-mode 1)
+  (add-hook 'beacon-blink 'focus-in-hook t))  ; I don't think this works under OSX. Sad.
+#+end_src
+
+
+
+** Show Empty lines
+#+begin_src emacs-lisp 
+(setq indicate-empty-lines t)
+#+end_src
+
+** Show Whitespace with fill-column-indicator                                            :deactived:
+   I was initially using fill-column-indicator, but that turned out to
+   be kinda buggy.   It looks  It would hose org exports and also whack
+   visual-line-mode.
+
+   See [[file:Programming.org::*Show%20whitespace][Show whitespace in Programming.org]]
+
+#+begin_src emacs-lisp :tangle no
+(use-package fill-column-indicator
+  :init
+  (setq fci-rule-width 1)
+  (setq fci-rule-column 81)
+  (define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+  :config
+  (global-fci-mode 1))
+#+end_src
+
+** Themes
+*** Base theme: Moe, Moe, Kyun!
+   This theme is my favorite so far.  It's got good color choices and it's nice and dark.
+
+**** Set up different colors for different days
+
+     The colors are:
+
+     | Day       | apsect      | Color   | ☰  |
+     |-----------+-------------+---------+---|
+     | Sunday    | Benevolence | yellow  | 🌞 |
+     | Monday    | Reverence   | blue    | 🌚 |
+     | Tuesday   | Courage     | red     | ♂ |
+     | Wednesday | Honesty     | cyan    | ☿ |
+     | Thursday  | Rectitude   | green   | ♃ |
+     | Friday    | Honour      | magenta | ♀ |
+     | Saturday  | Loyalty     | b/w     | ♄ |
+
+     Note that at this point the 7 day cycle of days beats against the 8 day cycle of good modelines, see [[*The Separator][The Separator]] of the modeline.
+
+
+#+begin_src emacs-lisp 
+(defun emagician/get-moe-color-for-day (&optional day)
+  (when (null day)
+    (setq day (nth 6 (decode-time))))
+  (case day
+    ((0) 'yellow)
+    ((1) 'blue)
+    ((2) 'red)
+    ((3) 'cyan)
+    ((4) 'green)
+    ((5) 'magenta)
+    ((6) 'w/b)))
+
+(ert-deftest emagician/color-check ()
+  (should (equal (emagician/get-moe-color-for-day 1)
+                 'blue))
+  (should (equal (emagician/get-moe-color-for-day 5)
+                 'magenta))
+  (should (member (emagician/get-moe-color-for-day)
+                  '(yellow blue red cyan green magenta w/b))))
+#+end_src
+
+
+**** Main setup
+
+   The theme needs to be loaded after powerline to work.
+#+begin_src emacs-lisp  
+(use-package moe-theme
+  :init
+  (setq moe-theme-highlight-buffer-id t)
+  :config
+  (emagician/defhook update-moe-color midnight-hook
+    (moe-theme-set-color (emagician/get-moe-color-for-day))
+    (emagician/powerline-theme))
+  (moe-theme-set-color (emagician/get-moe-color-for-day))
+  (moe-dark)
+  (powerline-moe-theme)
+  (emagician/powerline-theme)
+  (powerline-reset)
+)
+#+end_src
+
+
+*** Org Beautify
+    Load from our bad self!
+#+begin_src emacs-lisp 
+  (add-to-list 'custom-theme-load-path (expand-file-name "themes/org-beautify-theme/" emagician/dir))
+  (load-theme 'org-beautify t)
+#+end_src
+
+** Digit Groups                                                                        :deactivated:
+   Currently a little buggy, completely overrides my theme. 
+
+   Group Numbers together into thousands, millions, billions.
+
+   10000000000
+
+   Looks like this:
+
+#+BEGIN_EXAMPLE
+   10000000000
+   --   ---
+#+END_EXAMPLE
+
+#+begin_src emacs-lisp :tangle no
+(use-package digit-groups
+  :demand
+  :config
+  (digit-groups-global-mode 1))
+#+end_src
+
+** TODO All the Icons?
+   https://github.com/domtronn/all-the-icons.El
+* Editing
+** UTF-8 Enforcement
+  I've kept a version of this since 2006.
+
+#+begin_src emacs-lisp
+(prefer-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+#+end_src
+
+** The Mark
+*** Transient mark mode
+
+  For now Transient Mark mode is just turned off.  I don't like
+  transients.
+
+  Seriously though, the reason why I like not having transient mark
+  mode is that I have gotten into the habit of dropping marks and
+  using the mark ring.  I also use the mark for nagivation, and having
+  transient mark mode on messes with my workflow.
+
+  If you are opposite, then let me know (file a bug report:
+  https://github.com/jonnay/emagicians-starter-kit/issues/new) and
+  I'll fix the emagicians kit so that transient mark mode can be
+  easily activated.
+
+#+begin_src emacs-lisp
+  (transient-mark-mode -1)
+#+end_src
+
+  Or with it on?
+
+#+begin_src emacs-lisp 
+(transient-mark-mode 1)
+#+end_src
+
+*** Show Marks   :learn-me:
+#+begin_src emacs-lisp
+(use-package show-marks
+  :ensure t)
+#+end_src
+
+** Multiple Cursors                                                                           :bind:
+
+   Note that this is a great example of building your own custom
+   keymap and using it with use-package.[fn:2]
+
+#+begin_src emacs-lisp
+(use-package multiple-cursors
+  :init
+  (define-prefix-command 'emagician/mc-keymap)
+  :bind-keymap (("C-S-c" . emagician/mc-keymap))
+  :bind (:map emagician/mc-keymap
+              ("e" . mc/edit-lines)
+              ("n" . mc/mark-next-like-this)
+              ("p" . mc/mark-previous-like-this)
+              (")" . mc/mark-next-symbol-like-this)
+              ("(" . mc/mark-prev-symbol-like-this)
+              ("h" . mc/mark-all-like-this)
+              ("s" . mc/mark-all-in-region)
+              ("f" . mc/unmark-next-like-this)
+              ("F" . mc/skip-to-next-like-this)
+              ("b" . mc/unmark-previous-like-this)
+              ("B" . mc/skip-to-previous-like-this)))
+#+end_src
+
+** Killing and Yanking
+   Having a big kill ring is very helpful.  It's searchable by helm.
+
+#+begin_src emacs-lisp
+(setq kill-ring-max 120)
+#+end_src
+
+   Also, the system clipboard is a must have.
+
+#+begin_src emacs-lisp
+(setq save-interprogram-paste-before-kill t)
+#+end_src
+
+   Allow Read-only killing.  Being able to throw chunks of a read-only buffer is so powerful.  It's one of the things I love about emacs.
+
+The Power of plain text.
+
+#+begin_src emacs-lisp
+(setq kill-read-only-ok t)
+#+end_src
+
+Kill-whole-line just blew chunks for me.  REALLY blew chunks.
+
+#+begin_src emacs-lisp
+(setq kill-whole-line nil)
+#+end_src
+
+*** Volatile Highlights
+   Shows what changed through undo, yank etc. commands
+
+#+begin_src emacs-lisp
+  (use-package volatile-highlights
+    :diminish ""
+    :ensure t
+    :config
+    (volatile-highlights-mode t))
+#+end_src
+
+*** Swap
+Found from Stackoverflow.  Thank you jcubic and legoscia.[fn:1]
+
+#+begin_src emacs-lisp
+(defun swap-region-with-kill (&optional arg)
+  "replace selected text with the one from kill ring"
+  (interactive "*P")
+  (backward-delete-char (- (point) (mark)))
+  (yank arg))
+#+end_src
+
+*** kill-buffer-file-name
+    I use this all the time.
+
+#+begin_src emacs-lisp
+  (defun kill-buffer-file-name ()
+    "Show current buffer's filename in the echo area and add it to the kill ring."
+    (interactive)
+    (let ((buffer-file-name (buffer-file-name)))
+      (if (null buffer-file-name)
+          (message "Buffer %s is not associated with a file." (buffer-name))
+        (message "%s" (kill-new buffer-file-name)))))
+#+end_src
+
+#+begin_src emacs-lisp
+    (defun kill-buffer-file-basename ()
+      "Show the buffers base name in the echo area and add it to the kill ring."
+      (interactive)
+      (let ((bufer-file-name (buffer-file-name)))
+        (if (not (null buffer-file-name))
+            (message "%s" (kill-new (file-name-nondirectory buffer-file-name)))
+          (error "Buffer %s is not associated with a file" (buffer-name)))))
+#+end_src
+
+** Snippets
+
+   See also [[./Snippets.org]] for the actual Snippets.
+
+   Set the snippet dir.
+
+#+begin_src emacs-lisp 
+(use-package yasnippet
+  :diminish ""
+  :ensure t
+  :init
+  (setq yas-snippet-dirs `(,(emagician/expect-dir "assets/snippets")))
+  (setq yas-trigger-key nil)
+  (add-hook 'text-mode-hook 'yas-minor-mode-on)
+  :config
+  (diminish 'yas-minor-mode "")
+  (yas/reload-all))
+#+end_src
+
+   This rigamaroo might nit be needed anymore:
+
+#+begin_src emacs-lisp :tangle no
+ (defun yas/org-very-safe-expand ()
+    (let ((yas/fallback-behavior 'return-nil)) (yas/expand)))
+
+  (defun yas/org-setup ()
+    ;; yasnippet (using the new org-cycle hooks)
+    (make-variable-buffer-local 'yas/trigger-key)
+    (setq yas/trigger-key [tab])
+    (add-to-list 'org-tab-first-hook 'yas/org-very-safe-expand)
+    (define-key yas/keymap [tab] 'yas/next-field))
+
+  ;(add-hook 'org-mode-hook #'yas/org-setup)
+
+#+end_src
+
+** Completion  :completion:
+*** Company Mode
+#+begin_src emacs-lisp
+(use-package company
+  :diminish "🈺 "
+  :bind (:map company-active-map
+              (("C-n" . company-select-next)
+               ("C-p" . company-select-prev)))
+  :config
+  (global-company-mode)
+  (use-package company-statistics
+    :config (company-statistics-mode)))
+#+end_src
+
+*** Auto Complete                                                                      :deactivated:
+
+    It's time to switch.  AC hasn't really changed that much, and it is starting to look awful.
+
+   *Note:* if you were looking for the AC sources for a particular language or mode, then you will want to look in those specific language/mode emagician files.
+
+   `ac-ignore-case` is really burning me right now, so I am enabling it.
+
+#+begin_src emacs-lisp :tangle no
+(use-package auto-complete
+  :demand
+  :diminish ""
+  :init
+  (setq ac-auto-show-menu t)
+  (setq ac-dwim t)
+  (setq ac-use-menu-map t)
+  (setq ac-ignore-case nil)
+  (setq ac-quick-help-delay (+ 0.125 (/ 0.125 2)))
+  (setq ac-quick-help-height 20)
+  (set-default 'ac-sources
+               '(ac-source-yasnippet
+                 ac-source-dictionary
+                 ac-source-filename
+                 ac-source-files-in-current-dir
+                 ac-source-words-in-buffer
+                 ac-source-words-in-same-mode-buffers))
+  :bind
+  (:map ac-completing-map
+        ("C-M-n"   . ac-next)
+        ("C-M-p"   . ac-previous)
+        ("<tab>"   . ac-complete)
+        ("M-<ret>" . ac-help)
+        ("<ret>"   . nil))
+
+  :config
+  (require 'auto-complete-config)
+  (ac-config-default)
+  (ac-flyspell-workaround)
+  (global-auto-complete-mode t)
+  (emagician/expect-dir "assets/ac-dictionaries")
+  (add-to-list 'ac-dictionary-directories (expand-file-name "assets/ac-dictionaries" emagician/dir)))
+#+end_src
+
+**** Auto Complete Default Sources :tangle no
+#+begin_src emacs-lisp
+  (set-default 'ac-sources
+               '(ac-source-yasnippet
+                 ac-source-dictionary
+                 ac-source-words-in-buffer
+                 ac-source-words-in-same-mode-buffers))
+#+end_src
+
+** Undo
+#+begin_src emacs-lisp
+  (use-package undo-tree
+    :diminish ""
+    :ensure t
+    :init
+    (setq undo-tree-enable-undo-in-region t
+          undo-tree-visualizer-diff t
+          undo-tree-zer-timestamps t)
+    :config
+    (global-undo-tree-mode))
+#+end_src
+
+*** Hydra for Undo Tree
+
+    Thanks to g00eykabl00ey[fn:4]
+
+#+begin_src emacs-lisp 
+(defhydra hydra-undo-tree (:color yellow
+                                  :hint nil
+                                  )
+  "
+  _p_: undo  _n_: redo _s_: save _l_: load   "
+  ("p"   undo-tree-undo)
+  ("n"   undo-tree-redo)
+  ("s"   undo-tree-save-history)
+  ("l"   undo-tree-load-history)
+  ("u"   undo-tree-visualize "visualize" :color blue)
+  ("q"   nil "quit" :color blue))
+
+(global-set-key (kbd "M-,") 'hydra-undo-tree/undo-tree-undo) 
+#+end_src
+
+
+** Spell Checking
+
+#+name: Mo Khan
+#+begin_quote
+   Your Emacs has cast aspell! 
+#+end_quote
+
+#+begin_src emacs-lisp 
+
+(use-package flyspell
+  :diminish (flyspell-mode . ""))
+#+end_src
+
+* Navigating
+** Scrolling
+   Keep the screen position when scrolling.
+
+  #+begin_src emacs-lisp
+(setq scroll-preserve-screen-position t)
+  #+end_src
+
+** Avy                                                                                       :learn:
+   Basically Acejump++.
+
+#+begin_src emacs-lisp
+(use-package avy
+  :bind
+  (("M-g f" . avy-goto-line)
+    ("M-g h" . avy-goto-char-2)
+    ("M-g i" . avy-goto-char)))
+#+end_src
+** Ace window jump
+   - Set the keys to home-row
+   - Make the ace-jump key super visible
+   - Only apply to this frame
+
+#+begin_src emacs-lisp
+(use-package ace-window
+  :init
+  (face-spec-set
+   'aw-leading-char-face
+     '((t (:inherit avy-lead-face :height 3.0))))
+  (setq aw-scope 'frame)
+  (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+  :bind
+  ("C-x o" . ace-window))
+#+end_src
+
+** Save Place
+   Saveplace allows emacs to remember where you were in a file.  It is handy and transparent in most cases.  Except org-mode.
+#+begin_src emacs-lisp
+(require 'saveplace)
+(save-place-mode)
+#+end_src
+
+** Goto Last Change                                                                          :learn:
+#+begin_src emacs-lisp
+(use-package goto-last-change
+  :bind
+  ("C-x C-/" . goto-last-change))
+#+end_src
+
+** Uniquify
+
+   Rename buffers so they are unique.
+
+#+begin_src emacs-lisp
+  (require 'uniquify)
+#+end_src
+
+** Searching
+*** Default to regexp Searches
+#+begin_src emacs-lisp
+(global-set-key [(control s)] 'isearch-forward-regexp)
+(global-set-key [(control r)] 'isearch-backward-regexp)
+#+end_src
+
+** TODO https://github.com/wasamasa/shackle 
+   example: https://github.com/hlissner/.emacs.d/blob/master/core/core-popup.el
+* Tramp
+
+Tramp has a tendency to 💩 history files everywhere.   This stops it.
+
+#+begin_src emacs-lisp
+(setq tramp-histfile-override t)
+#+end_src
+
+* Saving
+** Backups
+   Disabling backups was a monumentally stupidly bad idea.  I shall never do it again.  I figured since I was working mostly in source control, I'd be safe.  Then I was wrong one day, and lost a very important change.
+
+   Lesson learned.
+
+#+begin_src emacs-lisp
+(setq auto-save-default t)
+#+end_src
+
+   Set the directory to a directory in the user-emacs-directory, and then create it.
+
+#+begin_src emacs-lisp
+(setq backup-directory-alist
+      `(("." . ,(emagician/expect-dir "backups" user-emacs-directory))))
+
+(setq tramp-backup-directory-alist backup-directory-alist)
+#+end_src
+
+   Never delete any old verisons.  
+
+   (Disk is cheap and text is tiny.)- 🐦
+
+#+begin_src emacs-lisp 
+(setq delete-old-versions -1)
+#+end_src
+
+   Even in version control.  And while were at it, lets version control backups.  
+ 
+   (Again. Disk. Cheep.)- 🐦
+
+#+begin_src emacs-lisp 
+(setq version-control t)
+(setq vc-make-backup-files t)
+#+end_src
+
+   Auto save filename translation, put everything in it's own directory.
+
+   Also, this might fix auto-saves in tramp?
+
+#+begin_src emacs-lisp 
+(setq auto-save-file-name-transforms
+      `((".*" 
+         ,(emagician/expect-dir "auto-save-list"
+                                user-emacs-directory)
+         t)))
+#+end_src
+
+* State Management
+** Server
+
+   Server is good shit.  Lots of funk there.
+
+#+begin_src emacs-lisp
+(unless (string-equal "root" (getenv "USER"))
+  (require 'server)
+  (unless (server-running-p) (server-start)))
+#+end_src
+
+** Recent Files
+   500 should be as enough files to handle long editing sessions at
+   work, and some weekend projects as well.
+
+#+begin_src emacs-lisp
+  (require 'recentf)
+  (setq recentf-max-saved-items 500)
+#+end_src
+
+** History
+#+begin_quote
+   Our sense of self is really our sense of history.  The I that sits behind your eye is the memories of your self.
+#+end_quote
+
+   Save all history.  This is okay because we delete duplicates.
+
+#+begin_src emacs-lisp 
+(setq history-length t)
+(setq history-delete-duplicates t)
+#+end_src
+
+** Save History
+#+begin_src emacs-lisp
+(setq savehist-save-minibuffer-history 1)
+(setq savehist-additional-variables
+      '(search-ring regexp-search-ring kill-ring compile-command ))
+
+(setq savehist-autosave-interval 60)
+
+(savehist-mode t)
+#+end_src
+
+* Help and Discoverability                                                                    :help:
+** Achievements
+   Achievements are fun!  There is nothing at all wrong with exploring them.
+#+begin_src emacs-lisp  :tangle no
+(use-package achievements
+  :demand
+  :diminish "🏆 "
+  :init
+  (setq achievements-idle-time 300))
+#+end_src
+
+** Which Key
+   More like—witch key.  Which-key is the ultimate in discoverability.  I really enjoy this package and for-stalled my install of ~god-mode~ until I was sure they could play well together.
+
+#+begin_src emacs-lisp
+(use-package which-key
+  :demand
+  :ensure t
+  :diminish ""
+  :init
+  (setq which-key-idle-delay 0.6)
+  (setq which-key-is-verbose t)
+  (setq which-key-min-display-lines 3)
+  (setq which-key-sort-order 'which-key-local-then-key-order)
+  (setq which-key-max-description-length 50)
+  (setq which-key-show-remaining-keys t)
+  (setq which-key-lighter "❔")
+  :config
+  (which-key-mode))
+#+end_src
+
+** Discover My Major   :learn-me:bind:
+
+   ~f1~ is now a discovery prefix key.  From there you can get help on various modes.
+
+#+begin_src emacs-lisp
+(defmacro make-discovery (sym &optional mode)
+  "Make a command called discover-NAME"
+  (let* ((name (symbol-name sym))
+         (command (intern (concat "discover-" name)))
+         (mode (or mode
+                   (intern (concat name "-mode")))))
+    `(defun ,command ()
+      ,(concat "Automagickally created by Emagicians Starter kit.\n"
+               "Helps the user discover mode " (symbol-name mode))
+      (interactive)
+      (discover-my-mode (quote,mode)))))
+
+
+
+(use-package discover-my-major
+  :ensure t
+  :init
+  (make-discovery paredit)
+  (make-discovery projectile)
+  (make-discovery ruby-tools)
+  ;(make-discovery company)
+  (bind-keys :prefix-map discovery-map
+             :prefix "<f1>"
+             ("<f1>" . discover-my-major)
+             ("<f2>" . discover-my-mode)
+             ("("    . discover-paredit)
+            ; ("c"    . discover-company)
+             ("p"    . discover-projectile)
+             ("r"    . discover-ruby-tools)))
+#+end_src
+
+*** TODO fix Company Discovery 
+
+** How Do I?
+
+#+begin_src emacs-lisp 
+(use-package howdoi
+  :init
+  (setq howdoi-display-question t)
+  :bind
+  (:map discovery-map
+        ("?" . howdoi-query)))
+#+end_src
+
+** TODO Try out IVY instead of helm
+** Helm
+   I have a complicated relationship with helm.  
+
+   - ⛥ :: On the one hand its completion mechanism just does what I expect.  Little to no fuss nor muss.
+   - ⛥ :: On the other hand it's a bitch to extend and seems to have gotten very far from it's easy-to-extend Anything roots.  Case-in-point: ~M-x~ used to not only show commands, but give you actions to provide documentation for them, their source location, as well as a whole host of other things.  I miss that.
+
+   It's still a demand package though. 
+#+name: helm
+#+begin_src emacs-lisp 
+(use-package helm
+  :demand
+  :diminish (helm-mode . "")
+  :init
+  (global-set-key [f2] 'emagician/helm)
+  (require 'helm-for-files)
+  (require 'helm-config)
+  (require 'helm-ring)
+  (use-package helm-ls-git :demand)
+  :config
+  (helm-mode 1))
+#+end_src
+
+*** F2 is my super duper DWIM helper
+    F2 means "I wanna do something, get somewhere."  So show me a list of everything.
+
+#+begin_src emacs-lisp 
+(defun emagician/helm ()
+  "Super powered helm mode to DWIM!"
+  (interactive)
+  (unless (and helm-source-ls-git-status
+               helm-source-ls-git)
+    (setq helm-source-ls-git-status
+          (helm-make-source "Git status" 'helm-ls-git-status-source
+            :fuzzy-match helm-ls-git-fuzzy-match)
+          helm-source-ls-git
+          (helm-make-source "Git files" 'helm-ls-git-source
+            :fuzzy-match helm-ls-git-fuzzy-match)))
+  (unless helm-source-buffers-list
+    (setq helm-source-buffers-list
+          (helm-make-source "Buffers" 'helm-source-buffers)))
+  (helm :sources
+        '(helm-source-buffers-list
+          helm-source-files-in-current-dir
+          helm-source-ls-git-status
+          helm-source-ls-git
+          helm-source-mark-ring
+          helm-source-bookmarks
+          helm-source-recentf
+          helm-source-register
+          helm-source-buffer-not-found)))
+#+end_src
+
+
+**** Key binding muscle memory
+     The Fix-Muscle Memory keybinding setting re-enables the "You can run the command ~foo~ with ~bar~". This is one of the annoyances with ~Helm-M-x~ for me.  
+
+     See [[file:Lamp.org::*Fix-Muscle-Memory%20(was%20Emagician-Fix-Spell)][Fix-Muscle-Memory (was Emagician-Fix-Spell)]]
+
+*** Show full paths
+#+begin_src emacs-lisp 
+(setq helm-ff-transformer-show-only-basename nil)
+#+end_src
+*** Extended Command, Buffer Selection, Insert, write and find files should use helm.
+
+#+begin_src emacs-lisp
+(with-eval-after-load 'helm
+  (global-set-key (kbd "M-x")     'helm-M-x)
+(global-set-key (kbd "C-x b") 'helm-buffers-list)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "M-y")     'helm-show-kill-ring))
+
+  (setq helm-M-x-always-save-history t)
+#+end_src
+
+
+*** Personal Preferences
+Make helm open a new window instead of taking over another.
+
+Make it a bit nicer too.
+#+begin_src emacs-lisp 
+(setq helm-split-window-in-side-p t)
+(setq helm-candidate-separator "──────────────────────────────")
+#+end_src
+
+*** The Helm Alternative: Ivy?
+**** TODO read https://sam217pa.github.io/2016/09/13/from-helm-to-ivy/ again
+**** TODO Look at https://sam217pa.github.io/2016/09/11/nuclear-power-editing-via-ivy-and-ag/
+** Ivy/Council/Smex/Swiper
+#+begin_src emacs-lisp 
+(use-package ivy
+  :demand)
+#+end_src
+
+  (global-set-key (kbd "C-s") 'swiper)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "<f1> f") 'counsel-describe-function)
+(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+(global-set-key (kbd "<f1> l") 'counsel-find-library)
+(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+
+(global-set-key (kbd "C-c g") 'counsel-git)
+(global-set-key (kbd "C-c j") 'counsel-git-grep)qqqq
+(global-set-key (kbd "C-c k") 'counsel-ag)
+(global-set-key (kbd "C-x l") 'counsel-locate)
+(global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+
+
+* God Mode
+  Just starting to use god mode, not sure about it yet.
+
+#+begin_src emacs-lisp 
+(use-package god-mode
+  :bind (("<escape>" . god-local-mode))
+  :config
+  (which-key-enable-god-mode-support))
+#+end_src
+
+** PROJECT Look at command composability a-la evil 
+*** TODO Digest this: http://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118
+*** TODO Digest evil 
+*** TODO look at existing interactive spec 
+*** TODO Duplicate command watcher
+"Instead of hitting forward so many times, you can use C-3 C-f"
+*** TODO command teller-about-er
+ "you can use <whatever vimlike composable command sequence> instead of zap-to-char"
+*** TODO come up with a kickass name.  
+    - Boon
+    - Miracle
+    - Zeal
+    - Some sort of action-of-gods.  A better name would be something more Ancient Egyptian/Greek
+*** TODO Digest https://github.com/paldepind/composable.el/blob/master/composable.el
+
+* Footnotes
+
+[fn:1] http://stackoverflow.com/questions/22039847/emacs-lisp-function-with-optional-argument-call-other-function#22040296
+
+[fn:2] Thanks habamax and jwiegley. https://github.com/jwiegley/use-package/issues/366
+
+[fn:3] https://github.com/wasamasa/dotemacs/blob/master/init.org#display-fringe-indicators-and-fix-line-movement-in-visual-line-mode
+
+[fn:4] https://www.reddit.com/r/emacs/comments/78aa27/hydras_are_just_great_simple_but_super_useful/
+
+

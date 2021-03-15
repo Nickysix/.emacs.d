@@ -1,0 +1,123 @@
+#+title: Lisp
+#+LINK_UP: Programming.html 
+
+* Set up a generalized Lisp mode hook
+#+begin_src emacs-lisp
+(defvar generic-lisp-mode-hook '()
+  "Generic lisp hooks to run")
+#+end_src
+
+#+begin_src emacs-lisp 
+(defun run-lisp-mode-hooks ()
+  "Run standard lisp mode hooks"
+  (run-hooks 'generic-lisp-mode-hook))
+#+end_src
+
+#+begin_src emacs-lisp 
+(dolist (hook '(scheme-mode-hook clojure-mode-hook lisp-mode-hook emacs-lisp-mode-hook))
+  (add-hook hook 'run-lisp-mode-hooks))
+#+end_src
+
+* Editing 
+** Paredit
+#+begin_src emacs-lisp 
+(use-package paredit
+  :ensure t
+  :diminish "⒫"
+  :init
+  (emagician/minor-in-major-mode paredit-mode generic-lisp-mode-hook))
+#+end_src
+
+** Smart Parens
+   Turn this shit off on lisps
+
+#+begin_src emacs-lisp 
+(add-hook 'generic-lisp-mode-hook #'turn-off-smartparens-mode t)
+#+end_src
+* Individual Lisps
+** Elisp
+*** Editing 
+**** Highlighting
+#+begin_src emacs-lisp 
+(with-eval-after-load 'dash
+  (dash-enable-font-lock))
+#+end_src
+
+**** Eldoc
+#+begin_src emacs-lisp 
+(use-package eldoc
+  :diminish ""
+  :init 
+    (setq eldoc-idle-delay 0.1)
+    (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
+  :config
+    (set-face-attribute 'eldoc-highlight-function-argument nil
+                        :underline t :foreground "green"
+                        :weight 'bold))
+#+end_src
+
+
+**** Auto Complete
+#+begin_src emacs-lisp :tangle no 
+(emagician/defhook emagician/ac-set-elisp-sources emacs-lisp-mode
+  (setq ac-sources
+        '(ac-source-yasnippet
+          ac-source-functions
+          ac-source-features
+          ac-source-variables
+          ac-source-symbols
+          ac-source-files-in-current-dir
+          ac-source-words-in-buffer
+          ac-source-words-in-same-mode-buffers)))
+#+end_src
+**** Indentation
+#+begin_src emacs-lisp 
+(put 'use-package 'lisp-indent-function 1)
+(put 'lexically 'lisp-indent-function 0)
+#+end_src
+
+**** Package checking
+#+begin_src emacs-lisp 
+  (use-package flycheck-package
+    :config 
+    (flycheck-package-setup))
+#+end_src
+
+***** Turn off in orc-src buffers
+Don't flycheck in emacs-lisp-mode org-src buffers!  SO ANNOYING!
+
+#+begin_src emacs-lisp 
+(emagician/defhook turn-off-flycheck-in-emacs-lisp org-src-mode-hook
+  (when (equal mode-name "Emacs-Lisp")
+    (flycheck-mode -1)))
+#+end_src
+
+*** Environment
+    See [[./Emagician-Base.org]]
+
+** Scheme
+
+*** Editing
+**** Intenting
+#+begin_src emacs-lisp
+;; Indenting module body code at column 0
+(defun scheme-module-indent (state indent-point normal-indent) 0)
+(put 'module 'scheme-indent-function 'scheme-module-indent)
+
+(put 'and-let* 'scheme-indent-function 1)
+(put 'parameterize 'scheme-indent-function 1)
+(put 'handle-exceptions 'scheme-indent-function 1)
+(put 'when 'scheme-indent-function 1)
+(put 'unless 'scheme-indent-function 1)
+(put 'match 'scheme-indent-function 1)
+#+end_src
+*** Interface
+**** Geiser REPL
+
+#+begin_src emacs-lisp 
+  (use-package geiser
+    :init
+    (setq geiser-active-implementations '(chicken))
+    :config 
+    (emagician/defhook emagician/ac-set-scheme-sources scheme-mode-hook))
+#+end_src

@@ -1,0 +1,126 @@
+#+title: Web Programming
+#+LINK_UP: Programming.html 
+#+SETUPFILE: Org-Include.setup
+* Interface 
+** Completion    :completion:
+#+begin_src emacs-lisp 
+(use-package company-web)
+(use-package ac-html-bootstrap)
+#+end_src
+
+** Colors
+#+begin_src emacs-lisp 
+(use-package rainbow-mode
+  :diminish "🌈"
+  :hook (scss-mode less-mode css-mode))
+#+end_src
+
+* Modes
+** Web Mode
+*** Mode setup
+#+begin_src emacs-lisp 
+(use-package web-mode
+  :diminish "🌎"
+  :mode 
+  (("\\.phtml\\'" . web-mode)
+  ("\\.tpl\\.php\\'" . web-mode)      
+  ("\\.jsp\\'" . web-mode)            
+  ("\\.as[cp]x\\'" . web-mode)        
+  ("\\.erb\\'" . web-mode)            
+  ("\\.mustache\\'" . web-mode)       
+  ("\\.djhtml\\'" . web-mode)         
+  ("\\.jst.ejs\\'" . web-mode)        
+  ("\\.html?\\'" . web-mode))
+  :init
+  (setq web-mode-enable-block-face t)
+  (setq web-mode-enable-comment-keywords t)
+  (setq web-mode-enable-current-element-highlight t)
+  (setq web-mode-enable-current-column-highlight t)   
+  (setq web-mode-script-padding 2)
+  (setq web-mode-style-padding 2)
+  (setq web-mode-comment-style 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-markup-indent-offset 2))
+#+end_src
+** Stylesheets
+*** CSS Mode
+#+begin_src emacs-lisp 
+  (setq css-indent-level 2)
+  (setq css-indent-offset 2)
+#+end_src
+
+*** Less mode
+#+begin_src emacs-lisp 
+(use-package less-css-mode)
+#+end_src
+
+*** SCSS Mode 
+#+begin_src emacs-lisp 
+(use-package scss-mode
+  :init
+  (setq scss-compile-at-save nil))
+#+end_src
+*** They should descend from prog-mode, but they don't!
+#+begin_src emacs-lisp 
+(emagician/defhook run-prog-mode-hooks css-mode-hook
+  "Runs the progmode hooks"
+  (run-hooks 'prog-mode-hook))
+
+(add-hook 'scss-mode-hook 'run-prog-mode-hooks)
+#+end_src
+
+** Coffeescript
+#+begin_src emacs-lisp 
+(use-package coffee-mode
+  :diminish "☕"
+  :init
+  (setq coffee-tab-width 2))
+#+end_src
+
+* Helpers 
+** Apache Mode
+#+begin_src emacs-lisp 
+(use-package apache-mode)
+#+end_src
+** Restclient Mode   :completion:
+#+begin_src emacs-lisp 
+(use-package restclient
+  :init
+  (use-package company-restclient))
+#+end_src
+** Fontawesome mode 
+   Insert fontawesome icons.
+
+#+begin_src emacs-lisp 
+(use-package fontawesome)
+#+end_src
+
+*** Prettify Fontawesome
+Take fontawesome-alist, append fa- to the name, and use that as the list for prettify-mode
+#+begin_src emacs-lisp 
+(emagician/defhook emagician-prettify-fontawesome web-mode-hook
+  (setq prettify-symbols-alist (mapcar (lambda (fa-cons)
+                                         (cons (concat "fa-" (car fa-cons))
+                                               (aref (cdr fa-cons) 0)))
+                                       fontawesome-alist)))
+#+end_src
+
+Now you can type out ~<i icon="fa fa-tree">~ and it comes out ~<i icon="fa ">~
+
+* Interpreters
+** Skewer
+#+begin_src emacs-lisp 
+(use-package skewer-mode
+  :init 
+  (setq httpd-port 8123))
+
+(use-package skewer-reload-stylesheets
+  :init (add-hook 'css-mode-hook 'skewer-reload-stylesheets-start-editing)
+        (add-hook 'scss-mode-hook 'skewer-reload-stylesheets-start-editing))
+
+#+end_src
+* Documentation
+** HTTP Well
+#+begin_src emacs-lisp 
+(use-package know-your-http-well)
+#+end_src

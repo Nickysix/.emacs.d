@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: union-big
+# key: unionb
+# --
+\\bigcup_{$1}^{$2}

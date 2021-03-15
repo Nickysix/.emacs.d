@@ -1,0 +1,51 @@
+#!/bin/sh
+
+# Make the assumption that we are almost always running on Ubuntu, but
+# if there is a RedHat file, then assume we should use yum instead...
+
+APTGET=apt-get
+if [ -f /etc/redhat-release ]
+then
+    APTGET=yum
+else
+    echo "deb http://archive.ubuntu.com/ubuntu quantal main restricted multiverse universe" | sudo tee -a /etc/apt/sources.list
+    sudo apt-get update
+fi
+
+# I love meself my Zshell...
+sudo $APTGET install -y zsh
+sudo chsh -s `which zsh` $USER
+
+# Install the stuff to make my life easier...
+
+sudo $APTGET install -y tmux
+sudo $APTGET install -y source-highlight
+
+if sudo $APTGET install -y emacs24-nox
+then
+    emacs -Q --batch \
+        --eval "(progn
+     (require 'package)
+     (setq package-archives '((\"org\"      . \"http://orgmode.org/elpa/\")
+                             (\"gnu\"       . \"http://elpa.gnu.org/packages/\")
+                             (\"melpa\"     . \"http://melpa.milkbox.net/packages/\")
+                             (\"tromey\"    . \"http://tromey.com/elpa/\")
+                             (\"marmalade\" . \"http://marmalade-repo.org/packages/\")))
+    (package-initialize)
+    (when (not package-archive-contents)
+      (package-refresh-contents))
+
+    (package-install 'emamux))"
+else
+    # Can't get v24? :-(   I'll settle for v23...
+    sudo $APTGET install -y emacs23-nox
+fi
+
+# Now, copy all of the dot-files in this directory to the home
+# directory, and we're done.
+
+for FILE in `dirname $0`/.??*
+do
+    echo cp -r $FILE $HOME
+    cp -r $FILE $HOME
+done

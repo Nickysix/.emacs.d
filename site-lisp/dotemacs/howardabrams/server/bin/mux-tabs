@@ -1,0 +1,42 @@
+#!/bin/bash
+# ----------------------------------------------------------------------
+#  STANDARD: Create tabs for the standard virtual machines...
+# ----------------------------------------------------------------------
+
+VERBOSE=0
+SSH_OPTS="-o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
+
+while getopts "v" o
+do  case "$o" in
+        v)  VERBOSE=1;;
+        [?])    print >&2 "Usage: $0 [-v]"
+                exit 1;;
+    esac
+done
+shift $(expr $OPTIND - 1)
+
+source $HOME/openrc
+
+# ----------------------------------------------------------------------
+# Connect to the Chef server if it is running.
+
+CHEFIP=$(~/bin/onova list | grep chef | cut -d= -f2)
+if [ -n "$CHEFIP" ]
+then
+    if [ "$VERBOSE" -eq 1 ]; then
+        echo "tmux neww -n chef 'ssh -i wpc3x.pem $SSH_OPTS root@$CHEFIP'"
+    fi
+    tmux neww -n chef "ssh -i wpc3x.pem $SSH_OPTS root@$CHEFIP"
+fi
+
+# ----------------------------------------------------------------------
+# Connect to the Tempest server if it is running.
+
+TEMPESTIP=$(~/bin/onova list | grep tempest | cut -d= -f2)
+if [ -n "$TEMPESTIP" ]
+then
+    if [ "$VERBOSE" -eq 1 ]; then
+        echo "tmux neww -n tempest 'ssh -i wpc3x.pem $SSH_OPTS $TEMPESTIP'"
+    fi
+    tmux neww -n tempest "ssh -i wpc3x.pem $SSH_OPTS $TEMPESTIP"
+fi

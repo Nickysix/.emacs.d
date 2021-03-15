@@ -1,0 +1,243 @@
+[submodule "lazycat-theme"]
+	path = site-lisp/extensions/lazycat-theme
+	url = https://github.com/manateelazycat/lazycat-theme.git
+[submodule "sdcv"]
+	path = site-lisp/extensions/sdcv
+	url = https://github.com/manateelazycat/sdcv.git
+[submodule "company-english-helper"]
+	path = site-lisp/extensions/company-english-helper
+	url = https://github.com/manateelazycat/company-english-helper.git
+[submodule "typescript"]
+	path = site-lisp/extensions/typescript
+	url = https://github.com/ananthakumaran/typescript.el.git
+[submodule "watch-other-window"]
+	path = site-lisp/extensions/watch-other-window
+	url = https://github.com/manateelazycat/watch-other-window.git
+[submodule "site-lisp/extensions/magithub"]
+	path = site-lisp/extensions/magithub
+	url = https://github.com/vermiculus/magithub
+[submodule "site-lisp/extensions/magit"]
+	path = site-lisp/extensions/magit
+	url = https://github.com/magit/magit
+[submodule "ghub-plus"]
+	path = site-lisp/extensions/ghub-plus
+	url = https://github.com/vermiculus/ghub-plus.git
+[submodule "apiwrap"]
+	path = site-lisp/extensions/apiwrap
+	url = https://github.com/vermiculus/apiwrap.el.git
+[submodule "web-mode"]
+	path = site-lisp/extensions/web-mode
+	url = https://github.com/fxbois/web-mode
+[submodule "iedit"]
+	path = site-lisp/extensions/iedit
+	url = https://github.com/victorhge/iedit
+[submodule "Indium"]
+	path = site-lisp/extensions/Indium
+	url = https://github.com/NicolasPetton/Indium
+[submodule "tide"]
+	path = site-lisp/extensions/tide
+	url = https://github.com/ananthakumaran/tide.git
+[submodule "js2-refactor"]
+	path = site-lisp/extensions/js2-refactor
+	url = https://github.com/magnars/js2-refactor.el.git
+[submodule "cache-path-from-shell"]
+	path = site-lisp/extensions/cache-path-from-shell
+	url = https://github.com/manateelazycat/cache-path-from-shell.git
+[submodule "emacs-rails"]
+	path = site-lisp/extensions/emacs-rails
+	url = https://github.com/manateelazycat/emacs-rails.git
+[submodule "insert-translated-name"]
+	path = site-lisp/extensions/insert-translated-name
+	url = https://github.com/manateelazycat/insert-translated-name.git
+[submodule "vi-navigate"]
+	path = site-lisp/extensions/vi-navigate
+	url = https://github.com/manateelazycat/vi-navigate.git
+[submodule "flex"]
+	path = site-lisp/extensions/flex
+	url = https://github.com/manateelazycat/flex.git
+[submodule "bison"]
+	path = site-lisp/extensions/bison
+	url = https://github.com/manateelazycat/bison.git
+[submodule "awesome-tray"]
+	path = site-lisp/extensions/awesome-tray
+	url = https://github.com/manateelazycat/awesome-tray.git
+[submodule "grep-dired"]
+	path = site-lisp/extensions/grep-dired
+	url = https://github.com/manateelazycat/grep-dired.git
+[submodule "json-reformat"]
+	path = site-lisp/extensions/json-reformat
+	url = https://github.com/gongo/json-reformat.git
+[submodule "restclient.el"]
+	path = site-lisp/extensions/restclient.el
+	url = https://github.com/pashky/restclient.el.git
+[submodule "helm-projectile"]
+	path = site-lisp/extensions/helm-projectile
+	url = https://github.com/bbatsov/helm-projectile.git
+[submodule "helm-ls-git"]
+	path = site-lisp/extensions/helm-ls-git
+	url = https://github.com/emacs-helm/helm-ls-git.git
+[submodule "flycheck-swift"]
+	path = site-lisp/extensions/flycheck-swift
+	url = http://github.com/swift-emacs/flycheck-swift.git
+[submodule "rcodetools"]
+	path = site-lisp/extensions/rcodetools
+	url = http://github.com/rcodetools/rcodetools
+[submodule "flycheck-pycheckers"]
+	path = site-lisp/extensions/flycheck-pycheckers
+	url = http://github.com/msherry/flycheck-pycheckers
+[submodule "swift-mode"]
+	path = site-lisp/extensions/swift-mode
+	url = http://github.com/swift-emacs/swift-mode
+[submodule "awesome-pair"]
+	path = site-lisp/extensions/awesome-pair
+	url = https://github.com/manateelazycat/awesome-pair.git
+[submodule "css-sort"]
+	path = site-lisp/extensions/css-sort
+	url = https://github.com/manateelazycat/css-sort.git
+[submodule "go-mode"]
+	path = site-lisp/extensions/go-mode
+	url = https://github.com/dominikh/go-mode.el.git
+[submodule "color-rg"]
+	path = site-lisp/extensions/color-rg
+	url = https://github.com/manateelazycat/color-rg.git
+[submodule "rjsx-mode"]
+	path = site-lisp/extensions/rjsx-mode
+	url = https://github.com/felipeochoa/rjsx-mode.git
+[submodule "auto-save"]
+	path = site-lisp/extensions/auto-save
+	url = https://github.com/manateelazycat/auto-save.git
+[submodule "thing-edit"]
+	path = site-lisp/extensions/thing-edit
+	url = https://github.com/manateelazycat/thing-edit.git
+[submodule "lsp-mode"]
+	path = site-lisp/extensions/lsp-mode
+	url = https://github.com/emacs-lsp/lsp-mode.git
+[submodule "company-lsp"]
+	path = site-lisp/extensions/company-lsp
+	url = https://github.com/tigersoldier/company-lsp.git
+[submodule "lazy-search"]
+	path = site-lisp/extensions/lazy-search
+	url = https://github.com/manateelazycat/lazy-search.git
+[submodule "goto-line-preview"]
+	path = site-lisp/extensions/goto-line-preview
+	url = https://github.com/jcs090218/goto-line-preview.git
+[submodule "duplicate-line"]
+	path = site-lisp/extensions/duplicate-line
+	url = https://github.com/manateelazycat/duplicate-line.git
+[submodule "move-text"]
+	path = site-lisp/extensions/move-text
+	url = https://github.com/manateelazycat/move-text.git
+[submodule "open-newline"]
+	path = site-lisp/extensions/open-newline
+	url = https://github.com/manateelazycat/open-newline.git
+[submodule "aweshell"]
+	path = site-lisp/extensions/aweshell
+	url = https://github.com/manateelazycat/aweshell.git
+[submodule "lazy-load"]
+	path = site-lisp/extensions/lazy-load
+	url = https://github.com/manateelazycat/lazy-load.git
+[submodule "site-lisp/extensions/transient"]
+	path = site-lisp/extensions/transient
+	url = https://github.com/magit/transient.git
+[submodule "site-lisp/extensions/with-editor"]
+	path = site-lisp/extensions/with-editor
+	url = https://github.com/magit/with-editor.git
+[submodule "symbol-overlay"]
+	path = site-lisp/extensions/symbol-overlay
+	url = https://github.com/wolray/symbol-overlay.git
+[submodule "swiper"]
+	path = site-lisp/extensions/swiper
+	url = https://github.com/abo-abo/swiper.git
+[submodule "site-lisp/extensions/shift-number"]
+	path = site-lisp/extensions/shift-number
+	url = https://github.com/alezost/shift-number.el.git
+[submodule "delete-block"]
+	path = site-lisp/extensions/delete-block
+	url = https://github.com/manateelazycat/delete-block.git
+[submodule "smart-align"]
+	path = site-lisp/extensions/smart-align
+	url = https://github.com/manateelazycat/smart-align.git
+[submodule "multi-term"]
+	path = site-lisp/extensions/multi-term
+	url = https://github.com/manateelazycat/multi-term.git
+[submodule "instant-rename-tag"]
+	path = site-lisp/extensions/instant-rename-tag
+	url = https://github.com/manateelazycat/instant-rename-tag.git
+[submodule "highlight-matching-tag"]
+	path = site-lisp/extensions/highlight-matching-tag
+	url = https://github.com/manateelazycat/highlight-matching-tag.git
+[submodule "highlight-indent-guides"]
+	path = site-lisp/extensions/highlight-indent-guides
+	url = https://github.com/DarthFennec/highlight-indent-guides.git
+[submodule "awesome-tab"]
+	path = site-lisp/extensions/awesome-tab
+	url = https://github.com/manateelazycat/awesome-tab.git
+[submodule "olivetti"]
+	path = site-lisp/extensions/olivetti
+	url = https://github.com/rnkn/olivetti.git
+[submodule "names"]
+	path = site-lisp/extensions/names
+	url = https://github.com/Malabarba/names.git
+[submodule "company-tabnine"]
+	path = site-lisp/extensions/company-tabnine
+	url = https://github.com/TommyX12/company-tabnine.git
+[submodule "site-lisp/extensions/unicode-escape"]
+	path = site-lisp/extensions/unicode-escape
+	url = https://github.com/kosh04/unicode-escape.el.git
+[submodule "snails"]
+	path = site-lisp/extensions/snails
+	url = https://github.com/manateelazycat/snails.git
+[submodule "posframe"]
+	path = site-lisp/extensions/posframe
+	url = https://github.com/tumashu/posframe.git
+[submodule "site-lisp/extensions/fuz"]
+	path = site-lisp/extensions/fuz
+	url = https://github.com/cireu/fuz.el.git
+[submodule "emacs-async"]
+	path = site-lisp/extensions/emacs-async
+	url = https://github.com/jwiegley/emacs-async.git
+[submodule "projectile"]
+	path = site-lisp/extensions/projectile
+	url = https://github.com/bbatsov/projectile.git
+[submodule "site-lisp/extensions/benchmark-init"]
+	path = site-lisp/extensions/benchmark-init
+	url = https://github.com/dholm/benchmark-init-el
+[submodule "sly-el-indent"]
+	path = site-lisp/extensions/sly-el-indent
+	url = https://github.com/cireu/sly-el-indent.git
+[submodule "xr"]
+	path = site-lisp/extensions/xr
+	url = https://github.com/mattiase/xr.git
+[submodule "emacs-rime"]
+	path = site-lisp/extensions/emacs-rime
+	url = https://github.com/DogLooksGood/emacs-rime.git
+[submodule "nox"]
+	path = site-lisp/extensions/nox
+	url = https://github.com/manateelazycat/nox.git
+[submodule "site-lisp/extensions/valign"]
+	path = site-lisp/extensions/valign
+	url = https://github.com/casouri/valign.git
+[submodule "site-lisp/extensions/emacs-application-framework"]
+	path = site-lisp/extensions/emacs-application-framework
+	url = https://github.com/manateelazycat/emacs-application-framework.git
+[submodule "site-lisp/extensions/magit-popup"]
+	path = site-lisp/extensions/magit-popup
+	url = https://github.com/magit/magit-popup.git
+[submodule "site-lisp/extensions/elfeed"]
+	path = site-lisp/extensions/elfeed
+	url = https://github.com/skeeto/elfeed.git
+[submodule "site-lisp/extensions/emacs-ctable"]
+	path = site-lisp/extensions/emacs-ctable
+	url = https://github.com/kiwanami/emacs-ctable.git
+[submodule "site-lisp/extensions/emacs-deferred"]
+	path = site-lisp/extensions/emacs-deferred
+	url = https://github.com/kiwanami/emacs-deferred.git
+[submodule "site-lisp/extensions/emacs-epc"]
+	path = site-lisp/extensions/emacs-epc
+	url = https://github.com/kiwanami/emacs-epc.git
+[submodule "site-lisp/extensions/nim-mode"]
+	path = site-lisp/extensions/nim-mode
+	url = https://github.com/nim-lang/nim-mode.git
+[submodule "site-lisp/extensions/commenter"]
+	path = site-lisp/extensions/commenter
+	url = https://github.com/yuutayamada/commenter.git

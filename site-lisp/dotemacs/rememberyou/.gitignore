@@ -1,0 +1,27 @@
+# GNU Emacs
+*.elc
+*~
+.cache
+/elpa/
+config.el
+custom.el
+tutorial
+
+# Third-party packages
+/history/
+/url/
+/var/
+/anaconda-mode/
+/auto-save-list/
+/backups/
+/transient/
+.abbrev_defs
+.dap-breakpoints
+ac-comphist.dat
+bookmarks
+nov-places
+recentf
+request
+smex-items
+tramp
+workspace

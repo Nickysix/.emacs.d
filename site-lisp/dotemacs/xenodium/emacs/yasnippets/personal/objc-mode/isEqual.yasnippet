@@ -1,0 +1,18 @@
+#name : Objective-C Methods: -isEqual: and -hash
+#key : isEqual
+# --
+- (BOOL)isEqual:(id)other
+{
+    if (other == self) {
+        return YES;
+    } else if (![super isEqual:other]) {
+        return NO;
+    } else {
+        return ${1:comparison expression};
+    }
+}
+
+- (NSUInteger)hash
+{
+    return ${2:hash expression};
+}

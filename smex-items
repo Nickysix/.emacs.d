@@ -1,0 +1,18 @@
+
+;; ----- smex-history -----
+(
+ auto-insert
+ all-the-icons-install-fonts
+ refile
+ cd
+ 5x5
+ amx
+ arp
+)
+
+;; ----- smex-data -----
+(
+ (refile . 2)
+ (all-the-icons-install-fonts . 1)
+ (auto-insert . 2)
+)
