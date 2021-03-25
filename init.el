@@ -57,18 +57,42 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
+;;; site-lisp/local/libraries
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/local/libraries")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/local/packages")
+
+(require 'lacarte)
+(require 'font-lock+)
+(require 'sr-speedbar)
+(require 'dired+)
+(require 'info+)
+(require 'lusty-explorer)
+
+
+;;; site-lisp/local/packages
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (add-to-list 'load-path "~/.emacs.d/site-lisp/local/packages/aweshell")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/local/packages/awesome-tab")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/local/packages/awesome-tray")
 
 (require 'aweshell)
 (require 'awesome-tab)
+(require 'awesome-tray)
+;;(awesome-tray-mode 1)
 
-(require 'lacarte) 
-(global-set-key [?\e ?\M-x] 'lacarte-execute-command)
+(add-to-list 'load-path "~/.emacs.d/site-lisp/local/packages/sunrise-commander")
+
+(require 'sunrise)
+(require 'sunrise-buttons)
+(require 'sunrise-checkpoint)
+(require 'sunrise-loop)
+(require 'sunrise-mirror)
+(require 'sunrise-modeline)
+(require 'sunrise-popviewer)
+(require 'sunrise-tabs)
+(require 'sunrise-tree)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -95,6 +119,7 @@
 
 (load "keybindings")
 
+(load "starthooks")
 
 ;;; site-lisp
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -105,6 +130,13 @@
 (load "themes")
 (load "idomode")
 (load "neotree")
+(load "company")
+(load "ibuffer")
+
+
+
+
+
 
 
 

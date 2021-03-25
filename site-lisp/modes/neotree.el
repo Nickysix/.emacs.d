@@ -4,6 +4,7 @@
 
 
 (use-package neotree
+  :straight nil
   :bind ("<f8>" . 'neotree-toggle)
   :init
   (setq neo-window-width 50)  

@@ -1,13 +1,13 @@
 
 ;; ----- smex-history -----
 (
+ lusty-file-explorer
+ lacarte-execute-menu-command
+ rainbow-delimiters-mode
+ help-mode
+ pwd
  auto-insert
  all-the-icons-install-fonts
- refile
- cd
- 5x5
- amx
- arp
 )
 
 ;; ----- smex-data -----
@@ -15,4 +15,9 @@
  (refile . 2)
  (all-the-icons-install-fonts . 1)
  (auto-insert . 2)
+ (pwd . 2)
+ (help-mode . 3)
+ (rainbow-delimiters-mode . 2)
+ (lacarte-execute-menu-command . 1)
+ (lusty-file-explorer . 1)
 )

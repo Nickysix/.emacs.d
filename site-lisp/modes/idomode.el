@@ -3,7 +3,7 @@
 
 
 (use-package smex
-      :ensure nil
+      :straight nil
       :init (smex-initialize)
       :bind ("M-x" . smex))
 
@@ -11,7 +11,7 @@
 ;;  :config (amx-mode))
 
 (use-package ido
-  :ensure nil
+  :straight nil
   :init
   (progn
     (ido-mode 1)
@@ -26,26 +26,24 @@
           ido-max-prospects 10)))
 
 (use-package ido-vertical-mode
-      :ensure nil
+      :straight nil
       :init (ido-vertical-mode 1))
 
 (use-package flx-ido
-      :ensure nil
+      :straight nil
       :init (flx-ido-mode 1))    
 
 (use-package ido-completing-read+
-      :ensure nil
+      :straight nil
       :init (ido-ubiquitous-mode 1))    
 
-
-
 (use-package ido-grid-mode
-  :ensure nil
+  :straight nil
   :init
   (ido-grid-mode 1))
 
 (use-package idomenu
-  :ensure nil
+  :straight nil
   :config
   (autoload 'idomenu "idomenu" nil t))
 

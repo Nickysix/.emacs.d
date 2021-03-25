@@ -20,119 +20,41 @@
 
 ;;; Commentary:
 
-;; 
+;;
 
 ;;; Code:
 
 
+(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 
+(setq ibuffer-saved-filter-groups
+      '(("default"
+	       ("Emacs-Config" (or (filename . ".emacs.d")
+			                       (filename . "emacs-config")))
+		     ("Org" (or (mode . org-mode)
+		                (filename . "OrgMode")))
+         ("Code" (filename . "code"))
+	       ("Web Dev" (or (mode . html-mode)
+			                  (mode . css-mode)))
+	       ("Subversion" (name . "\*svn"))
+	       ("Dired" (mode . dired-mode))
+	       ("Magit" (name . "^\\*magit\\*$"))
+	       ("Text" (name . ".txt"))
+	       ("ERC" (mode . erc-mode))
+	       ("Emacs" (or
+                   (name . "^\\*scratch\\*$")
+                   (name . "^\\*Messages\\*$")))
+	       ("Help" (or (name . "^\\*Help\\*$")
+		                 (name . "^\\*Apropos\\*$")
+		                 (name . "^\\*info\\*$"))))))
 
+(add-hook 'ibuffer-mode-hook
+	        '(lambda ()
+	           (ibuffer-switch-to-saved-filter-groups "default")))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+(setq ibuffer-show-empty-filter-groups t)
 
 
 (provide 'ibuffer)
 ;;; ibuffer.el ends here
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

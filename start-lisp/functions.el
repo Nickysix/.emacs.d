@@ -1,5 +1,9 @@
 
 
+(defun display-startup-echo-area-message ()
+  (message "Let the hacking begin!"))
+
+(display-startup-echo-area-message)
 
 
 
@@ -103,8 +107,17 @@
 (global-set-key (kbd "C-3") 'split-window-right-focus)
 
 
+;; C-a goto beginning of line correction.
 
+(defun beginning-of-line-or-indentation ()
+  "Move to beginning of line, or indentation"
+  (interactive)
+  (if (bolp)
+      (back-to-indentation)
+    (beginning-of-line)))
 
+(global-set-key [remap move-beginning-of-line]
+                #'beginning-of-line-or-indentation)
 
 
 

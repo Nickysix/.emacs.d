@@ -3,9 +3,9 @@
 
 "27.1"
 
-#s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data ("org-elpa" ("2021-03-14 08:18:04" nil (:local-repo nil :package "org-elpa" :type git)) "melpa" ("2021-03-14 08:18:04" nil (:type git :host github :repo "melpa/melpa" :build nil :package "melpa" :local-repo "melpa")) "gnu-elpa-mirror" ("2021-03-14 08:18:00" nil (:type git :host github :repo "emacs-straight/gnu-elpa-mirror" :build nil :package "gnu-elpa-mirror" :local-repo "gnu-elpa-mirror")) "el-get" ("2021-03-14 08:18:00" nil (:type git :host github :repo "dimitri/el-get" :build nil :files ("*.el" ("recipes" "recipes/el-get.rcp") "methods" "el-get-pkg.el") :flavor melpa :package "el-get" :local-repo "el-get")) "emacsmirror-mirror" ("2021-03-14 08:18:00" nil (:type git :host github :repo "emacs-straight/emacsmirror-mirror" :build nil :package "emacsmirror-mirror" :local-repo "emacsmirror-mirror")) "straight" ("2021-03-14 08:18:00" ("emacs") (:type git :host github :repo "raxod502/straight.el" :files ("straight*.el") :branch "master" :package "straight" :local-repo "straight.el")) "use-package" ("2021-03-14 08:18:00" ("emacs" "bind-key") (:type git :flavor melpa :files (:defaults (:exclude "bind-key.el" "bind-chord.el" "use-package-chords.el" "use-package-ensure-system-package.el") "use-package-pkg.el") :host github :repo "jwiegley/use-package" :package "use-package" :local-repo "use-package")) "bind-key" ("2021-03-14 08:18:00" nil (:flavor melpa :files ("bind-key.el" "bind-key-pkg.el") :package "bind-key" :local-repo "use-package" :type git :repo "jwiegley/use-package" :host github)) "vterm" ("2021-03-14 08:18:01" ("emacs") (:type git :flavor melpa :files ("*" (:exclude ".dir-locals.el" ".gitignore" ".clang-format" ".travis.yml") "vterm-pkg.el") :host github :repo "akermu/emacs-libvterm" :package "vterm" :local-repo "emacs-libvterm")) "org-plus-contrib" ("2021-03-14 08:18:02" nil (:type git :repo "https://code.orgmode.org/bzg/org-mode.git" :local-repo "org" :depth full :pre-build ("make" "autoloads" "EMACS=/usr/local/bin/emacs") :build (:not autoloads) :files (:defaults "lisp/*.el" ("etc/styles/" "etc/styles/*") "contrib/lisp/*.el") :includes org :package "org-plus-contrib")) "hyperbole" ("2021-03-14 08:18:02" ("emacs") (:type git :host github :repo "emacs-straight/hyperbole" :files ("*" (:exclude ".git")) :package "hyperbole" :local-repo "hyperbole")) "projectile" ("2021-03-14 08:18:03" ("emacs" "pkg-info") (:type git :flavor melpa :files ("projectile.el" "projectile-pkg.el") :host github :repo "bbatsov/projectile" :package "projectile" :local-repo "projectile")) "pkg-info" ("2021-03-14 08:18:03" ("epl") (:type git :flavor melpa :host github :repo "emacsorphanage/pkg-info" :package "pkg-info" :local-repo "pkg-info")) "epl" ("2021-03-14 08:18:03" ("cl-lib") (:type git :flavor melpa :host github :repo "cask/epl" :package "epl" :local-repo "epl")) "ido-vertical-mode" ("2021-03-14 08:18:03" ("emacs") (:type git :flavor melpa :host github :repo "creichert/ido-vertical-mode.el" :package "ido-vertical-mode" :local-repo "ido-vertical-mode.el")) "all-the-icons" ("2021-03-14 08:18:03" ("emacs") (:type git :flavor melpa :files (:defaults "data" "all-the-icons-pkg.el") :host github :repo "domtronn/all-the-icons.el" :package "all-the-icons" :local-repo "all-the-icons.el")) "general" ("2021-03-14 08:18:03" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "noctuid/general.el" :package "general" :local-repo "general.el")) "god-mode" ("2021-03-14 08:18:03" ("emacs") (:type git :flavor melpa :host github :repo "emacsorphanage/god-mode" :package "god-mode" :local-repo "god-mode")) "neotree" ("2021-03-14 08:18:03" ("cl-lib") (:type git :flavor melpa :files (:defaults "icons" "neotree-pkg.el") :host github :repo "jaypei/emacs-neotree" :package "neotree" :local-repo "emacs-neotree")) "jazz-theme" ("2021-03-14 08:18:03" nil (:type git :flavor melpa :host github :repo "donderom/jazz-theme" :package "jazz-theme" :local-repo "jazz-theme")) "smex" ("2021-03-14 08:18:03" ("emacs") (:type git :flavor melpa :host github :repo "nonsequitur/smex" :package "smex" :local-repo "smex")) "amx" ("2021-03-14 08:18:03" ("emacs" "s") (:type git :flavor melpa :host github :repo "DarwinAwardWinner/amx" :package "amx" :local-repo "amx")) "s" ("2021-03-14 08:18:03" nil (:type git :flavor melpa :files ("s.el" "s-pkg.el") :host github :repo "magnars/s.el" :package "s" :local-repo "s.el")) "flx-ido" ("2021-03-14 08:18:03" ("flx" "cl-lib") (:type git :flavor melpa :files ("flx-ido.el" "flx-ido-pkg.el") :host github :repo "lewang/flx" :package "flx-ido" :local-repo "flx")) "flx" ("2021-03-14 08:18:03" ("cl-lib") (:flavor melpa :files ("flx.el" "flx-pkg.el") :package "flx" :local-repo "flx" :type git :repo "lewang/flx" :host github)) "ido-completing-read+" ("2021-03-14 08:18:03" ("emacs" "seq" "cl-lib" "memoize") (:type git :flavor melpa :files ("ido-completing-read+.el" "ido-completing-read+-pkg.el") :host github :repo "DarwinAwardWinner/ido-completing-read-plus" :package "ido-completing-read+" :local-repo "ido-completing-read-plus")) "memoize" ("2021-03-14 08:18:03" nil (:type git :flavor melpa :host github :repo "skeeto/emacs-memoize" :package "memoize" :local-repo "emacs-memoize")) "ido-grid-mode" ("2021-03-14 08:18:03" ("emacs") (:type git :flavor melpa :host github :repo "larkery/ido-grid-mode.el" :package "ido-grid-mode" :local-repo "ido-grid-mode.el")) "idomenu" ("2021-03-14 08:18:03" nil (:type git :flavor melpa :host github :repo "birkenfeld/idomenu" :package "idomenu" :local-repo "idomenu")) "imenu-anywhere" ("2021-03-14 08:18:03" ("cl-lib" "emacs") (:type git :flavor melpa :host github :repo "vspinu/imenu-anywhere" :package "imenu-anywhere" :local-repo "imenu-anywhere")) "selectrum" ("2021-03-14 08:18:03" ("emacs") (:type git :flavor melpa :host github :repo "raxod502/selectrum" :package "selectrum" :local-repo "selectrum")) "rainbow-delimiters" ("2021-03-14 08:18:05" nil (:type git :flavor melpa :host github :repo "Fanael/rainbow-delimiters" :package "rainbow-delimiters" :local-repo "rainbow-delimiters")) "dired-rainbow" ("2021-03-14 08:18:11" ("dash" "dired-hacks-utils") (:type git :flavor melpa :files ("dired-rainbow.el" "dired-rainbow-pkg.el") :host github :repo "Fuco1/dired-hacks" :package "dired-rainbow" :local-repo "dired-hacks")) "dash" ("2021-03-14 08:18:11" ("emacs") (:type git :flavor melpa :files ("dash.el" "dash.texi" "dash-pkg.el") :host github :repo "magnars/dash.el" :package "dash" :local-repo "dash.el")) "dired-hacks-utils" ("2021-03-14 08:18:11" ("dash") (:flavor melpa :files ("dired-hacks-utils.el" "dired-hacks-utils-pkg.el") :package "dired-hacks-utils" :local-repo "dired-hacks" :type git :repo "Fuco1/dired-hacks" :host github))))
+#s(hash-table size 97 test equal rehash-size 1.5 rehash-threshold 0.8125 data ("org-elpa" ("2021-03-25 12:33:09" nil (:local-repo nil :package "org-elpa" :type git)) "melpa" ("2021-03-25 12:33:10" nil (:type git :host github :repo "melpa/melpa" :build nil :package "melpa" :local-repo "melpa")) "gnu-elpa-mirror" ("2021-03-25 12:33:10" nil (:type git :host github :repo "emacs-straight/gnu-elpa-mirror" :build nil :package "gnu-elpa-mirror" :local-repo "gnu-elpa-mirror")) "el-get" ("2021-03-25 12:33:10" nil (:type git :host github :repo "dimitri/el-get" :build nil :files ("*.el" ("recipes" "recipes/el-get.rcp") "methods" "el-get-pkg.el") :flavor melpa :package "el-get" :local-repo "el-get")) "emacsmirror-mirror" ("2021-03-25 12:33:10" nil (:type git :host github :repo "emacs-straight/emacsmirror-mirror" :build nil :package "emacsmirror-mirror" :local-repo "emacsmirror-mirror")) "straight" ("2021-03-25 12:33:10" ("emacs") (:type git :host github :repo "raxod502/straight.el" :files ("straight*.el") :branch "master" :package "straight" :local-repo "straight.el")) "use-package" ("2021-03-25 12:33:10" ("emacs" "bind-key") (:type git :flavor melpa :files (:defaults (:exclude "bind-key.el" "bind-chord.el" "use-package-chords.el" "use-package-ensure-system-package.el") "use-package-pkg.el") :host github :repo "jwiegley/use-package" :package "use-package" :local-repo "use-package")) "bind-key" ("2021-03-25 12:33:10" nil (:flavor melpa :files ("bind-key.el" "bind-key-pkg.el") :package "bind-key" :local-repo "use-package" :type git :repo "jwiegley/use-package" :host github)) "vterm" ("2021-03-25 12:33:10" ("emacs") (:type git :flavor melpa :files ("*" (:exclude ".dir-locals.el" ".gitignore" ".clang-format" ".travis.yml") "vterm-pkg.el") :host github :repo "akermu/emacs-libvterm" :package "vterm" :local-repo "emacs-libvterm")) "org-plus-contrib" ("2021-03-25 12:33:10" nil (:type git :repo "https://code.orgmode.org/bzg/org-mode.git" :local-repo "org" :depth full :pre-build ("make" "autoloads" "EMACS=/usr/local/bin/emacs") :build (:not autoloads) :files (:defaults "lisp/*.el" ("etc/styles/" "etc/styles/*") "contrib/lisp/*.el") :includes org :package "org-plus-contrib")) "hyperbole" ("2021-03-25 12:33:11" ("emacs") (:type git :host github :repo "emacs-straight/hyperbole" :files ("*" (:exclude ".git")) :package "hyperbole" :local-repo "hyperbole")) "projectile" ("2021-03-25 12:33:11" ("emacs" "pkg-info") (:type git :flavor melpa :files ("projectile.el" "projectile-pkg.el") :host github :repo "bbatsov/projectile" :package "projectile" :local-repo "projectile")) "pkg-info" ("2021-03-25 12:33:11" ("epl") (:type git :flavor melpa :host github :repo "emacsorphanage/pkg-info" :package "pkg-info" :local-repo "pkg-info")) "epl" ("2021-03-25 12:33:11" ("cl-lib") (:type git :flavor melpa :host github :repo "cask/epl" :package "epl" :local-repo "epl")) "ido-vertical-mode" ("2021-03-25 12:33:11" ("emacs") (:type git :flavor melpa :host github :repo "creichert/ido-vertical-mode.el" :package "ido-vertical-mode" :local-repo "ido-vertical-mode.el")) "all-the-icons" ("2021-03-25 12:33:11" ("emacs") (:type git :flavor melpa :files (:defaults "data" "all-the-icons-pkg.el") :host github :repo "domtronn/all-the-icons.el" :package "all-the-icons" :local-repo "all-the-icons.el")) "general" ("2021-03-25 12:33:11" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "noctuid/general.el" :package "general" :local-repo "general.el")) "god-mode" ("2021-03-25 12:33:11" ("emacs") (:type git :flavor melpa :host github :repo "emacsorphanage/god-mode" :package "god-mode" :local-repo "god-mode")) "neotree" ("2021-03-25 12:33:11" ("cl-lib") (:type git :flavor melpa :files (:defaults "icons" "neotree-pkg.el") :host github :repo "jaypei/emacs-neotree" :package "neotree" :local-repo "emacs-neotree")) "jazz-theme" ("2021-03-25 12:33:11" nil (:type git :flavor melpa :host github :repo "donderom/jazz-theme" :package "jazz-theme" :local-repo "jazz-theme")) "smex" ("2021-03-25 12:33:11" ("emacs") (:type git :flavor melpa :host github :repo "nonsequitur/smex" :package "smex" :local-repo "smex")) "amx" ("2021-03-25 12:33:11" ("emacs" "s") (:type git :flavor melpa :host github :repo "DarwinAwardWinner/amx" :package "amx" :local-repo "amx")) "s" ("2021-03-25 12:33:11" nil (:type git :flavor melpa :files ("s.el" "s-pkg.el") :host github :repo "magnars/s.el" :package "s" :local-repo "s.el")) "flx-ido" ("2021-03-25 12:33:11" ("flx" "cl-lib") (:type git :flavor melpa :files ("flx-ido.el" "flx-ido-pkg.el") :host github :repo "lewang/flx" :package "flx-ido" :local-repo "flx")) "flx" ("2021-03-25 12:33:11" ("cl-lib") (:flavor melpa :files ("flx.el" "flx-pkg.el") :package "flx" :local-repo "flx" :type git :repo "lewang/flx" :host github)) "ido-completing-read+" ("2021-03-25 12:33:11" ("emacs" "seq" "cl-lib" "memoize") (:type git :flavor melpa :files ("ido-completing-read+.el" "ido-completing-read+-pkg.el") :host github :repo "DarwinAwardWinner/ido-completing-read-plus" :package "ido-completing-read+" :local-repo "ido-completing-read-plus")) "memoize" ("2021-03-25 12:33:11" nil (:type git :flavor melpa :host github :repo "skeeto/emacs-memoize" :package "memoize" :local-repo "emacs-memoize")) "ido-grid-mode" ("2021-03-25 12:33:11" ("emacs") (:type git :flavor melpa :host github :repo "larkery/ido-grid-mode.el" :package "ido-grid-mode" :local-repo "ido-grid-mode.el")) "idomenu" ("2021-03-25 12:33:11" nil (:type git :flavor melpa :host github :repo "birkenfeld/idomenu" :package "idomenu" :local-repo "idomenu")) "imenu-anywhere" ("2021-03-25 12:33:11" ("cl-lib" "emacs") (:type git :flavor melpa :host github :repo "vspinu/imenu-anywhere" :package "imenu-anywhere" :local-repo "imenu-anywhere")) "selectrum" ("2021-03-25 12:33:11" ("emacs") (:type git :flavor melpa :host github :repo "raxod502/selectrum" :package "selectrum" :local-repo "selectrum")) "rainbow-delimiters" ("2021-03-25 12:33:11" nil (:type git :flavor melpa :host github :repo "Fanael/rainbow-delimiters" :package "rainbow-delimiters" :local-repo "rainbow-delimiters")) "dired-rainbow" ("2021-03-25 12:33:11" ("dash" "dired-hacks-utils") (:type git :flavor melpa :files ("dired-rainbow.el" "dired-rainbow-pkg.el") :host github :repo "Fuco1/dired-hacks" :package "dired-rainbow" :local-repo "dired-hacks")) "dash" ("2021-03-25 12:33:11" ("emacs") (:type git :flavor melpa :files ("dash.el" "dash.texi" "dash-pkg.el") :host github :repo "magnars/dash.el" :package "dash" :local-repo "dash.el")) "dired-hacks-utils" ("2021-03-25 12:33:11" ("dash") (:flavor melpa :files ("dired-hacks-utils.el" "dired-hacks-utils-pkg.el") :package "dired-hacks-utils" :local-repo "dired-hacks" :type git :repo "Fuco1/dired-hacks" :host github)) "shell-pop" ("2021-03-25 12:33:10" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "kyagi/shell-pop-el" :package "shell-pop" :local-repo "shell-pop-el")) "vterm-toggle" ("2021-03-25 12:33:10" ("emacs" "vterm") (:type git :flavor melpa :host github :repo "jixiuf/vterm-toggle" :package "vterm-toggle" :local-repo "vterm-toggle")) "smartparens" ("2021-03-25 12:33:11" ("dash" "cl-lib") (:type git :flavor melpa :host github :repo "Fuco1/smartparens" :package "smartparens" :local-repo "smartparens")) "which-key" ("2021-03-25 12:33:11" ("emacs") (:type git :flavor melpa :host github :repo "justbur/emacs-which-key" :package "which-key" :local-repo "emacs-which-key")) "pdf-tools" ("2021-03-25 12:33:11" ("emacs" "tablist" "let-alist") (:type git :flavor melpa :files ("lisp/*.el" "README" ("build" "Makefile") ("build" "server") (:exclude "lisp/tablist.el" "lisp/tablist-filter.el") "pdf-tools-pkg.el") :host github :repo "politza/pdf-tools" :package "pdf-tools" :local-repo "pdf-tools")) "tablist" ("2021-03-25 12:33:11" ("emacs") (:type git :flavor melpa :host github :repo "politza/tablist" :package "tablist" :local-repo "tablist")) "let-alist" ("2021-03-25 12:33:11" ("emacs") (:type git :host github :repo "emacs-straight/let-alist" :files ("*" (:exclude ".git")) :package "let-alist" :local-repo "let-alist")) "ripgrep" ("2021-03-25 12:33:12" nil (:type git :flavor melpa :files ("ripgrep.el" "ripgrep-pkg.el") :host github :repo "nlamirault/ripgrep.el" :package "ripgrep" :local-repo "ripgrep.el")) "undo-tree" ("2021-03-25 12:33:12" nil (:type git :host github :repo "emacs-straight/undo-tree" :files ("*" (:exclude ".git")) :package "undo-tree" :local-repo "undo-tree")) "crux" ("2021-03-25 12:33:12" ("seq") (:type git :flavor melpa :host github :repo "bbatsov/crux" :package "crux" :local-repo "crux")) "feebleline" ("2021-03-25 12:33:12" nil (:type git :flavor melpa :host github :repo "tautologyclub/feebleline" :package "feebleline" :local-repo "feebleline")) "helpful" ("2021-03-25 12:33:12" ("emacs" "dash" "s" "f" "elisp-refs") (:type git :flavor melpa :host github :repo "Wilfred/helpful" :package "helpful" :local-repo "helpful")) "f" ("2021-03-25 12:33:12" ("s" "dash") (:type git :flavor melpa :files ("f.el" "f-pkg.el") :host github :repo "rejeep/f.el" :package "f" :local-repo "f.el")) "elisp-refs" ("2021-03-25 12:33:12" ("dash" "s") (:type git :flavor melpa :files (:defaults (:exclude "elisp-refs-bench.el") "elisp-refs-pkg.el") :host github :repo "Wilfred/elisp-refs" :package "elisp-refs" :local-repo "elisp-refs")) "key-chord" ("2021-03-25 12:33:12" ("emacs") (:type git :flavor melpa :host github :repo "emacsorphanage/key-chord" :package "key-chord" :local-repo "key-chord")) "avy" ("2021-03-25 12:33:12" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "abo-abo/avy" :package "avy" :local-repo "avy")) "selectrum-prescient" ("2021-03-25 12:33:11" ("emacs" "prescient" "selectrum") (:type git :flavor melpa :files ("selectrum-prescient.el" "selectrum-prescient-pkg.el") :host github :repo "raxod502/prescient.el" :package "selectrum-prescient" :local-repo "prescient.el")) "prescient" ("2021-03-25 12:33:11" ("emacs") (:flavor melpa :files ("prescient.el" "prescient-pkg.el") :package "prescient" :local-repo "prescient.el" :type git :repo "raxod502/prescient.el" :host github)) "popup" ("2021-03-25 12:33:12" ("emacs") (:type git :flavor melpa :files ("popup.el" "popup-pkg.el") :host github :repo "auto-complete/popup-el" :package "popup" :local-repo "popup-el")) "posframe" ("2021-03-25 12:33:12" ("emacs") (:type git :flavor melpa :host github :repo "tumashu/posframe" :package "posframe" :local-repo "posframe")) "company" ("2021-03-25 12:33:12" ("emacs") (:type git :flavor melpa :host github :repo "company-mode/company-mode" :package "company" :local-repo "company-mode")) "bm" ("2021-03-25 12:33:12" nil (:type git :flavor melpa :host github :repo "joodland/bm" :package "bm" :local-repo "bm")) "free-keys" ("2021-03-25 08:59:02" ("cl-lib") (:type git :flavor melpa :host github :repo "Fuco1/free-keys" :package "free-keys" :local-repo "free-keys")) "deft" ("2021-03-25 12:33:11" nil (:type git :flavor melpa :host github :repo "jrblevin/deft" :package "deft" :local-repo "deft")) "outshine" ("2021-03-25 12:33:12" ("outorg" "cl-lib") (:type git :flavor melpa :host github :repo "alphapapa/outshine" :package "outshine" :local-repo "outshine")) "outorg" ("2021-03-25 12:33:12" ("emacs") (:type git :flavor melpa :host github :repo "alphapapa/outorg" :package "outorg" :local-repo "outorg")) "outline-minor-faces" ("2021-03-25 12:33:12" ("emacs") (:type git :flavor melpa :host github :repo "tarsius/outline-minor-faces" :package "outline-minor-faces" :local-repo "outline-minor-faces")) "backline" ("2021-03-25 12:33:12" ("emacs" "outline-minor-faces") (:type git :flavor melpa :host github :repo "tarsius/backline" :package "backline" :local-repo "backline")) "bicycle" ("2021-03-25 12:33:12" ("emacs") (:type git :flavor melpa :host github :repo "tarsius/bicycle" :package "bicycle" :local-repo "bicycle")) "outline-magic" ("2021-03-25 12:33:12" nil (:type git :flavor melpa :host github :repo "tj64/outline-magic" :package "outline-magic" :local-repo "outline-magic")) "outline-toc" ("2021-03-25 12:33:12" nil (:type git :flavor melpa :host github :repo "abingham/outline-toc.el" :package "outline-toc" :local-repo "outline-toc.el")) "doom-themes" ("2021-03-25 12:33:12" ("emacs" "cl-lib") (:type git :flavor melpa :files (:defaults "themes/*.el" "doom-themes-pkg.el") :host github :repo "hlissner/emacs-doom-themes" :package "doom-themes" :local-repo "emacs-doom-themes")) "doom-modeline" ("2021-03-25 12:33:12" ("emacs" "all-the-icons" "shrink-path" "dash") (:type git :flavor melpa :host github :repo "seagle0128/doom-modeline" :package "doom-modeline" :local-repo "doom-modeline")) "shrink-path" ("2021-03-25 12:33:12" ("emacs" "s" "dash" "f") (:type git :flavor melpa :host gitlab :repo "bennya/shrink-path.el" :package "shrink-path" :local-repo "shrink-path.el")) "color-theme-modern" ("2021-03-25 12:33:12" ("emacs") (:type git :flavor melpa :host github :repo "emacs-jp/replace-colorthemes" :package "color-theme-modern" :local-repo "replace-colorthemes")) "theme-looper" ("2021-03-25 12:33:12" ("emacs" "cl-lib") (:type git :flavor melpa :host github :repo "myTerminal/theme-looper" :package "theme-looper" :local-repo "theme-looper")) "select-themes" ("2021-03-25 12:33:12" nil (:type git :flavor melpa :host github :repo "jasonm23/emacs-select-themes" :package "select-themes" :local-repo "emacs-select-themes")) "kaolin-themes" ("2021-03-25 12:33:12" ("emacs" "autothemer" "cl-lib") (:type git :flavor melpa :files (:defaults "themes/*.el" "kaolin-themes-pkg.el") :host github :repo "ogdenwebb/emacs-kaolin-themes" :package "kaolin-themes" :local-repo "emacs-kaolin-themes")) "autothemer" ("2021-03-25 12:33:12" ("dash" "emacs" "cl-lib") (:type git :flavor melpa :host github :repo "jasonm23/autothemer" :package "autothemer" :local-repo "autothemer")) "gruvbox-theme" ("2021-03-25 12:33:12" ("autothemer") (:type git :flavor melpa :host github :repo "greduan/emacs-theme-gruvbox" :package "gruvbox-theme" :local-repo "emacs-theme-gruvbox")) "dark-mint-theme" ("2021-03-25 12:33:12" nil (:type git :flavor melpa :host github :repo "shaunvxc/dark-mint-theme" :package "dark-mint-theme" :local-repo "dark-mint-theme")) "zerodark-theme" ("2021-03-25 12:33:12" ("all-the-icons") (:type git :flavor melpa :host github :repo "NicolasPetton/zerodark-theme" :package "zerodark-theme" :local-repo "zerodark-theme")) "suscolors-theme" ("2021-03-25 12:33:12" nil (:type git :flavor melpa :host github :repo "TheSuspiciousWombat/SusColors-emacs" :package "suscolors-theme" :local-repo "SusColors-emacs"))))
 
-#s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data ("straight" ((straight straight-x straight-autoloads) (autoload 'straight-get-recipe "straight" "Interactively select a recipe from one of the recipe repositories.
+#s(hash-table size 97 test equal rehash-size 1.5 rehash-threshold 0.8125 data ("straight" ((straight straight-x straight-autoloads) (autoload 'straight-get-recipe "straight" "Interactively select a recipe from one of the recipe repositories.
 All recipe repositories in `straight-recipe-repositories' will
 first be cloned. After the recipe is selected, it will be copied
 to the kill ring. With a prefix argument, first prompt for a
@@ -2180,10 +2180,1434 @@ Dash-Fontify mode is enabled in all buffers where
 See `dash-fontify-mode' for more information on Dash-Fontify mode.
 
 (fn &optional ARG)" t nil) (autoload 'dash-register-info-lookup "dash" "Register the Dash Info manual with `info-lookup-symbol'.
-This allows Dash symbols to be looked up with \\[info-lookup-symbol]." t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "dash" '("!cdr" "!cons" "--" "->" "-a" "-butlast" "-c" "-d" "-e" "-f" "-gr" "-i" "-juxt" "-keep" "-l" "-m" "-no" "-o" "-p" "-r" "-s" "-t" "-u" "-value-to-list" "-when-let" "-zip" "dash-"))) (provide 'dash-autoloads)) "dired-hacks-utils" ((dired-hacks-utils dired-hacks-utils-autoloads) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "dired-hacks-utils" '("dired-"))) (provide 'dired-hacks-utils-autoloads)) "dired-rainbow" ((dired-rainbow dired-rainbow-autoloads) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "dired-rainbow" '("dired-rainbow-"))) (provide 'dired-rainbow-autoloads))))
+This allows Dash symbols to be looked up with \\[info-lookup-symbol]." t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "dash" '("!cdr" "!cons" "--" "->" "-a" "-butlast" "-c" "-d" "-e" "-f" "-gr" "-i" "-juxt" "-keep" "-l" "-m" "-no" "-o" "-p" "-r" "-s" "-t" "-u" "-value-to-list" "-when-let" "-zip" "dash-"))) (provide 'dash-autoloads)) "dired-hacks-utils" ((dired-hacks-utils dired-hacks-utils-autoloads) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "dired-hacks-utils" '("dired-"))) (provide 'dired-hacks-utils-autoloads)) "dired-rainbow" ((dired-rainbow dired-rainbow-autoloads) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "dired-rainbow" '("dired-rainbow-"))) (provide 'dired-rainbow-autoloads)) "shell-pop" ((shell-pop-autoloads shell-pop) (defvar shell-pop-universal-key nil "Key binding used to pop in and out of the shell.
 
-#s(hash-table size 65 test eq rehash-size 1.5 rehash-threshold 0.8125 data (org-elpa #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 7 "melpa" nil "gnu-elpa-mirror" nil "el-get" nil "emacsmirror-mirror" nil "straight" nil "use-package" nil "bind-key" nil "vterm" nil "org-plus-contrib" `(org-plus-contrib :type git :repo "https://code.orgmode.org/bzg/org-mode.git" :local-repo "org" :depth full :pre-build ,(list (concat (when (eq system-type 'berkeley-unix) "g") "make") "autoloads" (concat "EMACS=" invocation-directory invocation-name)) :build (:not autoloads) :files (:defaults "lisp/*.el" ("etc/styles/" "etc/styles/*") "contrib/lisp/*.el") :includes org) "hyperbole" nil "projectile" nil "pkg-info" nil "epl" nil "cl-lib" nil "ido-vertical-mode" nil "all-the-icons" nil "general" nil "god-mode" nil "neotree" nil "jazz-theme" nil "smex" nil "amx" nil "s" nil "flx-ido" nil "flx" nil "ido-completing-read+" nil "seq" nil "memoize" nil "ido-grid-mode" nil "idomenu" nil "imenu-anywhere" nil "selectrum" nil "ido" nil "rainbow-delimiters" nil "dired-rainbow" nil "dash" nil "dired-hacks-utils" nil)) melpa #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "gnu-elpa-mirror" nil "el-get" (el-get :type git :flavor melpa :files ("*.el" ("recipes" "recipes/el-get.rcp") "methods" "el-get-pkg.el") :host github :repo "dimitri/el-get") "emacsmirror-mirror" nil "straight" nil "use-package" (use-package :type git :flavor melpa :files (:defaults (:exclude "bind-key.el" "bind-chord.el" "use-package-chords.el" "use-package-ensure-system-package.el") "use-package-pkg.el") :host github :repo "jwiegley/use-package") "bind-key" (bind-key :type git :flavor melpa :files ("bind-key.el" "bind-key-pkg.el") :host github :repo "jwiegley/use-package") "vterm" (vterm :type git :flavor melpa :files ("*" (:exclude ".dir-locals.el" ".gitignore" ".clang-format" ".travis.yml") "vterm-pkg.el") :host github :repo "akermu/emacs-libvterm") "hyperbole" nil "projectile" (projectile :type git :flavor melpa :files ("projectile.el" "projectile-pkg.el") :host github :repo "bbatsov/projectile") "pkg-info" (pkg-info :type git :flavor melpa :host github :repo "emacsorphanage/pkg-info") "epl" (epl :type git :flavor melpa :host github :repo "cask/epl") "cl-lib" nil "ido-vertical-mode" (ido-vertical-mode :type git :flavor melpa :host github :repo "creichert/ido-vertical-mode.el") "all-the-icons" (all-the-icons :type git :flavor melpa :files (:defaults "data" "all-the-icons-pkg.el") :host github :repo "domtronn/all-the-icons.el") "general" (general :type git :flavor melpa :host github :repo "noctuid/general.el") "god-mode" (god-mode :type git :flavor melpa :host github :repo "emacsorphanage/god-mode") "neotree" (neotree :type git :flavor melpa :files (:defaults "icons" "neotree-pkg.el") :host github :repo "jaypei/emacs-neotree") "jazz-theme" (jazz-theme :type git :flavor melpa :host github :repo "donderom/jazz-theme") "smex" (smex :type git :flavor melpa :host github :repo "nonsequitur/smex") "amx" (amx :type git :flavor melpa :host github :repo "DarwinAwardWinner/amx") "s" (s :type git :flavor melpa :files ("s.el" "s-pkg.el") :host github :repo "magnars/s.el") "flx-ido" (flx-ido :type git :flavor melpa :files ("flx-ido.el" "flx-ido-pkg.el") :host github :repo "lewang/flx") "flx" (flx :type git :flavor melpa :files ("flx.el" "flx-pkg.el") :host github :repo "lewang/flx") "ido-completing-read+" (ido-completing-read+ :type git :flavor melpa :files ("ido-completing-read+.el" "ido-completing-read+-pkg.el") :host github :repo "DarwinAwardWinner/ido-completing-read-plus") "seq" nil "memoize" (memoize :type git :flavor melpa :host github :repo "skeeto/emacs-memoize") "ido-grid-mode" (ido-grid-mode :type git :flavor melpa :host github :repo "larkery/ido-grid-mode.el") "idomenu" (idomenu :type git :flavor melpa :host github :repo "birkenfeld/idomenu") "imenu-anywhere" (imenu-anywhere :type git :flavor melpa :host github :repo "vspinu/imenu-anywhere") "selectrum" (selectrum :type git :flavor melpa :host github :repo "raxod502/selectrum") "ido" nil "rainbow-delimiters" (rainbow-delimiters :type git :flavor melpa :host github :repo "Fanael/rainbow-delimiters") "dired-rainbow" (dired-rainbow :type git :flavor melpa :files ("dired-rainbow.el" "dired-rainbow-pkg.el") :host github :repo "Fuco1/dired-hacks") "dash" (dash :type git :flavor melpa :files ("dash.el" "dash.texi" "dash-pkg.el") :host github :repo "magnars/dash.el") "dired-hacks-utils" (dired-hacks-utils :type git :flavor melpa :files ("dired-hacks-utils.el" "dired-hacks-utils-pkg.el") :host github :repo "Fuco1/dired-hacks"))) el-get #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 1 "emacsmirror-mirror" nil "straight" nil "cl-lib" nil "seq" nil "ido" nil)) gnu-elpa-mirror #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 3 "emacsmirror-mirror" nil "straight" nil "hyperbole" (hyperbole :type git :host github :repo "emacs-straight/hyperbole" :files ("*" (:exclude ".git"))) "cl-lib" nil "seq" nil "ido" nil)) emacsmirror-mirror #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "straight" (straight :type git :host github :repo "emacsmirror/straight") "cl-lib" nil "seq" nil "ido" nil))))
+The input format is the same as that of `kbd'.") (custom-autoload 'shell-pop-universal-key "shell-pop" nil) (autoload 'shell-pop "shell-pop" "
 
-("org-elpa" "melpa" "gnu-elpa-mirror" "el-get" "emacsmirror-mirror" "straight" "emacs" "use-package" "bind-key" "vterm" "org-plus-contrib" "hyperbole" "projectile" "pkg-info" "epl" "cl-lib" "ido-vertical-mode" "all-the-icons" "general" "god-mode" "neotree" "jazz-theme" "smex" "amx" "s" "flx-ido" "flx" "ido-completing-read+" "seq" "memoize" "ido-grid-mode" "idomenu" "imenu-anywhere" "selectrum" "rainbow-delimiters" "dired-rainbow" "dash" "dired-hacks-utils" "ido")
+(fn ARG)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "shell-pop" '("shell-pop-"))) (provide 'shell-pop-autoloads)) "vterm-toggle" ((vterm-toggle-autoloads vterm-toggle) (autoload 'vterm-toggle "vterm-toggle" "Vterm toggle.
+Optional argument ARGS .
+
+(fn &optional ARGS)" t nil) (autoload 'vterm-toggle-cd "vterm-toggle" "Vterm toggle and insert a cd command.
+Optional argument ARGS .
+
+(fn &optional ARGS)" t nil) (autoload 'vterm-toggle-insert-cd "vterm-toggle" "Cd to the directory where your previous buffer file exists.
+after you have toggle to the vterm buffer with `vterm-toggle'." t nil) (autoload 'vterm-toggle-forward "vterm-toggle" "Go to the next term buffer.
+If OFFSET is `non-nil', will goto next term buffer with OFFSET.
+
+(fn &optional OFFSET)" t nil) (autoload 'vterm-toggle-backward "vterm-toggle" "Go to the previous term buffer.
+If OFFSET is `non-nil', will goto next term buffer with OFFSET.
+
+(fn &optional OFFSET)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "vterm-toggle" '("vterm-toggle-"))) (provide 'vterm-toggle-autoloads)) "smartparens" ((smartparens-text smartparens-ess smartparens-ml smartparens-python smartparens-c smartparens-lua smartparens smartparens-crystal smartparens-scala smartparens-clojure sp-sublimetext-like smartparens-elixir smartparens-rst smartparens-haskell smartparens-org smartparens-autoloads smartparens-markdown smartparens-html smartparens-ruby smartparens-racket smartparens-javascript smartparens-rust smartparens-latex smartparens-config smartparens-pkg) (autoload 'sp-cheat-sheet "smartparens" "Generate a cheat sheet of all the smartparens interactive functions.
+
+Without a prefix argument, print only the short documentation and examples.
+
+With non-nil prefix argument ARG, show the full documentation for each function.
+
+You can follow the links to the function or variable help page.
+To get back to the full list, use \\[help-go-back].
+
+You can use `beginning-of-defun' and `end-of-defun' to jump to
+the previous/next entry.
+
+Examples are fontified using the `font-lock-string-face' for
+better orientation.
+
+(fn &optional ARG)" t nil) (defvar smartparens-mode-map (make-sparse-keymap) "Keymap used for `smartparens-mode'.") (autoload 'sp-use-paredit-bindings "smartparens" "Initiate `smartparens-mode-map' with `sp-paredit-bindings'." t nil) (autoload 'sp-use-smartparens-bindings "smartparens" "Initiate `smartparens-mode-map' with `sp-smartparens-bindings'." t nil) (autoload 'smartparens-mode "smartparens" "Toggle smartparens mode.
+
+If called interactively, enable Smartparens mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+You can enable pre-set bindings by customizing
+`sp-base-key-bindings' variable.  The current content of
+`smartparens-mode-map' is:
+
+ \\{smartparens-mode-map}
+
+(fn &optional ARG)" t nil) (autoload 'smartparens-strict-mode "smartparens" "Toggle the strict smartparens mode.
+
+If called interactively, enable Smartparens-Strict mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+When strict mode is active, `delete-char', `kill-word' and their
+backward variants will skip over the pair delimiters in order to
+keep the structure always valid (the same way as `paredit-mode'
+does).  This is accomplished by remapping them to
+`sp-delete-char' and `sp-kill-word'.  There is also function
+`sp-kill-symbol' that deletes symbols instead of words, otherwise
+working exactly the same (it is not bound to any key by default).
+
+When strict mode is active, this is indicated with \"/s\"
+after the smartparens indicator in the mode list.
+
+(fn &optional ARG)" t nil) (put 'smartparens-global-strict-mode 'globalized-minor-mode t) (defvar smartparens-global-strict-mode nil "Non-nil if Smartparens-Global-Strict mode is enabled.
+See the `smartparens-global-strict-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `smartparens-global-strict-mode'.") (custom-autoload 'smartparens-global-strict-mode "smartparens" nil) (autoload 'smartparens-global-strict-mode "smartparens" "Toggle Smartparens-Strict mode in all buffers.
+With prefix ARG, enable Smartparens-Global-Strict mode if ARG is positive;
+otherwise, disable it.  If called from Lisp, enable the mode if
+ARG is omitted or nil.
+
+Smartparens-Strict mode is enabled in all buffers where
+`turn-on-smartparens-strict-mode' would do it.
+See `smartparens-strict-mode' for more information on Smartparens-Strict mode.
+
+(fn &optional ARG)" t nil) (autoload 'turn-on-smartparens-strict-mode "smartparens" "Turn on `smartparens-strict-mode'." t nil) (autoload 'turn-off-smartparens-strict-mode "smartparens" "Turn off `smartparens-strict-mode'." t nil) (put 'smartparens-global-mode 'globalized-minor-mode t) (defvar smartparens-global-mode nil "Non-nil if Smartparens-Global mode is enabled.
+See the `smartparens-global-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `smartparens-global-mode'.") (custom-autoload 'smartparens-global-mode "smartparens" nil) (autoload 'smartparens-global-mode "smartparens" "Toggle Smartparens mode in all buffers.
+With prefix ARG, enable Smartparens-Global mode if ARG is positive;
+otherwise, disable it.  If called from Lisp, enable the mode if
+ARG is omitted or nil.
+
+Smartparens mode is enabled in all buffers where
+`turn-on-smartparens-mode' would do it.
+See `smartparens-mode' for more information on Smartparens mode.
+
+(fn &optional ARG)" t nil) (autoload 'turn-on-smartparens-mode "smartparens" "Turn on `smartparens-mode'.
+
+This function is used to turn on `smartparens-global-mode'.
+
+By default `smartparens-global-mode' ignores buffers with
+`mode-class' set to special, but only if they are also not comint
+buffers.
+
+Additionally, buffers on `sp-ignore-modes-list' are ignored.
+
+You can still turn on smartparens in these mode manually (or
+in mode's startup-hook etc.) by calling `smartparens-mode'." t nil) (autoload 'turn-off-smartparens-mode "smartparens" "Turn off `smartparens-mode'." t nil) (autoload 'show-smartparens-mode "smartparens" "Toggle visualization of matching pairs.  When enabled, any
+matching pair is highlighted after `sp-show-pair-delay' seconds
+of Emacs idle time if the point is immediately in front or after
+a pair.  This mode works similarly to `show-paren-mode', but
+support custom pairs.
+
+If called interactively, enable Show-Smartparens mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+(fn &optional ARG)" t nil) (put 'show-smartparens-global-mode 'globalized-minor-mode t) (defvar show-smartparens-global-mode nil "Non-nil if Show-Smartparens-Global mode is enabled.
+See the `show-smartparens-global-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `show-smartparens-global-mode'.") (custom-autoload 'show-smartparens-global-mode "smartparens" nil) (autoload 'show-smartparens-global-mode "smartparens" "Toggle Show-Smartparens mode in all buffers.
+With prefix ARG, enable Show-Smartparens-Global mode if ARG is positive;
+otherwise, disable it.  If called from Lisp, enable the mode if
+ARG is omitted or nil.
+
+Show-Smartparens mode is enabled in all buffers where
+`turn-on-show-smartparens-mode' would do it.
+See `show-smartparens-mode' for more information on Show-Smartparens mode.
+
+(fn &optional ARG)" t nil) (autoload 'turn-on-show-smartparens-mode "smartparens" "Turn on `show-smartparens-mode'." t nil) (autoload 'turn-off-show-smartparens-mode "smartparens" "Turn off `show-smartparens-mode'." t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smartparens" '("smartparens-" "sp-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smartparens-clojure" '("sp-clojure-prefix"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smartparens-config" '("sp-lisp-invalid-hyperlink-p"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smartparens-crystal" '("sp-crystal-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smartparens-elixir" '("sp-elixir-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smartparens-ess" '("sp-ess-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smartparens-haskell" '("sp-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smartparens-html" '("sp-html-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smartparens-latex" '("sp-latex-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smartparens-lua" '("sp-lua-post-keyword-insert"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smartparens-markdown" '("sp-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smartparens-org" '("sp-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smartparens-python" '("sp-python-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smartparens-rst" '("sp-rst-point-after-backtick"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smartparens-ruby" '("sp-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smartparens-rust" '("sp-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smartparens-scala" '("sp-scala-wrap-with-indented-newlines"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smartparens-text" '("sp-text-mode-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "sp-sublimetext-like" '("sp-point-not-before-word"))) (provide 'smartparens-autoloads)) "which-key" ((which-key which-key-autoloads) (defvar which-key-mode nil "Non-nil if Which-Key mode is enabled.
+See the `which-key-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `which-key-mode'.") (custom-autoload 'which-key-mode "which-key" nil) (autoload 'which-key-mode "which-key" "Toggle which-key-mode.
+
+If called interactively, enable Which-Key mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+(fn &optional ARG)" t nil) (autoload 'which-key-setup-side-window-right "which-key" "Apply suggested settings for side-window that opens on right." t nil) (autoload 'which-key-setup-side-window-right-bottom "which-key" "Apply suggested settings for side-window that opens on right
+if there is space and the bottom otherwise." t nil) (autoload 'which-key-setup-side-window-bottom "which-key" "Apply suggested settings for side-window that opens on
+bottom." t nil) (autoload 'which-key-setup-minibuffer "which-key" "Apply suggested settings for minibuffer.
+Do not use this setup if you use the paging commands. Instead use
+`which-key-setup-side-window-bottom', which is nearly identical
+but more functional." t nil) (autoload 'which-key-add-keymap-based-replacements "which-key" "Replace the description of KEY using REPLACEMENT in KEYMAP.
+KEY should take a format suitable for use in
+`kbd'. REPLACEMENT is the string to use to describe the
+command associated with KEY in the KEYMAP. You may also use a
+cons cell of the form (STRING . COMMAND) for each REPLACEMENT,
+where STRING is the replacement string and COMMAND is a symbol
+corresponding to the intended command to be replaced. In the
+latter case, which-key will verify the intended command before
+performing the replacement. COMMAND should be nil if the binding
+corresponds to a key prefix. For example,
+
+(which-key-add-keymap-based-replacements global-map
+  \"C-x w\" \"Save as\")
+
+and
+
+(which-key-add-keymap-based-replacements global-map
+  \"C-x w\" '(\"Save as\" . write-file))
+
+both have the same effect for the \"C-x C-w\" key binding, but
+the latter causes which-key to verify that the key sequence is
+actually bound to write-file before performing the replacement.
+
+(fn KEYMAP KEY REPLACEMENT &rest MORE)" nil nil) (autoload 'which-key-add-key-based-replacements "which-key" "Replace the description of KEY-SEQUENCE with REPLACEMENT.
+KEY-SEQUENCE is a string suitable for use in `kbd'. REPLACEMENT
+may either be a string, as in
+
+(which-key-add-key-based-replacements \"C-x 1\" \"maximize\")
+
+a cons of two strings as in
+
+(which-key-add-key-based-replacements \"C-x 8\"
+                                        '(\"unicode\" . \"Unicode keys\"))
+
+or a function that takes a (KEY . BINDING) cons and returns a
+replacement.
+
+In the second case, the second string is used to provide a longer
+name for the keys under a prefix.
+
+MORE allows you to specifcy additional KEY REPLACEMENT pairs.  All
+replacements are added to
+`which-key-key-based-description-replacement-alist'.
+
+(fn KEY-SEQUENCE REPLACEMENT &rest MORE)" nil nil) (autoload 'which-key-add-major-mode-key-based-replacements "which-key" "Functions like `which-key-add-key-based-replacements'.
+The difference is that MODE specifies the `major-mode' that must
+be active for KEY-SEQUENCE and REPLACEMENT (MORE contains
+addition KEY-SEQUENCE REPLACEMENT pairs) to apply.
+
+(fn MODE KEY-SEQUENCE REPLACEMENT &rest MORE)" nil nil) (autoload 'which-key-reload-key-sequence "which-key" "Simulate entering the key sequence KEY-SEQ.
+KEY-SEQ should be a list of events as produced by
+`listify-key-sequence'. If nil, KEY-SEQ defaults to
+`which-key--current-key-list'. Any prefix arguments that were
+used are reapplied to the new key sequence.
+
+(fn &optional KEY-SEQ)" nil nil) (autoload 'which-key-show-standard-help "which-key" "Call the command in `which-key--prefix-help-cmd-backup'.
+Usually this is `describe-prefix-bindings'.
+
+(fn &optional _)" t nil) (autoload 'which-key-show-next-page-no-cycle "which-key" "Show next page of keys unless on the last page, in which case
+call `which-key-show-standard-help'." t nil) (autoload 'which-key-show-previous-page-no-cycle "which-key" "Show previous page of keys unless on the first page, in which
+case do nothing." t nil) (autoload 'which-key-show-next-page-cycle "which-key" "Show the next page of keys, cycling from end to beginning
+after last page.
+
+(fn &optional _)" t nil) (autoload 'which-key-show-previous-page-cycle "which-key" "Show the previous page of keys, cycling from beginning to end
+after first page.
+
+(fn &optional _)" t nil) (autoload 'which-key-show-top-level "which-key" "Show top-level bindings.
+
+(fn &optional _)" t nil) (autoload 'which-key-show-major-mode "which-key" "Show top-level bindings in the map of the current major mode.
+
+This function will also detect evil bindings made using
+`evil-define-key' in this map. These bindings will depend on the
+current evil state. 
+
+(fn &optional ALL)" t nil) (autoload 'which-key-show-full-major-mode "which-key" "Show all bindings in the map of the current major mode.
+
+This function will also detect evil bindings made using
+`evil-define-key' in this map. These bindings will depend on the
+current evil state. " t nil) (autoload 'which-key-dump-bindings "which-key" "Dump bindings from PREFIX into buffer named BUFFER-NAME.
+
+PREFIX should be a string suitable for `kbd'.
+
+(fn PREFIX BUFFER-NAME)" t nil) (autoload 'which-key-undo-key "which-key" "Undo last keypress and force which-key update.
+
+(fn &optional _)" t nil) (autoload 'which-key-C-h-dispatch "which-key" "Dispatch C-h commands by looking up key in
+`which-key-C-h-map'. This command is always accessible (from any
+prefix) if `which-key-use-C-h-commands' is non nil." t nil) (autoload 'which-key-show-keymap "which-key" "Show the top-level bindings in KEYMAP using which-key. KEYMAP
+is selected interactively from all available keymaps.
+
+If NO-PAGING is non-nil, which-key will not intercept subsequent
+keypresses for the paging functionality.
+
+(fn KEYMAP &optional NO-PAGING)" t nil) (autoload 'which-key-show-full-keymap "which-key" "Show all bindings in KEYMAP using which-key. KEYMAP is
+selected interactively from all available keymaps.
+
+(fn KEYMAP)" t nil) (autoload 'which-key-show-minor-mode-keymap "which-key" "Show the top-level bindings in KEYMAP using which-key. KEYMAP
+is selected interactively by mode in `minor-mode-map-alist'.
+
+(fn &optional ALL)" t nil) (autoload 'which-key-show-full-minor-mode-keymap "which-key" "Show all bindings in KEYMAP using which-key. KEYMAP
+is selected interactively by mode in `minor-mode-map-alist'." t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "which-key" '("which-key-"))) (provide 'which-key-autoloads)) "tablist" ((tablist-autoloads tablist tablist-filter) (autoload 'tablist-minor-mode "tablist" "Toggle Tablist minor mode on or off.
+
+If called interactively, enable Tablist minor mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+\\{tablist-minor-mode-map}
+
+(fn &optional ARG)" t nil) (autoload 'tablist-mode "tablist" "
+
+(fn)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "tablist" '("tablist-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "tablist-filter" '("tablist-filter-"))) (provide 'tablist-autoloads)) "let-alist" ((let-alist let-alist-autoloads) (autoload 'let-alist "let-alist" "Let-bind dotted symbols to their cdrs in ALIST and execute BODY.
+Dotted symbol is any symbol starting with a `.'.  Only those present
+in BODY are let-bound and this search is done at compile time.
+
+For instance, the following code
+
+  (let-alist alist
+    (if (and .title .body)
+        .body
+      .site
+      .site.contents))
+
+essentially expands to
+
+  (let ((.title (cdr (assq \\='title alist)))
+        (.body  (cdr (assq \\='body alist)))
+        (.site  (cdr (assq \\='site alist)))
+        (.site.contents (cdr (assq \\='contents (cdr (assq \\='site alist))))))
+    (if (and .title .body)
+        .body
+      .site
+      .site.contents))
+
+If you nest `let-alist' invocations, the inner one can't access
+the variables of the outer one. You can, however, access alists
+inside the original alist by using dots inside the symbol, as
+displayed in the example above.
+
+(fn ALIST &rest BODY)" nil t) (function-put 'let-alist 'lisp-indent-function '1) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "let-alist" '("let-alist--"))) (provide 'let-alist-autoloads)) "pdf-tools" ((pdf-util pdf-view pdf-occur pdf-cache pdf-misc pdf-virtual pdf-sync pdf-loader pdf-annot pdf-tools-autoloads pdf-dev pdf-outline pdf-history pdf-tools pdf-links pdf-isearch pdf-info) (autoload 'pdf-annot-minor-mode "pdf-annot" "Support for PDF Annotations.
+
+If called interactively, enable Pdf-Annot minor mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+\\{pdf-annot-minor-mode-map}
+
+(fn &optional ARG)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "pdf-annot" '("pdf-annot-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "pdf-cache" '("boundingbox" "define-pdf-cache-function" "page" "pdf-cache-" "textregions"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "pdf-dev" '("pdf-dev-"))) (autoload 'pdf-history-minor-mode "pdf-history" "Keep a history of previously visited pages.
+
+If called interactively, enable Pdf-History minor mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+This is a simple stack-based history.  Turning the page or
+following a link pushes the left-behind page on the stack, which
+may be navigated with the following keys.
+
+\\{pdf-history-minor-mode-map}
+
+(fn &optional ARG)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "pdf-history" '("pdf-history-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "pdf-info" '("pdf-info-"))) (autoload 'pdf-isearch-minor-mode "pdf-isearch" "Isearch mode for PDF buffer.
+
+If called interactively, enable Pdf-Isearch minor mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+When this mode is enabled \\[isearch-forward], among other keys,
+starts an incremental search in this PDF document.  Since this mode
+uses external programs to highlight found matches via
+image-processing, proceeding to the next match may be slow.
+
+Therefore two isearch behaviours have been defined: Normal isearch and
+batch mode.  The later one is a minor mode
+(`pdf-isearch-batch-mode'), which when activated inhibits isearch
+from stopping at and highlighting every single match, but rather
+display them batch-wise.  Here a batch means a number of matches
+currently visible in the selected window.
+
+The kind of highlighting is determined by three faces
+`pdf-isearch-match' (for the current match), `pdf-isearch-lazy'
+(for all other matches) and `pdf-isearch-batch' (when in batch
+mode), which see.
+
+Colors may also be influenced by the minor-mode
+`pdf-view-dark-minor-mode'.  If this is minor mode enabled, each face's
+dark colors, are used (see e.g. `frame-background-mode'), instead
+of the light ones.
+
+\\{pdf-isearch-minor-mode-map}
+While in `isearch-mode' the following keys are available. Note
+that not every isearch command work as expected.
+
+\\{pdf-isearch-active-mode-map}
+
+(fn &optional ARG)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "pdf-isearch" '("pdf-isearch-"))) (autoload 'pdf-links-minor-mode "pdf-links" "Handle links in PDF documents.\\<pdf-links-minor-mode-map>
+
+If called interactively, enable Pdf-Links minor mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+If this mode is enabled, most links in the document may be
+activated by clicking on them or by pressing \\[pdf-links-action-perform] and selecting
+one of the displayed keys, or by using isearch limited to
+links via \\[pdf-links-isearch-link].
+
+\\{pdf-links-minor-mode-map}
+
+(fn &optional ARG)" t nil) (autoload 'pdf-links-action-perform "pdf-links" "Follow LINK, depending on its type.
+
+This may turn to another page, switch to another PDF buffer or
+invoke `pdf-links-browse-uri-function'.
+
+Interactively, link is read via `pdf-links-read-link-action'.
+This function displays characters around the links in the current
+page and starts reading characters (ignoring case).  After a
+sufficient number of characters have been read, the corresponding
+link's link is invoked.  Additionally, SPC may be used to
+scroll the current page.
+
+(fn LINK)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "pdf-links" '("pdf-links-"))) (autoload 'pdf-loader-install "pdf-loader" "Prepare Emacs for using PDF Tools.
+
+This function acts as a replacement for `pdf-tools-install' and
+makes Emacs load and use PDF Tools as soon as a PDF file is
+opened, but not sooner.
+
+The arguments are passed verbatim to `pdf-tools-install', which
+see.
+
+(fn &optional NO-QUERY-P SKIP-DEPENDENCIES-P NO-ERROR-P FORCE-DEPENDENCIES-P)" nil nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "pdf-loader" '("pdf-loader--"))) (autoload 'pdf-misc-minor-mode "pdf-misc" "FIXME:  Not documented.
+
+If called interactively, enable Pdf-Misc minor mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+(fn &optional ARG)" t nil) (autoload 'pdf-misc-size-indication-minor-mode "pdf-misc" "Provide a working size indication in the mode-line.
+
+If called interactively, enable Pdf-Misc-Size-Indication minor
+mode if ARG is positive, and disable it if ARG is zero or
+negative.  If called from Lisp, also enable the mode if ARG is
+omitted or nil, and toggle it if ARG is `toggle'; disable the
+mode otherwise.
+
+(fn &optional ARG)" t nil) (autoload 'pdf-misc-menu-bar-minor-mode "pdf-misc" "Display a PDF Tools menu in the menu-bar.
+
+If called interactively, enable Pdf-Misc-Menu-Bar minor mode if
+ARG is positive, and disable it if ARG is zero or negative.  If
+called from Lisp, also enable the mode if ARG is omitted or nil,
+and toggle it if ARG is `toggle'; disable the mode otherwise.
+
+(fn &optional ARG)" t nil) (autoload 'pdf-misc-context-menu-minor-mode "pdf-misc" "Provide a right-click context menu in PDF buffers.
+
+If called interactively, enable Pdf-Misc-Context-Menu minor mode
+if ARG is positive, and disable it if ARG is zero or negative.
+If called from Lisp, also enable the mode if ARG is omitted or
+nil, and toggle it if ARG is `toggle'; disable the mode
+otherwise.
+
+\\{pdf-misc-context-menu-minor-mode-map}
+
+(fn &optional ARG)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "pdf-misc" '("pdf-misc-"))) (autoload 'pdf-occur "pdf-occur" "List lines matching STRING or PCRE.
+
+Interactively search for a regexp. Unless a prefix arg was given,
+in which case this functions performs a string search.
+
+If `pdf-occur-prefer-string-search' is non-nil, the meaning of
+the prefix-arg is inverted.
+
+(fn STRING &optional REGEXP-P)" t nil) (autoload 'pdf-occur-multi-command "pdf-occur" "Perform `pdf-occur' on multiple buffer.
+
+For a programmatic search of multiple documents see
+`pdf-occur-search'." t nil) (defvar pdf-occur-global-minor-mode nil "Non-nil if Pdf-Occur-Global minor mode is enabled.
+See the `pdf-occur-global-minor-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `pdf-occur-global-minor-mode'.") (custom-autoload 'pdf-occur-global-minor-mode "pdf-occur" nil) (autoload 'pdf-occur-global-minor-mode "pdf-occur" "Enable integration of Pdf Occur with other modes.
+
+If called interactively, enable Pdf-Occur-Global minor mode if
+ARG is positive, and disable it if ARG is zero or negative.  If
+called from Lisp, also enable the mode if ARG is omitted or nil,
+and toggle it if ARG is `toggle'; disable the mode otherwise.
+
+This global minor mode enables (or disables)
+`pdf-occur-ibuffer-minor-mode' and `pdf-occur-dired-minor-mode'
+in all current and future ibuffer/dired buffer.
+
+(fn &optional ARG)" t nil) (autoload 'pdf-occur-ibuffer-minor-mode "pdf-occur" "Hack into ibuffer's do-occur binding.
+
+If called interactively, enable Pdf-Occur-Ibuffer minor mode if
+ARG is positive, and disable it if ARG is zero or negative.  If
+called from Lisp, also enable the mode if ARG is omitted or nil,
+and toggle it if ARG is `toggle'; disable the mode otherwise.
+
+This mode remaps `ibuffer-do-occur' to
+`pdf-occur-ibuffer-do-occur', which will start the PDF Tools
+version of `occur', if all marked buffer's are in `pdf-view-mode'
+and otherwise fallback to `ibuffer-do-occur'.
+
+(fn &optional ARG)" t nil) (autoload 'pdf-occur-dired-minor-mode "pdf-occur" "Hack into dired's `dired-do-search' binding.
+
+If called interactively, enable Pdf-Occur-Dired minor mode if ARG
+is positive, and disable it if ARG is zero or negative.  If
+called from Lisp, also enable the mode if ARG is omitted or nil,
+and toggle it if ARG is `toggle'; disable the mode otherwise.
+
+This mode remaps `dired-do-search' to
+`pdf-occur-dired-do-search', which will start the PDF Tools
+version of `occur', if all marked buffer's are in `pdf-view-mode'
+and otherwise fallback to `dired-do-search'.
+
+(fn &optional ARG)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "pdf-occur" '("pdf-occur-"))) (autoload 'pdf-outline-minor-mode "pdf-outline" "Display an outline of a PDF document.
+
+If called interactively, enable Pdf-Outline minor mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+This provides a PDF's outline on the menu bar via imenu.
+Additionally the same outline may be viewed in a designated
+buffer.
+
+\\{pdf-outline-minor-mode-map}
+
+(fn &optional ARG)" t nil) (autoload 'pdf-outline "pdf-outline" "Display an PDF outline of BUFFER.
+
+BUFFER defaults to the current buffer.  Select the outline
+buffer, unless NO-SELECT-WINDOW-P is non-nil.
+
+(fn &optional BUFFER NO-SELECT-WINDOW-P)" t nil) (autoload 'pdf-outline-imenu-enable "pdf-outline" "Enable imenu in the current PDF buffer." t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "pdf-outline" '("pdf-outline"))) (autoload 'pdf-sync-minor-mode "pdf-sync" "Correlate a PDF position with the TeX file.
+\\<pdf-sync-minor-mode-map>
+This works via SyncTeX, which means the TeX sources need to have
+been compiled with `--synctex=1'.  In AUCTeX this can be done by
+setting `TeX-source-correlate-method' to 'synctex (before AUCTeX
+is loaded) and enabling `TeX-source-correlate-mode'.
+
+If called interactively, enable Pdf-Sync minor mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+Then \\[pdf-sync-backward-search-mouse] in the PDF buffer will open the
+corresponding TeX location.
+
+If AUCTeX is your preferred tex-mode, this library arranges to
+bind `pdf-sync-forward-display-pdf-key' (the default is `C-c C-g')
+to `pdf-sync-forward-search' in `TeX-source-correlate-map'.  This
+function displays the PDF page corresponding to the current
+position in the TeX buffer.  This function only works together
+with AUCTeX.
+
+(fn &optional ARG)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "pdf-sync" '("pdf-sync-"))) (defvar pdf-tools-handle-upgrades t "Whether PDF Tools should handle upgrading itself.") (custom-autoload 'pdf-tools-handle-upgrades "pdf-tools" t) (autoload 'pdf-tools-install "pdf-tools" "Install PDF-Tools in all current and future PDF buffers.
+
+If the `pdf-info-epdfinfo-program' is not running or does not
+appear to be working, attempt to rebuild it.  If this build
+succeeded, continue with the activation of the package.
+Otherwise fail silently, i.e. no error is signaled.
+
+Build the program (if necessary) without asking first, if
+NO-QUERY-P is non-nil.
+
+Don't attempt to install system packages, if SKIP-DEPENDENCIES-P
+is non-nil.
+
+Do not signal an error in case the build failed, if NO-ERROR-P is
+non-nil.
+
+Attempt to install system packages (even if it is deemed
+unnecessary), if FORCE-DEPENDENCIES-P is non-nil.
+
+Note that SKIP-DEPENDENCIES-P and FORCE-DEPENDENCIES-P are
+mutually exclusive.
+
+Note further, that you can influence the installation directory
+by setting `pdf-info-epdfinfo-program' to an appropriate
+value (e.g. ~/bin/epdfinfo) before calling this function.
+
+See `pdf-view-mode' and `pdf-tools-enabled-modes'.
+
+(fn &optional NO-QUERY-P SKIP-DEPENDENCIES-P NO-ERROR-P FORCE-DEPENDENCIES-P)" t nil) (autoload 'pdf-tools-enable-minor-modes "pdf-tools" "Enable MODES in the current buffer.
+
+MODES defaults to `pdf-tools-enabled-modes'.
+
+(fn &optional MODES)" t nil) (autoload 'pdf-tools-help "pdf-tools" nil t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "pdf-tools" '("pdf-tools-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "pdf-util" '("display-buffer-split-below-and-attach" "pdf-util-"))) (autoload 'pdf-view-bookmark-jump-handler "pdf-view" "The bookmark handler-function interface for bookmark BMK.
+
+See also `pdf-view-bookmark-make-record'.
+
+(fn BMK)" nil nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "pdf-view" '("pdf-view-"))) (autoload 'pdf-virtual-edit-mode "pdf-virtual" "Major mode when editing a virtual PDF buffer.
+
+(fn)" t nil) (autoload 'pdf-virtual-view-mode "pdf-virtual" "Major mode in virtual PDF buffers.
+
+(fn)" t nil) (defvar pdf-virtual-global-minor-mode nil "Non-nil if Pdf-Virtual-Global minor mode is enabled.
+See the `pdf-virtual-global-minor-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `pdf-virtual-global-minor-mode'.") (custom-autoload 'pdf-virtual-global-minor-mode "pdf-virtual" nil) (autoload 'pdf-virtual-global-minor-mode "pdf-virtual" "Enable recognition and handling of VPDF files.
+
+If called interactively, enable Pdf-Virtual-Global minor mode if
+ARG is positive, and disable it if ARG is zero or negative.  If
+called from Lisp, also enable the mode if ARG is omitted or nil,
+and toggle it if ARG is `toggle'; disable the mode otherwise.
+
+(fn &optional ARG)" t nil) (autoload 'pdf-virtual-buffer-create "pdf-virtual" "
+
+(fn &optional FILENAMES BUFFER-NAME DISPLAY-P)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "pdf-virtual" '("pdf-virtual-"))) (provide 'pdf-tools-autoloads)) "ripgrep" ((ripgrep-autoloads ripgrep) (autoload 'ripgrep-regexp "ripgrep" "Run a ripgrep search with `REGEXP' rooted at `DIRECTORY'.
+`ARGS' provides Ripgrep command line arguments.
+
+(fn REGEXP DIRECTORY &optional ARGS)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ripgrep" '("ripgrep"))) (provide 'ripgrep-autoloads)) "undo-tree" ((undo-tree undo-tree-autoloads) (autoload 'undo-tree-mode "undo-tree" "Toggle undo-tree mode.
+With no argument, this command toggles the mode.
+A positive prefix argument turns the mode on.
+A negative prefix argument turns it off.
+
+If called interactively, enable Undo-Tree mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+Undo-tree-mode replaces Emacs' standard undo feature with a more
+powerful yet easier to use version, that treats the undo history
+as what it is: a tree.
+
+The following keys are available in `undo-tree-mode':
+
+  \\{undo-tree-map}
+
+Within the undo-tree visualizer, the following keys are available:
+
+  \\{undo-tree-visualizer-mode-map}
+
+(fn &optional ARG)" t nil) (put 'global-undo-tree-mode 'globalized-minor-mode t) (defvar global-undo-tree-mode nil "Non-nil if Global Undo-Tree mode is enabled.
+See the `global-undo-tree-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `global-undo-tree-mode'.") (custom-autoload 'global-undo-tree-mode "undo-tree" nil) (autoload 'global-undo-tree-mode "undo-tree" "Toggle Undo-Tree mode in all buffers.
+With prefix ARG, enable Global Undo-Tree mode if ARG is positive;
+otherwise, disable it.  If called from Lisp, enable the mode if
+ARG is omitted or nil.
+
+Undo-Tree mode is enabled in all buffers where
+`turn-on-undo-tree-mode' would do it.
+See `undo-tree-mode' for more information on Undo-Tree mode.
+
+(fn &optional ARG)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "undo-tree" '("*undo-tree-id-counter*" "buffer-undo-tree" "turn-on-undo-tree-mode" "undo-"))) (provide 'undo-tree-autoloads)) "crux" ((crux-autoloads crux) (autoload 'crux-open-with "crux" "Open visited file in default external program.
+When in dired mode, open file under the cursor.
+
+With a prefix ARG always prompt for command to use.
+
+(fn ARG)" t nil) (autoload 'crux-visit-term-buffer "crux" "Create or visit a terminal buffer.
+If the process in that buffer died, ask to restart." t nil) (autoload 'crux-visit-shell-buffer "crux" "Create or visit a shell buffer.
+If the process in that buffer died, ask to restart." t nil) (autoload 'crux-indent-rigidly-and-copy-to-clipboard "crux" "Indent region between BEGIN and END by ARG columns and copy to clipboard.
+
+(fn BEGIN END ARG)" t nil) (autoload 'crux-smart-open-line-above "crux" "Insert an empty line above the current line.
+Position the cursor at its beginning, according to the current mode." t nil) (autoload 'crux-smart-open-line "crux" "Insert an empty line after the current line.
+Position the cursor at its beginning, according to the current mode.
+
+With a prefix ARG open line above the current line.
+
+(fn ARG)" t nil) (autoload 'crux-smart-kill-line "crux" "Kill to the end of the line and kill whole line on the next call." t nil) (autoload 'crux-top-join-line "crux" "Join the current line with the line beneath it." t nil) (autoload 'crux-kill-whole-line "crux" "A simple wrapper around command `kill-whole-line' that respects indentation.
+Passes ARG to command `kill-whole-line' when provided.
+
+(fn &optional ARG)" t nil) (autoload 'crux-kill-line-backwards "crux" "Kill line backwards and adjust the indentation." t nil) (autoload 'crux-kill-and-join-forward "crux" "If at end of line, join with following; otherwise kill line.
+Passes ARG to command `kill-line' when provided.
+Deletes whitespace at join.
+
+(fn &optional ARG)" t nil) (autoload 'crux-move-to-mode-line-start "crux" "Move to the beginning, skipping mode specific line start regex." t nil) (autoload 'crux-move-beginning-of-line "crux" "Move point back to indentation of beginning of line.
+
+Move point to the first non-whitespace character on this line.
+If point is already there, move to the beginning of the line.
+Effectively toggle between the first non-whitespace character and
+the beginning of the line.
+
+If ARG is not nil or 1, move forward ARG - 1 lines first.  If
+point reaches the beginning or end of the buffer, stop there.
+
+(fn ARG)" t nil) (autoload 'crux-indent-defun "crux" "Indent the current defun." t nil) (autoload 'crux-duplicate-current-line-or-region "crux" "Duplicates the current line or region ARG times.
+If there's no region, the current line will be duplicated.  However, if
+there's a region, all lines that region covers will be duplicated.
+
+(fn ARG)" t nil) (autoload 'crux-duplicate-and-comment-current-line-or-region "crux" "Duplicates and comments the current line or region ARG times.
+If there's no region, the current line will be duplicated.  However, if
+there's a region, all lines that region covers will be duplicated.
+
+(fn ARG)" t nil) (autoload 'crux-rename-file-and-buffer "crux" "Rename current buffer and if the buffer is visiting a file, rename it too." t nil) (autoload 'crux-delete-file-and-buffer "crux" "Kill the current buffer and deletes the file it is visiting." t nil) (autoload 'crux-copy-file-preserve-attributes "crux" "Copy the current file-visiting buffer's file to a destination.
+
+This function prompts for the new file's location and copies it
+similar to cp -p. If the new location is a directory, and the
+directory does not exist, this function confirms with the user
+whether it should be created. A directory must end in a slash
+like `copy-file' expects. If the destination is a directory and
+already has a file named as the origin file, offers to
+overwrite.
+
+If the current buffer is not a file-visiting file or the
+destination is a non-existent directory but the user has elected
+to not created it, nothing will be done.
+
+When invoke with C-u, the newly created file will be visited.
+
+(fn VISIT)" t nil) (autoload 'crux-view-url "crux" "Open a new buffer containing the contents of URL." t nil) (autoload 'crux-cleanup-buffer-or-region "crux" "Cleanup a region if selected, otherwise the whole buffer." t nil) (autoload 'crux-eval-and-replace "crux" "Replace the preceding sexp with its value." t nil) (autoload 'crux-recompile-init "crux" "Byte-compile all your dotfiles again." t nil) (autoload 'crux-sudo-edit "crux" "Edit currently visited file as root.
+
+With a prefix ARG prompt for a file to visit.
+Will also prompt for a file to visit if current
+buffer is not visiting a file.
+
+(fn &optional ARG)" t nil) (autoload 'crux-reopen-as-root "crux" "Find file as root if necessary.
+
+Meant to be used as `find-file-hook'.
+See also `crux-reopen-as-root-mode'." nil nil) (defvar crux-reopen-as-root-mode nil "Non-nil if Crux-Reopen-As-Root mode is enabled.
+See the `crux-reopen-as-root-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `crux-reopen-as-root-mode'.") (custom-autoload 'crux-reopen-as-root-mode "crux" nil) (autoload 'crux-reopen-as-root-mode "crux" "Automatically reopen files as root if we can't write to them
+as the current user.
+
+If called interactively, enable Crux-Reopen-As-Root mode if ARG
+is positive, and disable it if ARG is zero or negative.  If
+called from Lisp, also enable the mode if ARG is omitted or nil,
+and toggle it if ARG is `toggle'; disable the mode otherwise.
+
+(fn &optional ARG)" t nil) (autoload 'crux-insert-date "crux" "Insert a timestamp according to locale's date and time format." t nil) (autoload 'crux-recentf-find-file "crux" "Find a recent file using `completing-read'.
+When optional argument FILTER is a function, it is used to
+transform recent files before completion.
+
+(fn &optional FILTER)" t nil) (autoload 'crux-recentf-find-directory "crux" "Find a recent directory using `completing-read'." t nil) (autoload 'crux-transpose-windows "crux" "Transpose the buffers shown in two windows.
+Prefix ARG determines if the current windows buffer is swapped
+with the next or previous window, and the number of
+transpositions to execute in sequence.
+
+(fn ARG)" t nil) (autoload 'crux-switch-to-previous-buffer "crux" "Switch to previously open buffer.
+Repeated invocations toggle between the two most recently open buffers." t nil) (autoload 'crux-other-window-or-switch-buffer "crux" "Call `other-window' if more than one window is visible.
+Switch to most recent buffer otherwise." t nil) (autoload 'crux-kill-other-buffers "crux" "Kill all buffers but the current one.
+Doesn't mess with special buffers." t nil) (autoload 'crux-kill-buffer-truename "crux" "Kill absolute path of file visited in current buffer." t nil) (autoload 'crux-create-scratch-buffer "crux" "Create a new scratch buffer." t nil) (autoload 'crux-find-user-init-file "crux" "Edit the `user-init-file', in another window." t nil) (autoload 'crux-find-user-custom-file "crux" "Edit the `custom-file', in another window." t nil) (autoload 'crux-find-shell-init-file "crux" "Edit the shell init file in another window." t nil) (autoload 'crux-upcase-region "crux" "`upcase-region' when `transient-mark-mode' is on and region is active.
+
+(fn BEG END)" t nil) (autoload 'crux-downcase-region "crux" "`downcase-region' when `transient-mark-mode' is on and region is active.
+
+(fn BEG END)" t nil) (autoload 'crux-capitalize-region "crux" "`capitalize-region' when `transient-mark-mode' is on and region is active.
+
+(fn BEG END)" t nil) (autoload 'crux-ispell-word-then-abbrev "crux" "Call `ispell-word', then create an abbrev for it.
+With prefix P, create local abbrev.  Otherwise it will
+be global.
+If there's nothing wrong with the word at point, keep
+looking for a typo until the beginning of buffer.  You can
+skip typos you don't want to fix with `SPC', and you can
+abort completely with `C-g'.
+
+(fn P)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "crux" '("crux-"))) (provide 'crux-autoloads)) "feebleline" ((feebleline-autoloads feebleline) (defvar feebleline-mode nil "Non-nil if Feebleline mode is enabled.
+See the `feebleline-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `feebleline-mode'.") (custom-autoload 'feebleline-mode "feebleline" nil) (autoload 'feebleline-mode "feebleline" "Replace modeline with a slimmer proxy.
+
+If called interactively, enable Feebleline mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+(fn &optional ARG)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "feebleline" '("feebleline-"))) (provide 'feebleline-autoloads)) "f" ((f-autoloads f) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "f" '("f-"))) (provide 'f-autoloads)) "elisp-refs" ((elisp-refs-autoloads elisp-refs) (autoload 'elisp-refs-function "elisp-refs" "Display all the references to function SYMBOL, in all loaded
+elisp files.
+
+If called with a prefix, prompt for a directory to limit the search.
+
+This searches for functions, not macros. For that, see
+`elisp-refs-macro'.
+
+(fn SYMBOL &optional PATH-PREFIX)" t nil) (autoload 'elisp-refs-macro "elisp-refs" "Display all the references to macro SYMBOL, in all loaded
+elisp files.
+
+If called with a prefix, prompt for a directory to limit the search.
+
+This searches for macros, not functions. For that, see
+`elisp-refs-function'.
+
+(fn SYMBOL &optional PATH-PREFIX)" t nil) (autoload 'elisp-refs-special "elisp-refs" "Display all the references to special form SYMBOL, in all loaded
+elisp files.
+
+If called with a prefix, prompt for a directory to limit the search.
+
+(fn SYMBOL &optional PATH-PREFIX)" t nil) (autoload 'elisp-refs-variable "elisp-refs" "Display all the references to variable SYMBOL, in all loaded
+elisp files.
+
+If called with a prefix, prompt for a directory to limit the search.
+
+(fn SYMBOL &optional PATH-PREFIX)" t nil) (autoload 'elisp-refs-symbol "elisp-refs" "Display all the references to SYMBOL in all loaded elisp files.
+
+If called with a prefix, prompt for a directory to limit the
+search.
+
+(fn SYMBOL &optional PATH-PREFIX)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "elisp-refs" '("elisp-refs-"))) (provide 'elisp-refs-autoloads)) "helpful" ((helpful-autoloads helpful) (autoload 'helpful-function "helpful" "Show help for function named SYMBOL.
+
+See also `helpful-macro', `helpful-command' and `helpful-callable'.
+
+(fn SYMBOL)" t nil) (autoload 'helpful-command "helpful" "Show help for interactive function named SYMBOL.
+
+See also `helpful-function'.
+
+(fn SYMBOL)" t nil) (autoload 'helpful-key "helpful" "Show help for interactive command bound to KEY-SEQUENCE.
+
+(fn KEY-SEQUENCE)" t nil) (autoload 'helpful-macro "helpful" "Show help for macro named SYMBOL.
+
+(fn SYMBOL)" t nil) (autoload 'helpful-callable "helpful" "Show help for function, macro or special form named SYMBOL.
+
+See also `helpful-macro', `helpful-function' and `helpful-command'.
+
+(fn SYMBOL)" t nil) (autoload 'helpful-symbol "helpful" "Show help for SYMBOL, a variable, function or macro.
+
+See also `helpful-callable' and `helpful-variable'.
+
+(fn SYMBOL)" t nil) (autoload 'helpful-variable "helpful" "Show help for variable named SYMBOL.
+
+(fn SYMBOL)" t nil) (autoload 'helpful-at-point "helpful" "Show help for the symbol at point." t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "helpful" '("helpful-"))) (provide 'helpful-autoloads)) "key-chord" ((key-chord key-chord-autoloads) (defvar key-chord-mode nil "Non-nil if Key-Chord mode is enabled.
+See the `key-chord-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `key-chord-mode'.") (custom-autoload 'key-chord-mode "key-chord" nil) (autoload 'key-chord-mode "key-chord" "Map pairs of simultaneously pressed keys to commands.
+
+If called interactively, enable Key-Chord mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+See functions `key-chord-define-global', `key-chord-define-local',
+and `key-chord-define' and variables `key-chord-two-keys-delay'
+and `key-chord-one-key-delay'.
+
+(fn &optional ARG)" t nil) (autoload 'key-chord-define-global "key-chord" "Define a key-chord of the two keys in KEYS starting a COMMAND.
+
+KEYS can be a string or a vector of two elements. Currently only
+elements that corresponds to ascii codes in the range 32 to 126
+can be used.
+
+COMMAND can be an interactive function, a string, or nil.
+If COMMAND is nil, the key-chord is removed.
+
+Note that KEYS defined locally in the current buffer will have
+precedence.
+
+(fn KEYS COMMAND)" t nil) (autoload 'key-chord-define-local "key-chord" "Locally define a key-chord of the two keys in KEYS starting a COMMAND.
+
+KEYS can be a string or a vector of two elements. Currently only
+elements that corresponds to ascii codes in the range 32 to 126
+can be used.
+
+COMMAND can be an interactive function, a string, or nil.
+If COMMAND is nil, the key-chord is removed.
+
+The binding goes in the current buffer's local map, which in most
+cases is shared with all other buffers in the same major mode.
+
+(fn KEYS COMMAND)" t nil) (autoload 'key-chord-define "key-chord" "Define in KEYMAP, a key-chord of the two keys in KEYS starting a COMMAND.
+
+KEYS can be a string or a vector of two elements. Currently only
+elements that corresponds to ascii codes in the range 32 to 126
+can be used.
+
+COMMAND can be an interactive function, a string, or nil.
+If COMMAND is nil, the key-chord is removed.
+
+(fn KEYMAP KEYS COMMAND)" nil nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "key-chord" '("key-chord-"))) (provide 'key-chord-autoloads)) "avy" ((avy-autoloads avy) (autoload 'avy-process "avy" "Select one of CANDIDATES using `avy-read'.
+Use OVERLAY-FN to visualize the decision overlay.
+CLEANUP-FN should take no arguments and remove the effects of
+multiple OVERLAY-FN invocations.
+
+(fn CANDIDATES &optional OVERLAY-FN CLEANUP-FN)" nil nil) (autoload 'avy-goto-char "avy" "Jump to the currently visible CHAR.
+The window scope is determined by `avy-all-windows' (ARG negates it).
+
+(fn CHAR &optional ARG)" t nil) (autoload 'avy-goto-char-in-line "avy" "Jump to the currently visible CHAR in the current line.
+
+(fn CHAR)" t nil) (autoload 'avy-goto-char-2 "avy" "Jump to the currently visible CHAR1 followed by CHAR2.
+The window scope is determined by `avy-all-windows'.
+When ARG is non-nil, do the opposite of `avy-all-windows'.
+BEG and END narrow the scope where candidates are searched.
+
+(fn CHAR1 CHAR2 &optional ARG BEG END)" t nil) (autoload 'avy-goto-char-2-above "avy" "Jump to the currently visible CHAR1 followed by CHAR2.
+This is a scoped version of `avy-goto-char-2', where the scope is
+the visible part of the current buffer up to point.
+The window scope is determined by `avy-all-windows'.
+When ARG is non-nil, do the opposite of `avy-all-windows'.
+
+(fn CHAR1 CHAR2 &optional ARG)" t nil) (autoload 'avy-goto-char-2-below "avy" "Jump to the currently visible CHAR1 followed by CHAR2.
+This is a scoped version of `avy-goto-char-2', where the scope is
+the visible part of the current buffer following point.
+The window scope is determined by `avy-all-windows'.
+When ARG is non-nil, do the opposite of `avy-all-windows'.
+
+(fn CHAR1 CHAR2 &optional ARG)" t nil) (autoload 'avy-isearch "avy" "Jump to one of the current isearch candidates." t nil) (autoload 'avy-goto-word-0 "avy" "Jump to a word start.
+The window scope is determined by `avy-all-windows'.
+When ARG is non-nil, do the opposite of `avy-all-windows'.
+BEG and END narrow the scope where candidates are searched.
+
+(fn ARG &optional BEG END)" t nil) (autoload 'avy-goto-whitespace-end "avy" "Jump to the end of a whitespace sequence.
+The window scope is determined by `avy-all-windows'.
+When ARG is non-nil, do the opposite of `avy-all-windows'.
+BEG and END narrow the scope where candidates are searched.
+
+(fn ARG &optional BEG END)" t nil) (autoload 'avy-goto-word-1 "avy" "Jump to the currently visible CHAR at a word start.
+The window scope is determined by `avy-all-windows'.
+When ARG is non-nil, do the opposite of `avy-all-windows'.
+BEG and END narrow the scope where candidates are searched.
+When SYMBOL is non-nil, jump to symbol start instead of word start.
+
+(fn CHAR &optional ARG BEG END SYMBOL)" t nil) (autoload 'avy-goto-word-1-above "avy" "Jump to the currently visible CHAR at a word start.
+This is a scoped version of `avy-goto-word-1', where the scope is
+the visible part of the current buffer up to point.
+The window scope is determined by `avy-all-windows'.
+When ARG is non-nil, do the opposite of `avy-all-windows'.
+
+(fn CHAR &optional ARG)" t nil) (autoload 'avy-goto-word-1-below "avy" "Jump to the currently visible CHAR at a word start.
+This is a scoped version of `avy-goto-word-1', where the scope is
+the visible part of the current buffer following point.
+The window scope is determined by `avy-all-windows'.
+When ARG is non-nil, do the opposite of `avy-all-windows'.
+
+(fn CHAR &optional ARG)" t nil) (autoload 'avy-goto-symbol-1 "avy" "Jump to the currently visible CHAR at a symbol start.
+The window scope is determined by `avy-all-windows'.
+When ARG is non-nil, do the opposite of `avy-all-windows'.
+
+(fn CHAR &optional ARG)" t nil) (autoload 'avy-goto-symbol-1-above "avy" "Jump to the currently visible CHAR at a symbol start.
+This is a scoped version of `avy-goto-symbol-1', where the scope is
+the visible part of the current buffer up to point.
+The window scope is determined by `avy-all-windows'.
+When ARG is non-nil, do the opposite of `avy-all-windows'.
+
+(fn CHAR &optional ARG)" t nil) (autoload 'avy-goto-symbol-1-below "avy" "Jump to the currently visible CHAR at a symbol start.
+This is a scoped version of `avy-goto-symbol-1', where the scope is
+the visible part of the current buffer following point.
+The window scope is determined by `avy-all-windows'.
+When ARG is non-nil, do the opposite of `avy-all-windows'.
+
+(fn CHAR &optional ARG)" t nil) (autoload 'avy-goto-subword-0 "avy" "Jump to a word or subword start.
+The window scope is determined by `avy-all-windows' (ARG negates it).
+
+When PREDICATE is non-nil it's a function of zero parameters that
+should return true.
+
+BEG and END narrow the scope where candidates are searched.
+
+(fn &optional ARG PREDICATE BEG END)" t nil) (autoload 'avy-goto-subword-1 "avy" "Jump to the currently visible CHAR at a subword start.
+The window scope is determined by `avy-all-windows' (ARG negates it).
+The case of CHAR is ignored.
+
+(fn CHAR &optional ARG)" t nil) (autoload 'avy-goto-word-or-subword-1 "avy" "Forward to `avy-goto-subword-1' or `avy-goto-word-1'.
+Which one depends on variable `subword-mode'." t nil) (autoload 'avy-goto-line "avy" "Jump to a line start in current buffer.
+
+When ARG is 1, jump to lines currently visible, with the option
+to cancel to `goto-line' by entering a number.
+
+When ARG is 4, negate the window scope determined by
+`avy-all-windows'.
+
+Otherwise, forward to `goto-line' with ARG.
+
+(fn &optional ARG)" t nil) (autoload 'avy-goto-line-above "avy" "Goto visible line above the cursor.
+OFFSET changes the distance between the closest key to the cursor and
+the cursor
+When BOTTOM-UP is non-nil, display avy candidates from top to bottom
+
+(fn &optional OFFSET BOTTOM-UP)" t nil) (autoload 'avy-goto-line-below "avy" "Goto visible line below the cursor.
+OFFSET changes the distance between the closest key to the cursor and
+the cursor
+When BOTTOM-UP is non-nil, display avy candidates from top to bottom
+
+(fn &optional OFFSET BOTTOM-UP)" t nil) (autoload 'avy-goto-end-of-line "avy" "Call `avy-goto-line' and move to the end of the line.
+
+(fn &optional ARG)" t nil) (autoload 'avy-copy-line "avy" "Copy a selected line above the current line.
+ARG lines can be used.
+
+(fn ARG)" t nil) (autoload 'avy-move-line "avy" "Move a selected line above the current line.
+ARG lines can be used.
+
+(fn ARG)" t nil) (autoload 'avy-copy-region "avy" "Select two lines and copy the text between them to point.
+
+The window scope is determined by `avy-all-windows' or
+`avy-all-windows-alt' when ARG is non-nil.
+
+(fn ARG)" t nil) (autoload 'avy-move-region "avy" "Select two lines and move the text between them above the current line." t nil) (autoload 'avy-kill-region "avy" "Select two lines and kill the region between them.
+
+The window scope is determined by `avy-all-windows' or
+`avy-all-windows-alt' when ARG is non-nil.
+
+(fn ARG)" t nil) (autoload 'avy-kill-ring-save-region "avy" "Select two lines and save the region between them to the kill ring.
+The window scope is determined by `avy-all-windows'.
+When ARG is non-nil, do the opposite of `avy-all-windows'.
+
+(fn ARG)" t nil) (autoload 'avy-kill-whole-line "avy" "Select line and kill the whole selected line.
+
+With a numerical prefix ARG, kill ARG line(s) starting from the
+selected line.  If ARG is negative, kill backward.
+
+If ARG is zero, kill the selected line but exclude the trailing
+newline.
+
+\\[universal-argument] 3 \\[avy-kil-whole-line] kill three lines
+starting from the selected line.  \\[universal-argument] -3
+
+\\[avy-kill-whole-line] kill three lines backward including the
+selected line.
+
+(fn ARG)" t nil) (autoload 'avy-kill-ring-save-whole-line "avy" "Select line and save the whole selected line as if killed, but don\342\200\231t kill it.
+
+This command is similar to `avy-kill-whole-line', except that it
+saves the line(s) as if killed, but does not kill it(them).
+
+With a numerical prefix ARG, kill ARG line(s) starting from the
+selected line.  If ARG is negative, kill backward.
+
+If ARG is zero, kill the selected line but exclude the trailing
+newline.
+
+(fn ARG)" t nil) (autoload 'avy-setup-default "avy" "Setup the default shortcuts." nil nil) (autoload 'avy-goto-char-timer "avy" "Read one or many consecutive chars and jump to the first one.
+The window scope is determined by `avy-all-windows' (ARG negates it).
+
+(fn &optional ARG)" t nil) (autoload 'avy-transpose-lines-in-region "avy" "Transpose lines in the active region." t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "avy" '("avy-"))) (provide 'avy-autoloads)) "prescient" ((prescient prescient-autoloads) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "prescient" '("prescient-"))) (provide 'prescient-autoloads)) "selectrum-prescient" ((selectrum-prescient-autoloads selectrum-prescient) (defvar selectrum-prescient-mode nil "Non-nil if Selectrum-Prescient mode is enabled.
+See the `selectrum-prescient-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `selectrum-prescient-mode'.") (custom-autoload 'selectrum-prescient-mode "selectrum-prescient" nil) (autoload 'selectrum-prescient-mode "selectrum-prescient" "Minor mode to use prescient.el in Selectrum menus.
+
+If called interactively, enable Selectrum-Prescient mode if ARG
+is positive, and disable it if ARG is zero or negative.  If
+called from Lisp, also enable the mode if ARG is omitted or nil,
+and toggle it if ARG is `toggle'; disable the mode otherwise.
+
+(fn &optional ARG)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "selectrum-prescient" '("selectrum-prescient-"))) (provide 'selectrum-prescient-autoloads)) "popup" ((popup-autoloads popup) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "popup" '("popup-"))) (provide 'popup-autoloads)) "posframe" ((posframe-autoloads posframe) (autoload 'posframe-workable-p "posframe" "Test posframe workable status." nil nil) (autoload 'posframe-show "posframe" "Pop up a posframe and show STRING at POSITION.
+
+POSITION can be:
+1. An integer, meaning point position.
+2. A cons of two integers, meaning absolute X and Y coordinates.
+3. Other type, in which case the corresponding POSHANDLER should be
+   provided.
+
+POSHANDLER is a function of one argument returning an actual
+position.  Its argument is a plist of the following form:
+
+  (:position xxx
+   :position-info xxx
+   :poshandler xxx
+   :font-height xxx
+   :font-width xxx
+   :posframe xxx
+   :posframe-width xxx
+   :posframe-height xxx
+   :posframe-buffer xxx
+   :parent-frame xxx
+   :parent-window-left xxx
+   :parent-window-top xxx
+   :parent-frame-width xxx
+   :parent-frame-height xxx
+   :parent-window xxx
+   :parent-window-width  xxx
+   :parent-window-height xxx
+   :minibuffer-height xxx
+   :mode-line-height  xxx
+   :header-line-height xxx
+   :tab-line-height xxx
+   :x-pixel-offset xxx
+   :y-pixel-offset xxx)
+
+By default, poshandler is auto-selected based on the type of POSITION,
+but the selection can be overridden using the POSHANDLER argument.
+The builtin poshandler functions are listed below:
+
+1.  `posframe-poshandler-frame-center'
+2.  `posframe-poshandler-frame-top-center'
+3.  `posframe-poshandler-frame-top-left-corner'
+4.  `posframe-poshandler-frame-top-right-corner'
+5.  `posframe-poshandler-frame-bottom-center'
+6.  `posframe-poshandler-frame-bottom-left-corner'
+7.  `posframe-poshandler-frame-bottom-right-corner'
+8.  `posframe-poshandler-window-center'
+9.  `posframe-poshandler-window-top-center'
+10. `posframe-poshandler-window-top-left-corner'
+11. `posframe-poshandler-window-top-right-corner'
+12. `posframe-poshandler-window-bottom-center'
+13. `posframe-poshandler-window-bottom-left-corner'
+14. `posframe-poshandler-window-bottom-right-corner'
+15. `posframe-poshandler-point-top-left-corner'
+16. `posframe-poshandler-point-bottom-left-corner'
+17. `posframe-poshandler-point-bottom-left-corner-upward'
+18. `posframe-poshandler-point-window-center'
+
+by the way, poshandler can be used by other packages easily
+(for example: mini-frame) with the help of function
+`posframe-poshandler-argbuilder'. like:
+
+   (let* ((info (posframe-poshandler-argbuilder child-frame))
+          (posn (posframe-poshandler-window-center info)))
+     `((left . ,(car posn))
+       (top . ,(cdr posn))))
+
+This posframe's buffer is BUFFER-OR-NAME, which can be a buffer
+or a name of a (possibly nonexistent) buffer.
+
+If NO-PROPERTIES is non-nil, The STRING's properties will
+be removed before being shown in posframe.
+
+WIDTH, MIN-WIDTH, HEIGHT and MIN-HEIGHT, specify bounds on the
+new total size of posframe.  MIN-HEIGHT and MIN-WIDTH default to
+the values of \342\200\230window-min-height\342\200\231 and \342\200\230window-min-width\342\200\231
+respectively.  These arguments are specified in the canonical
+character width and height of posframe.
+
+If LEFT-FRINGE or RIGHT-FRINGE is a number, left fringe or
+right fringe with be shown with the specified width.
+
+By default, posframe shows no borders, but users can specify
+borders by setting BORDER-WIDTH to a positive number.  Border
+color can be specified by BORDER-COLOR.
+
+INTERNAL-BORDER-WIDTH and INTERNAL-BORDER-COLOR are same as
+BORDER-WIDTH and INTERNAL-BORDER-COLOR, but do not suggest to use
+for the reason:
+
+   Add distinct controls for child frames' borders (Bug#45620)
+   http://git.savannah.gnu.org/cgit/emacs.git/commit/?id=ff7b1a133bfa7f2614650f8551824ffaef13fadc
+
+Posframe's font as well as foreground and background colors are
+derived from the current frame by default, but can be overridden
+using the FONT, FOREGROUND-COLOR and BACKGROUND-COLOR arguments,
+respectively.
+
+By default, posframe will display no header-line, mode-line and
+tab-line.  In case a header-line, mode-line or tab-line is
+desired, users can set RESPECT-HEADER-LINE and RESPECT-MODE-LINE
+to t.
+
+INITIALIZE is a function with no argument.  It will run when
+posframe buffer is first selected with `with-current-buffer'
+in `posframe-show', and only run once (for performance reasons).
+
+If LINES-TRUNCATE is non-nil, then lines will truncate in the
+posframe instead of wrap.
+
+OVERRIDE-PARAMETERS is very powful, *all* the frame parameters
+used by posframe's frame can be overridden by it.
+
+TIMEOUT can specify the number of seconds after which the posframe
+will auto-hide.
+
+If REFRESH is a number, posframe's frame-size will be re-adjusted
+every REFRESH seconds.
+
+When ACCEPT-FOCUS is non-nil, posframe will accept focus.
+be careful, you may face some bugs when set it to non-nil.
+
+HIDEHANDLER is a function, when it return t, posframe will be
+hide when `post-command-hook' is executed, this function has a
+plist argument:
+
+  (:posframe-buffer xxx
+   :posframe-parent-buffer xxx)
+
+The builtin hidehandler functions are listed below:
+
+1. `posframe-hidehandler-when-buffer-switch'
+
+
+You can use `posframe-delete-all' to delete all posframes.
+
+(fn BUFFER-OR-NAME &key STRING POSITION POSHANDLER WIDTH HEIGHT MIN-WIDTH MIN-HEIGHT X-PIXEL-OFFSET Y-PIXEL-OFFSET LEFT-FRINGE RIGHT-FRINGE BORDER-WIDTH BORDER-COLOR INTERNAL-BORDER-WIDTH INTERNAL-BORDER-COLOR FONT FOREGROUND-COLOR BACKGROUND-COLOR RESPECT-HEADER-LINE RESPECT-MODE-LINE INITIALIZE NO-PROPERTIES KEEP-RATIO LINES-TRUNCATE OVERRIDE-PARAMETERS TIMEOUT REFRESH ACCEPT-FOCUS HIDEHANDLER &allow-other-keys)" nil nil) (autoload 'posframe-hide-all "posframe" "Hide all posframe frames." t nil) (autoload 'posframe-delete-all "posframe" "Delete all posframe frames and buffers." t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "posframe" '("posframe-"))) (provide 'posframe-autoloads)) "company" ((company company-semantic company-elisp company-bbdb company-abbrev company-tempo company-etags company-capf company-ispell company-yasnippet company-oddmuse company-template company-files company-gtags company-keywords company-tng company-cmake company-autoloads company-clang company-nxml company-dabbrev-code company-dabbrev company-css) (autoload 'company-mode "company" "\"complete anything\"; is an in-buffer completion framework.
+Completion starts automatically, depending on the values
+`company-idle-delay' and `company-minimum-prefix-length'.
+
+If called interactively, enable Company mode if ARG is positive,
+and disable it if ARG is zero or negative.  If called from Lisp,
+also enable the mode if ARG is omitted or nil, and toggle it if
+ARG is `toggle'; disable the mode otherwise.
+
+Completion can be controlled with the commands:
+`company-complete-common', `company-complete-selection', `company-complete',
+`company-select-next', `company-select-previous'.  If these commands are
+called before `company-idle-delay', completion will also start.
+
+Completions can be searched with `company-search-candidates' or
+`company-filter-candidates'.  These can be used while completion is
+inactive, as well.
+
+The completion data is retrieved using `company-backends' and displayed
+using `company-frontends'.  If you want to start a specific backend, call
+it interactively or use `company-begin-backend'.
+
+By default, the completions list is sorted alphabetically, unless the
+backend chooses otherwise, or `company-transformers' changes it later.
+
+regular keymap (`company-mode-map'):
+
+\\{company-mode-map}
+keymap during active completions (`company-active-map'):
+
+\\{company-active-map}
+
+(fn &optional ARG)" t nil) (put 'global-company-mode 'globalized-minor-mode t) (defvar global-company-mode nil "Non-nil if Global Company mode is enabled.
+See the `global-company-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `global-company-mode'.") (custom-autoload 'global-company-mode "company" nil) (autoload 'global-company-mode "company" "Toggle Company mode in all buffers.
+With prefix ARG, enable Global Company mode if ARG is positive;
+otherwise, disable it.  If called from Lisp, enable the mode if
+ARG is omitted or nil.
+
+Company mode is enabled in all buffers where
+`company-mode-on' would do it.
+See `company-mode' for more information on Company mode.
+
+(fn &optional ARG)" t nil) (autoload 'company-manual-begin "company" nil t nil) (autoload 'company-complete "company" "Insert the common part of all candidates or the current selection.
+The first time this is called, the common part is inserted, the second
+time, or when the selection has been changed, the selected candidate is
+inserted." t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company" '("company-"))) (autoload 'company-abbrev "company-abbrev" "`company-mode' completion backend for abbrev.
+
+(fn COMMAND &optional ARG &rest IGNORED)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-abbrev" '("company-abbrev-insert"))) (autoload 'company-bbdb "company-bbdb" "`company-mode' completion backend for BBDB.
+
+(fn COMMAND &optional ARG &rest IGNORE)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-bbdb" '("company-bbdb-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-capf" '("company-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-clang" '("company-clang"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-cmake" '("company-cmake"))) (autoload 'company-css "company-css" "`company-mode' completion backend for `css-mode'.
+
+(fn COMMAND &optional ARG &rest IGNORED)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-css" '("company-css-"))) (autoload 'company-dabbrev "company-dabbrev" "dabbrev-like `company-mode' completion backend.
+
+(fn COMMAND &optional ARG &rest IGNORED)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-dabbrev" '("company-dabbrev-"))) (autoload 'company-dabbrev-code "company-dabbrev-code" "dabbrev-like `company-mode' backend for code.
+The backend looks for all symbols in the current buffer that aren't in
+comments or strings.
+
+(fn COMMAND &optional ARG &rest IGNORED)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-dabbrev-code" '("company-dabbrev-code-"))) (autoload 'company-elisp "company-elisp" "`company-mode' completion backend for Emacs Lisp.
+
+(fn COMMAND &optional ARG &rest IGNORED)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-elisp" '("company-elisp-"))) (autoload 'company-etags "company-etags" "`company-mode' completion backend for etags.
+
+(fn COMMAND &optional ARG &rest IGNORED)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-etags" '("company-etags-"))) (autoload 'company-files "company-files" "`company-mode' completion backend existing file names.
+Completions works for proper absolute and relative files paths.
+File paths with spaces are only supported inside strings.
+
+(fn COMMAND &optional ARG &rest IGNORED)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-files" '("company-file"))) (autoload 'company-gtags "company-gtags" "`company-mode' completion backend for GNU Global.
+
+(fn COMMAND &optional ARG &rest IGNORED)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-gtags" '("company-gtags-"))) (autoload 'company-ispell "company-ispell" "`company-mode' completion backend using Ispell.
+
+(fn COMMAND &optional ARG &rest IGNORED)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-ispell" '("company-ispell-"))) (autoload 'company-keywords "company-keywords" "`company-mode' backend for programming language keywords.
+
+(fn COMMAND &optional ARG &rest IGNORED)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-keywords" '("company-keywords-"))) (autoload 'company-nxml "company-nxml" "`company-mode' completion backend for `nxml-mode'.
+
+(fn COMMAND &optional ARG &rest IGNORED)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-nxml" '("company-nxml-"))) (autoload 'company-oddmuse "company-oddmuse" "`company-mode' completion backend for `oddmuse-mode'.
+
+(fn COMMAND &optional ARG &rest IGNORED)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-oddmuse" '("company-oddmuse-"))) (autoload 'company-semantic "company-semantic" "`company-mode' completion backend using CEDET Semantic.
+
+(fn COMMAND &optional ARG &rest IGNORED)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-semantic" '("company-semantic-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-template" '("company-template-"))) (autoload 'company-tempo "company-tempo" "`company-mode' completion backend for tempo.
+
+(fn COMMAND &optional ARG &rest IGNORED)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-tempo" '("company-tempo-"))) (autoload 'company-tng-frontend "company-tng" "When the user changes the selection at least once, this
+frontend will display the candidate in the buffer as if it's
+already there and any key outside of `company-active-map' will
+confirm the selection and finish the completion.
+
+(fn COMMAND)" nil nil) (define-obsolete-function-alias 'company-tng-configure-default 'company-tng-mode "0.9.14" "Applies the default configuration to enable company-tng.") (defvar company-tng-mode nil "Non-nil if Company-Tng mode is enabled.
+See the `company-tng-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `company-tng-mode'.") (custom-autoload 'company-tng-mode "company-tng" nil) (autoload 'company-tng-mode "company-tng" "This minor mode enables `company-tng-frontend'.
+
+If called interactively, enable Company-Tng mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+(fn &optional ARG)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-tng" '("company-tng-"))) (autoload 'company-yasnippet "company-yasnippet" "`company-mode' backend for `yasnippet'.
+
+This backend should be used with care, because as long as there are
+snippets defined for the current major mode, this backend will always
+shadow backends that come after it.  Recommended usages:
+
+* In a buffer-local value of `company-backends', grouped with a backend or
+  several that provide actual text completions.
+
+  (add-hook \\='js-mode-hook
+            (lambda ()
+              (set (make-local-variable \\='company-backends)
+                   \\='((company-dabbrev-code company-yasnippet)))))
+
+* After keyword `:with', grouped with other backends.
+
+  (push \\='(company-semantic :with company-yasnippet) company-backends)
+
+* Not in `company-backends', just bound to a key.
+
+  (global-set-key (kbd \"C-c y\") \\='company-yasnippet)
+
+(fn COMMAND &optional ARG &rest IGNORE)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "company-yasnippet" '("company-yasnippet-"))) (provide 'company-autoloads)) "bm" ((bm-sync bm-autoloads bm) (autoload 'bm-toggle "bm" "Toggle bookmark at point." t nil) (autoload 'bm-toggle-mouse "bm" "Toggle a bookmark with a mouse click.
+EV is the mouse event.
+
+(fn EV)" t nil) (autoload 'bm-lifo-previous "bm" "Goto previous bookmark in LIFO order . (that is, most
+recently set ones come first, oldest ones come last)" t nil) (autoload 'bm-lifo-next "bm" "Goto next bookmark in LIFO order .(that is, most
+recently set ones come first, oldest ones come last)" t nil) (autoload 'bm-next "bm" nil t nil) (autoload 'bm-common-next "bm" "Goto next bookmark." t nil) (autoload 'bm-next-mouse "bm" "Go to the next bookmark with the scroll wheel.
+EV is the mouse event.
+
+(fn EV)" t nil) (autoload 'bm-previous "bm" nil t nil) (autoload 'bm-common-previous "bm" "Goto previous bookmark." t nil) (autoload 'bm-previous-mouse "bm" "Go to the previous bookmark with the scroll wheel.
+EV is the mouse event.
+
+(fn EV)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "bm" '("bm-" "temporary-bookmark-p"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "bm-sync" '("bm-bookmark-"))) (provide 'bm-autoloads)) "free-keys" ((free-keys free-keys-autoloads) (autoload 'free-keys "free-keys" "Display free keys in current buffer.
+
+A free key is a key that has no associated key-binding as
+determined by function `key-binding'.
+
+By default, keys on `free-keys-keys' list with no prefix sequence
+are considered, possibly together with modifier keys from
+`free-keys-modifiers'.  You can change the prefix sequence by
+hitting 'p' in the *Free keys* buffer.  Prefix is supplied in
+format recognized by `kbd', for example \"C-x\".
+
+(fn &optional PREFIX BUFFER)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "free-keys" '("free-keys-"))) (provide 'free-keys-autoloads)) "deft" ((deft-autoloads deft) (autoload 'deft-find-file "deft" "Find FILE interactively using the minibuffer.
+FILE must exist and be a relative or absolute path, with extension.
+If FILE is not inside `deft-directory', fall back to using `find-file'.
+
+(fn FILE)" t nil) (autoload 'deft-new-file "deft" "Create a new file quickly.
+Use either an automatically generated filename or the filter string if non-nil
+and `deft-use-filter-string-for-filename' is set.  If the filter string is
+non-nil and title is not from filename, use it as the title." t nil) (autoload 'deft "deft" "Switch to *Deft* buffer and load files." t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "deft" '("deft-" "org-deft-store-link"))) (provide 'deft-autoloads)) "outorg" ((outorg-autoloads outorg) (autoload 'outorg-edit-as-org "outorg" "Convert and copy to temporary Org buffer
+
+With ARG, act conditional on the raw value of ARG:
+
+| prefix | raw | action 1          | action 2                       |
+|--------+-----+-------------------+--------------------------------|
+| C-u    | (4) | edit-whole-buffer | ---                            |
+| C-1    |   1 | edit-whole-buffer | insert default export-template |
+| C-2    |   2 | edit-whole-buffer | prompt user for template-file  |
+| C-3    |   3 | edit-whole-buffer | insert & keep default template |
+| C-4    |   4 | edit-whole-buffer | insert & keep template-file    |
+| C-5    |   5 | propagate changes | ---                            |
+
+(fn &optional ARG)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "outorg" '("backward-line-comments" "forward-line-comments" "out" "skip-line-comment-or-ws"))) (provide 'outorg-autoloads)) "outshine" ((outshine outshine-org-cmds outshine-autoloads) (autoload 'outshine-mode "outshine" "Outshine brings the look&feel of Org-mode to the (GNU Emacs)
+world outside of the Org major-mode.
+
+If called interactively, enable Outshine mode if ARG is positive,
+and disable it if ARG is zero or negative.  If called from Lisp,
+also enable the mode if ARG is omitted or nil, and toggle it if
+ARG is `toggle'; disable the mode otherwise.
+
+(fn &optional ARG)" t nil) (autoload 'outshine-hook-function "outshine" "DEPRECATED, use `outshine-mode'." nil nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "outshine" '("outshine-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "outshine-org-cmds" '("outshine-"))) (provide 'outshine-autoloads)) "outline-minor-faces" ((outline-minor-faces-autoloads outline-minor-faces) (autoload 'outline-minor-faces-add-font-lock-keywords "outline-minor-faces" nil nil nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "outline-minor-faces" '("outline-minor-faces"))) (provide 'outline-minor-faces-autoloads)) "backline" ((backline backline-autoloads) (autoload 'backline-update "backline" "When hidings, add an overlay to extend header's appearance to window edge.
+
+(fn FROM TO HIDE)" nil nil) (provide 'backline-autoloads)) "bicycle" ((bicycle-autoloads bicycle) (autoload 'bicycle-cycle "bicycle" "Cycle local or global visibility.
+
+With a prefix argument call `bicycle-cycle-global'.
+Without a prefix argument call `bicycle-cycle-local'.
+
+(fn &optional GLOBAL)" t nil) (autoload 'bicycle-cycle-global "bicycle" "Cycle visibility of all sections.
+
+1. OVERVIEW: Show only top-level heading.
+2. TOC:      Show all headings, without treating top-level
+             code blocks as sections.
+3. TREES:    Show all headings, treaing top-level code blocks
+             as sections (i.e. their first line is treated as
+             a heading).
+4. ALL:      Show everything, except code blocks that have been
+             collapsed individually (using a `hideshow' command
+             or function)." t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "bicycle" '("bicycle-" "outline-code-level"))) (provide 'bicycle-autoloads)) "outline-magic" ((outline-magic-autoloads outline-magic) (autoload 'outline-cycle "outline-magic" "Visibility cycling for outline(-minor)-mode.
+
+- When point is at the beginning of the buffer, or when called with a
+  C-u prefix argument, rotate the entire buffer through 3 states:
+  1. OVERVIEW: Show only top-level headlines.
+  2. CONTENTS: Show all headlines of all levels, but no body text.
+  3. SHOW ALL: Show everything.
+
+- When point is at the beginning of a headline, rotate the subtree started
+  by this line through 3 different states:
+  1. FOLDED:   Only the main headline is shown.
+  2. CHILDREN: The main headline and the direct children are shown.  From
+               this state, you can move to one of the children and
+               zoom in further.
+  3. SUBTREE:  Show the entire subtree, including body text.
+
+- When point is not at the beginning of a headline, execute
+  `indent-relative', like TAB normally does.
+
+(fn &optional ARG)" t nil) (autoload 'outline-next-line "outline-magic" "Forward line, but mover over invisible line ends.
+Essentially a much simplified version of `next-line'." t nil) (autoload 'outline-move-subtree-up "outline-magic" "Move the currrent subtree up past ARG headlines of the same level.
+
+(fn &optional ARG)" t nil) (autoload 'outline-move-subtree-down "outline-magic" "Move the currrent subtree down past ARG headlines of the same level.
+
+(fn &optional ARG)" t nil) (autoload 'outline-promote "outline-magic" "Decrease the level of an outline-structure by ARG levels.
+When the region is active in transient-mark-mode, all headlines in the
+region are changed.  Otherwise the current subtree is targeted. Note that
+after each application of the command the scope of \"current subtree\"
+may have changed.
+
+(fn &optional ARG)" t nil) (autoload 'outline-demote "outline-magic" "Increase the level of an outline-structure by ARG levels.
+When the region is active in transient-mark-mode, all headlines in the
+region are changed.  Otherwise the current subtree is targeted. Note that
+after each application of the command the scope of \"current subtree\"
+may have changed.
+
+(fn &optional ARG)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "outline-magic" '("outline-"))) (provide 'outline-magic-autoloads)) "outline-toc" ((outline-toc-autoloads outline-toc) (defvar outline-toc-mode nil "Non-nil if Outline-Toc mode is enabled.
+See the `outline-toc-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `outline-toc-mode'.") (custom-autoload 'outline-toc-mode "outline-toc" nil) (autoload 'outline-toc-mode "outline-toc" "Toggle outline-toc mode.
+
+If called interactively, enable Outline-Toc mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+(fn &optional ARG)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "outline-toc" '("outline-toc-"))) (provide 'outline-toc-autoloads)) "doom-themes" ((doom-themes-ext-org doom-nord-theme doom-flatwhite-theme doom-solarized-dark-theme doom-Iosvkem-theme doom-rouge-theme doom-themes doom-oceanic-next-theme doom-monokai-classic-theme doom-opera-theme doom-fairy-floss-theme doom-themes-autoloads doom-themes-ext-visual-bell doom-plain-theme doom-dracula-theme doom-wilmersdorf-theme doom-vibrant-theme doom-one-light-theme doom-gruvbox-theme doom-themes-ext-neotree doom-homage-white-theme doom-miramare-theme doom-old-hope-theme doom-dark+-theme doom-challenger-deep-theme doom-laserwave-theme doom-material-theme doom-monokai-pro-theme doom-nova-theme doom-sourcerer-theme doom-themes-ext-treemacs doom-one-theme doom-tomorrow-night-theme doom-ayu-light-theme doom-molokai-theme doom-solarized-light-theme doom-horizon-theme doom-zenburn-theme doom-peacock-theme doom-themes-base doom-palenight-theme doom-acario-light-theme doom-opera-light-theme doom-nord-light-theme doom-manegarm-theme doom-ephemeral-theme doom-outrun-electric-theme doom-homage-black-theme doom-monokai-spectrum-theme doom-city-lights-theme doom-moonlight-theme doom-gruvbox-light-theme doom-henna-theme doom-tomorrow-day-theme doom-acario-dark-theme doom-spacegrey-theme doom-snazzy-theme doom-ayu-mirage-theme doom-plain-dark-theme) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-Iosvkem-theme" '("doom-Iosvkem"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-acario-dark-theme" '("doom-acario-dark"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-acario-light-theme" '("doom-acario-light"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-ayu-light-theme" '("doom-ayu-light"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-ayu-mirage-theme" '("doom-ayu-mirage"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-challenger-deep-theme" '("doom-challenger-deep"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-city-lights-theme" '("doom-city-lights"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-dark+-theme" '("doom-dark+"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-dracula-theme" '("doom-dracula"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-ephemeral-theme" '("doom-ephemeral"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-fairy-floss-theme" '("doom-fairy-floss"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-flatwhite-theme" '("doom-f"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-gruvbox-light-theme" '("doom-gruvbox-light"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-gruvbox-theme" '("doom-gruvbox"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-henna-theme" '("doom-henna"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-homage-black-theme" '("doom-homage-black"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-homage-white-theme" '("doom-homage-white"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-horizon-theme" '("doom-horizon"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-laserwave-theme" '("doom-laserwave"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-manegarm-theme" '("doom-manegarm"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-material-theme" '("doom-material"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-miramare-theme" '("doom-miramare"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-molokai-theme" '("doom-molokai"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-monokai-classic-theme" '("doom-monokai-classic"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-monokai-pro-theme" '("doom-monokai-pro"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-monokai-spectrum-theme" '("doom-monokai-spectrum"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-moonlight-theme" '("doom-moonlight"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-nord-light-theme" '("doom-nord-light"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-nord-theme" '("doom-nord"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-nova-theme" '("doom-nova"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-oceanic-next-theme" '("doom-oceanic-next"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-old-hope-theme" '("doom-old-hope"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-one-light-theme" '("doom-one-light"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-one-theme" '("doom-one"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-opera-light-theme" '("doom-opera-light"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-opera-theme" '("doom-opera"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-outrun-electric-theme" '("doom-outrun-electric"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-palenight-theme" '("doom-palenight"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-peacock-theme" '("doom-peacock"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-plain-dark-theme" '("doom-plain-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-plain-theme" '("doom-plain"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-rouge-theme" '("doom-rouge"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-snazzy-theme" '("doom-snazzy"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-solarized-dark-theme" '("doom-solarized-dark"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-solarized-light-theme" '("doom-solarized-light"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-sourcerer-theme" '("doom-sourcerer"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-spacegrey-theme" '("doom-spacegrey"))) (autoload 'doom-name-to-rgb "doom-themes" "Retrieves the hexidecimal string repesented the named COLOR (e.g. \"red\")
+for FRAME (defaults to the current frame).
+
+(fn COLOR)" nil nil) (autoload 'doom-blend "doom-themes" "Blend two colors (hexidecimal strings) together by a coefficient ALPHA (a
+float between 0 and 1)
+
+(fn COLOR1 COLOR2 ALPHA)" nil nil) (autoload 'doom-darken "doom-themes" "Darken a COLOR (a hexidecimal string) by a coefficient ALPHA (a float between
+0 and 1).
+
+(fn COLOR ALPHA)" nil nil) (autoload 'doom-lighten "doom-themes" "Brighten a COLOR (a hexidecimal string) by a coefficient ALPHA (a float
+between 0 and 1).
+
+(fn COLOR ALPHA)" nil nil) (autoload 'doom-color "doom-themes" "Retrieve a specific color named NAME (a symbol) from the current theme.
+
+(fn NAME &optional TYPE)" nil nil) (autoload 'doom-ref "doom-themes" "TODO
+
+(fn FACE PROP &optional CLASS)" nil nil) (autoload 'doom-themes-set-faces "doom-themes" "Customize THEME (a symbol) with FACES.
+
+If THEME is nil, it applies to all themes you load. FACES is a list of Doom
+theme face specs. These is a simplified spec. For example:
+
+  (doom-themes-set-faces 'user
+    '(default :background red :foreground blue)
+    '(doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+    '(doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
+    '(doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
+    '(doom-modeline-buffer-project-root :foreground green :weight 'bold))
+
+(fn THEME &rest FACES)" nil nil) (function-put 'doom-themes-set-faces 'lisp-indent-function 'defun) (when (and (boundp 'custom-theme-load-path) load-file-name) (let* ((base (file-name-directory load-file-name)) (dir (expand-file-name "themes/" base))) (add-to-list 'custom-theme-load-path (or (and (file-directory-p dir) dir) base)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-themes" '("def-doom-theme" "doom-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-themes-base" '("doom-themes-base-"))) (autoload 'doom-themes-neotree-config "doom-themes-ext-neotree" "Install doom-themes' neotree configuration.
+
+Includes an Atom-esque icon theme and highlighting based on filetype." nil nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-themes-ext-neotree" '("doom-"))) (autoload 'doom-themes-org-config "doom-themes-ext-org" "Load `doom-themes-ext-org'." nil nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-themes-ext-org" '("doom-themes-"))) (autoload 'doom-themes-treemacs-config "doom-themes-ext-treemacs" "Install doom-themes' treemacs configuration.
+
+Includes an Atom-esque icon theme and highlighting based on filetype." nil nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-themes-ext-treemacs" '("doom-themes-"))) (autoload 'doom-themes-visual-bell-fn "doom-themes-ext-visual-bell" "Blink the mode-line red briefly. Set `ring-bell-function' to this to use it." nil nil) (autoload 'doom-themes-visual-bell-config "doom-themes-ext-visual-bell" "Enable flashing the mode-line on error." nil nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-tomorrow-day-theme" '("doom-tomorrow-day"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-tomorrow-night-theme" '("doom-tomorrow-night"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-vibrant-theme" '("doom-vibrant"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-wilmersdorf-theme" '("doom-wilmersdorf"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-zenburn-theme" '("doom-zenburn"))) (provide 'doom-themes-autoloads)) "shrink-path" ((shrink-path shrink-path-autoloads) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "shrink-path" '("shrink-path-"))) (provide 'shrink-path-autoloads)) "doom-modeline" ((doom-modeline doom-modeline-env doom-modeline-autoloads doom-modeline-core doom-modeline-segments) (autoload 'doom-modeline-init "doom-modeline" "Initialize doom mode-line." nil nil) (autoload 'doom-modeline-set-main-modeline "doom-modeline" "Set main mode-line.
+If DEFAULT is non-nil, set the default mode-line for all buffers.
+
+(fn &optional DEFAULT)" nil nil) (autoload 'doom-modeline-set-minimal-modeline "doom-modeline" "Set minimal mode-line." nil nil) (autoload 'doom-modeline-set-special-modeline "doom-modeline" "Set sepcial mode-line." nil nil) (autoload 'doom-modeline-set-project-modeline "doom-modeline" "Set project mode-line." nil nil) (autoload 'doom-modeline-set-dashboard-modeline "doom-modeline" "Set dashboard mode-line." nil nil) (autoload 'doom-modeline-set-vcs-modeline "doom-modeline" "Set vcs mode-line." nil nil) (autoload 'doom-modeline-set-info-modeline "doom-modeline" "Set Info mode-line." nil nil) (autoload 'doom-modeline-set-package-modeline "doom-modeline" "Set package mode-line." nil nil) (autoload 'doom-modeline-set-media-modeline "doom-modeline" "Set media mode-line." nil nil) (autoload 'doom-modeline-set-message-modeline "doom-modeline" "Set message mode-line." nil nil) (autoload 'doom-modeline-set-pdf-modeline "doom-modeline" "Set pdf mode-line." nil nil) (autoload 'doom-modeline-set-org-src-modeline "doom-modeline" "Set org-src mode-line." nil nil) (autoload 'doom-modeline-set-helm-modeline "doom-modeline" "Set helm mode-line.
+
+(fn &rest _)" nil nil) (autoload 'doom-modeline-set-timemachine-modeline "doom-modeline" "Set timemachine mode-line." nil nil) (defvar doom-modeline-mode nil "Non-nil if Doom-Modeline mode is enabled.
+See the `doom-modeline-mode' command
+for a description of this minor mode.
+Setting this variable directly does not take effect;
+either customize it (see the info node `Easy Customization')
+or call the function `doom-modeline-mode'.") (custom-autoload 'doom-modeline-mode "doom-modeline" nil) (autoload 'doom-modeline-mode "doom-modeline" "Toggle doom-modeline on or off.
+
+If called interactively, enable Doom-Modeline mode if ARG is
+positive, and disable it if ARG is zero or negative.  If called
+from Lisp, also enable the mode if ARG is omitted or nil, and
+toggle it if ARG is `toggle'; disable the mode otherwise.
+
+(fn &optional ARG)" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-modeline" '("doom-modeline-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-modeline-core" '("doom-modeline"))) (autoload 'doom-modeline-env-setup-python "doom-modeline-env") (autoload 'doom-modeline-env-setup-ruby "doom-modeline-env") (autoload 'doom-modeline-env-setup-perl "doom-modeline-env") (autoload 'doom-modeline-env-setup-go "doom-modeline-env") (autoload 'doom-modeline-env-setup-elixir "doom-modeline-env") (autoload 'doom-modeline-env-setup-rust "doom-modeline-env") (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-modeline-env" '("doom-modeline-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "doom-modeline-segments" '("doom-modeline-"))) (provide 'doom-modeline-autoloads)) "color-theme-modern" ((lawrence-theme goldenrod-theme dark-gnus-theme julie-theme aalto-dark-theme blue-gnus-theme dark-info-theme pierson-theme infodoc-theme word-perfect-theme color-theme-modern-autoloads dark-erc-theme fischmeister-theme blue-mood-theme ld-dark-theme late-night-theme oswald-theme rotor-theme robin-hood-theme greiner-theme feng-shui-theme whateveryouwant-theme aliceblue-theme jb-simple-theme black-on-gray-theme jedit-grey-theme vim-colors-theme matrix-theme blue-sea-theme montz-theme blue-eshell-theme emacs-nw-theme raspopovic-theme retro-green-theme snow-theme pok-wog-theme simple-1-theme jsc-dark-theme jsc-light-theme jsc-light2-theme cobalt-theme marine-theme mistyday-theme arjen-theme bharadwaj-slate-theme euphoria-theme clarity-theme midnight-theme desert-theme gray30-theme renegade-theme calm-forest-theme andreas-theme xemacs-theme ramangalahy-theme katester-theme railscast-theme scintilla-theme kingsajz-theme gray1-theme retro-orange-theme dark-green-theme taming-mr-arneson-theme color-theme-modern-pkg snowish-theme wheat-theme pok-wob-theme beige-eshell-theme deep-blue-theme gnome2-theme salmon-diff-theme subtle-blue-theme shaman-theme sitaramv-nt-theme tty-dark-theme subdued-theme dark-blue2-theme xp-theme marquardt-theme comidia-theme parus-theme charcoal-black-theme billw-theme taylor-theme resolve-theme blue-erc-theme standard-ediff-theme blippblopp-theme classic-theme ryerson-theme hober-theme color-theme-modern lethe-theme sitaramv-solaris-theme dark-blue-theme jonadabian-theme beige-diff-theme gtk-ide-theme emacs-21-theme salmon-font-lock-theme subtle-hacker-theme dark-laptop-theme digital-ofs1-theme gnome-theme jonadabian-slate-theme standard-theme aalto-light-theme high-contrast-theme bharadwaj-theme dark-font-lock-theme) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "aalto-dark-theme" '("aalto-dark"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "aalto-light-theme" '("aalto-light"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "aliceblue-theme" '("aliceblue"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "andreas-theme" '("andreas"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "arjen-theme" '("arjen"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "beige-diff-theme" '("beige-diff"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "beige-eshell-theme" '("beige-eshell"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "bharadwaj-slate-theme" '("bharadwaj-slate"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "bharadwaj-theme" '("bharadwaj"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "billw-theme" '("billw"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "black-on-gray-theme" '("black-on-gray"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "blippblopp-theme" '("blippblopp"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "blue-erc-theme" '("blue-erc"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "blue-eshell-theme" '("blue-eshell"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "blue-gnus-theme" '("blue-gnus"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "blue-mood-theme" '("blue-mood"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "blue-sea-theme" '("blue-sea"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "calm-forest-theme" '("calm-forest"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "charcoal-black-theme" '("charcoal-black"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "clarity-theme" '("clarity"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "classic-theme" '("classic"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "cobalt-theme" '("cobalt"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "comidia-theme" '("comidia"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "dark-blue-theme" '("dark-blue"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "dark-blue2-theme" '("dark-blue2"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "dark-erc-theme" '("dark-erc"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "dark-font-lock-theme" '("dark-font-lock"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "dark-gnus-theme" '("dark-gnus"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "dark-green-theme" '("dark-green"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "dark-info-theme" '("dark-info"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "dark-laptop-theme" '("dark-laptop"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "deep-blue-theme" '("deep-blue"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "desert-theme" '("desert"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "digital-ofs1-theme" '("digital-ofs1"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "emacs-21-theme" '("emacs-21"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "emacs-nw-theme" '("emacs-nw"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "euphoria-theme" '("euphoria"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "feng-shui-theme" '("feng-shui"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "fischmeister-theme" '("fischmeister"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "gnome-theme" '("gnome"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "gnome2-theme" '("gnome2"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "goldenrod-theme" '("goldenrod"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "gray1-theme" '("gray1"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "gray30-theme" '("gray30"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "greiner-theme" '("greiner"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "gtk-ide-theme" '("gtk-ide"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "high-contrast-theme" '("high-contrast"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "hober-theme" '("hober"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "infodoc-theme" '("infodoc"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "jb-simple-theme" '("jb-simple"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "jedit-grey-theme" '("jedit-grey"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "jonadabian-slate-theme" '("jonadabian-slate"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "jonadabian-theme" '("jonadabian"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "jsc-dark-theme" '("jsc-dark"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "jsc-light-theme" '("jsc-light"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "jsc-light2-theme" '("jsc-light2"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "julie-theme" '("julie"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "katester-theme" '("katester"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "kingsajz-theme" '("kingsajz"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "late-night-theme" '("late-night"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lawrence-theme" '("lawrence"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ld-dark-theme" '("ld-dark"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lethe-theme" '("lethe"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "marine-theme" '("marine"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "marquardt-theme" '("marquardt"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "matrix-theme" '("matrix"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "midnight-theme" '("midnight"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "mistyday-theme" '("mistyday"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "montz-theme" '("montz"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "oswald-theme" '("oswald"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "parus-theme" '("parus"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "pierson-theme" '("pierson"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "pok-wob-theme" '("pok-wob"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "pok-wog-theme" '("pok-wog"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "railscast-theme" '("railscast"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ramangalahy-theme" '("ramangalahy"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "raspopovic-theme" '("raspopovic"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "renegade-theme" '("renegade"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "resolve-theme" '("resolve"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "retro-green-theme" '("retro-green"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "retro-orange-theme" '("retro-orange"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "robin-hood-theme" '("robin-hood"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "rotor-theme" '("rotor"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ryerson-theme" '("ryerson"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "salmon-diff-theme" '("salmon-diff"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "salmon-font-lock-theme" '("salmon-font-lock"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "scintilla-theme" '("scintilla"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "shaman-theme" '("shaman"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "simple-1-theme" '("simple-1"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "sitaramv-nt-theme" '("sitaramv-nt"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "sitaramv-solaris-theme" '("sitaramv-solaris"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "snow-theme" '("snow"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "snowish-theme" '("snowish"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "standard-ediff-theme" '("standard-ediff"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "standard-theme" '("standard"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "subdued-theme" '("subdued"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "subtle-blue-theme" '("subtle-blue"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "subtle-hacker-theme" '("subtle-hacker"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "taming-mr-arneson-theme" '("taming-mr-arneson"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "taylor-theme" '("taylor"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "tty-dark-theme" '("tty-dark"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "vim-colors-theme" '("vim-colors"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "whateveryouwant-theme" '("whateveryouwant"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "wheat-theme" '("wheat"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "word-perfect-theme" '("word-perfect"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "xemacs-theme" '("xemacs"))) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "xp-theme" 'nil)) (provide 'color-theme-modern-autoloads)) "theme-looper" ((theme-looper-autoloads theme-looper) (autoload 'theme-looper-set-favorite-themes "theme-looper" "Sets the list of color-themes to cycle thru
+
+(fn THEMES)" nil nil) (autoload 'theme-looper-set-favorite-themes-regexp "theme-looper" "Sets the list of color-themes to cycle thru, matching a regular expression
+
+(fn REGEXP)" nil nil) (autoload 'theme-looper-set-ignored-themes "theme-looper" "Sets the list of color-themes to ignore
+
+(fn THEMES)" nil nil) (autoload 'theme-looper-set-ignored-themes-regexp "theme-looper" "Sets the list of color-themes to ignore, matching a regular expression
+
+(fn REGEXP)" nil nil) (autoload 'theme-looper-reset-themes-selection "theme-looper" "Resets themes selection back to default" nil nil) (autoload 'theme-looper-enable-theme "theme-looper" "Enables the specified color-theme
+Pass `*default*' to select Emacs defaults
+
+(fn THEME)" nil nil) (autoload 'theme-looper-enable-next-theme "theme-looper" "Enables the next color-theme in the list" t nil) (autoload 'theme-looper-enable-previous-theme "theme-looper" "Enables the previous color-theme in the list" t nil) (autoload 'theme-looper-enable-random-theme "theme-looper" "Enables a random theme from the list" t nil) (autoload 'theme-looper-reload-current-theme "theme-looper" "Reloads the currently activated theme" t nil) (autoload 'theme-looper-select-theme "theme-looper" "Lets user select a theme from a list of favorite ones rendered using ivy API" t nil) (autoload 'theme-looper-select-theme-from-all "theme-looper" "Lets user select a theme from a list of all available themes rendered using ivy API" t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "theme-looper" '("theme-looper-"))) (provide 'theme-looper-autoloads)) "select-themes" ((select-themes-autoloads select-themes) (autoload 'select-themes "select-themes" "Interactively select a THEME, from the available custom themes.
+
+You can also select '*Emacs default*' to return to Emacs default theme.
+
+Note: multiple enabled themes cause Emacs to slow down, so we
+disable them before selecting the new theme.
+
+(fn THEME)" t nil) (provide 'select-themes-autoloads)) "autothemer" ((autothemer autothemer-autoloads) (autoload 'autothemer-deftheme "autothemer" "Define a theme NAME with description DESCRIPTION.
+A color PALETTE can be used to define let*-like
+bindings within both the REDUCED-SPECS and the BODY.
+
+(fn NAME DESCRIPTION PALETTE REDUCED-SPECS &rest BODY)" nil t) (autoload 'autothemer-generate-templates "autothemer" "Autogenerate customizations for all unthemed faces.
+Iterate through all currently defined faces, select those that
+have been left uncustomized by the most recent call to
+`autothemer-deftheme' and generate customizations that best
+approximate the faces' current definitions using the color
+palette used in the most recent invocation of
+`autothemer-deftheme'." t nil) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "autothemer" '("autothemer--"))) (provide 'autothemer-autoloads)) "kaolin-themes" ((kaolin-mono-dark-theme kaolin-themes kaolin-light-theme kaolin-galaxy-theme kaolin-mono-light-theme kaolin-valley-dark-theme kaolin-eclipse-theme kaolin-bubblegum-theme kaolin-aurora-theme kaolin-themes-lib kaolin-breeze-theme kaolin-blossom-theme kaolin-themes-autoloads kaolin-valley-light-theme kaolin-temple-theme kaolin-dark-theme kaolin-shiva-theme kaolin-ocean-theme kaolin-themes-treemacs) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "kaolin-aurora-theme" '("aurora"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "kaolin-blossom-theme" '("blossom" "kaolin-blossom-bg"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "kaolin-breeze-theme" '("breeze"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "kaolin-bubblegum-theme" '("bubblegum"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "kaolin-dark-theme" '("dark"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "kaolin-eclipse-theme" '("eclipse" "kaolin-eclipse-alt-bg"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "kaolin-galaxy-theme" '("galaxy" "kaolin-galaxy-alt-bg"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "kaolin-light-theme" '("kaolin-light-alt-bg" "light"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "kaolin-mono-dark-theme" '("mono-dark"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "kaolin-mono-light-theme" '("kaolin-mono-light-alt-bg" "mono-light"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "kaolin-ocean-theme" '("kaolin-ocean-alt-bg" "ocean"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "kaolin-shiva-theme" '("kaolin-shiva-distinct-prep" "shiva"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "kaolin-temple-theme" '("temple"))) (autoload 'kaolin-treemacs-theme "kaolin-themes" "Enable kaolin-themes treemacs theme with all-the-icons package." nil nil) (when (and (boundp 'custom-theme-load-path) load-file-name) (let* ((base (file-name-directory load-file-name)) (dir (expand-file-name "themes/" base))) (add-to-list 'custom-theme-load-path (or (and (file-directory-p dir) dir) base)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "kaolin-themes" '("define-kaolin-theme" "kaolin-theme"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "kaolin-themes-lib" '("color-" "kaolin-"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "kaolin-themes-treemacs" '("kaolin-t"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "kaolin-valley-dark-theme" '("kaolin-valley-dark-alt-" "valley-dark"))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "kaolin-valley-light-theme" '("kaolin-valley-light-alt-bg" "valley-light"))) (provide 'kaolin-themes-autoloads)) "gruvbox-theme" ((gruvbox-light-medium-theme gruvbox-dark-hard-theme gruvbox gruvbox-theme-autoloads gruvbox-dark-medium-theme gruvbox-theme gruvbox-light-soft-theme gruvbox-light-hard-theme gruvbox-dark-soft-theme) (and load-file-name (boundp 'custom-theme-load-path) (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "gruvbox" '("gruvbox-"))) (and load-file-name (boundp 'custom-theme-load-path) (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (and load-file-name (boundp 'custom-theme-load-path) (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (and load-file-name (boundp 'custom-theme-load-path) (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (and load-file-name (boundp 'custom-theme-load-path) (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (and load-file-name (boundp 'custom-theme-load-path) (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (and load-file-name (boundp 'custom-theme-load-path) (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (and load-file-name (boundp 'custom-theme-load-path) (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (provide 'gruvbox-theme-autoloads)) "dark-mint-theme" ((dark-mint-theme-autoloads dark-mint-theme) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "dark-mint-theme" '("dark-mint"))) (provide 'dark-mint-theme-autoloads)) "zerodark-theme" ((zerodark-theme-autoloads zerodark-theme) (autoload 'zerodark-setup-modeline-format "zerodark-theme" "Setup the mode-line format for zerodark." t nil) (when (and (boundp 'custom-theme-load-path) load-file-name) (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "zerodark-theme" '("cached-for" "true-color-p" "zerodark"))) (provide 'zerodark-theme-autoloads)) "suscolors-theme" ((suscolors-theme suscolors-theme-autoloads) (when load-file-name (add-to-list 'custom-theme-load-path (file-name-as-directory (file-name-directory load-file-name)))) (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "suscolors-theme" '("suscolors"))) (provide 'suscolors-theme-autoloads))))
+
+#s(hash-table size 65 test eq rehash-size 1.5 rehash-threshold 0.8125 data (org-elpa #s(hash-table size 97 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 7 "melpa" nil "gnu-elpa-mirror" nil "el-get" nil "emacsmirror-mirror" nil "straight" nil "use-package" nil "bind-key" nil "vterm" nil "org-plus-contrib" `(org-plus-contrib :type git :repo "https://code.orgmode.org/bzg/org-mode.git" :local-repo "org" :depth full :pre-build ,(list (concat (when (eq system-type 'berkeley-unix) "g") "make") "autoloads" (concat "EMACS=" invocation-directory invocation-name)) :build (:not autoloads) :files (:defaults "lisp/*.el" ("etc/styles/" "etc/styles/*") "contrib/lisp/*.el") :includes org) "hyperbole" nil "projectile" nil "pkg-info" nil "epl" nil "cl-lib" nil "ido-vertical-mode" nil "all-the-icons" nil "general" nil "god-mode" nil "neotree" nil "jazz-theme" nil "smex" nil "amx" nil "s" nil "flx-ido" nil "flx" nil "ido-completing-read+" nil "seq" nil "memoize" nil "ido-grid-mode" nil "idomenu" nil "imenu-anywhere" nil "selectrum" nil "ido" nil "rainbow-delimiters" nil "dired-rainbow" nil "dash" nil "dired-hacks-utils" nil "shell-pop" nil "vterm-toggle" nil "smartparens" nil "which-key" nil "pdf-tools" nil "tablist" nil "let-alist" nil "ripgrep" nil "undo-tree" nil "crux" nil "feebleline" nil "helpful" nil "f" nil "elisp-refs" nil "key-chords" nil "key-chord" nil "avy" nil "selectrum-prescient" nil "prescient" nil "popup" nil "posframe" nil "company" nil "bm" nil "free-keys" nil "deft" nil "outshine" nil "outorg" nil "outline-minor-faces" nil "backline" nil "bicycle" nil "outline-magic" nil "outline-toc" nil "doom-themes" nil "doom-neotree" nil "doom-modeline" nil "shrink-path" nil "replace-colorthemes" nil "color-theme-modern" nil "theme-looper" nil "select-themes" nil "kaolin-themes" nil "autothemer" nil "gruvbox-theme" nil "dark-mint-theme" nil "zerodark-theme" nil "suscolors-theme" nil)) melpa #s(hash-table size 97 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "gnu-elpa-mirror" nil "el-get" (el-get :type git :flavor melpa :files ("*.el" ("recipes" "recipes/el-get.rcp") "methods" "el-get-pkg.el") :host github :repo "dimitri/el-get") "emacsmirror-mirror" nil "straight" nil "use-package" (use-package :type git :flavor melpa :files (:defaults (:exclude "bind-key.el" "bind-chord.el" "use-package-chords.el" "use-package-ensure-system-package.el") "use-package-pkg.el") :host github :repo "jwiegley/use-package") "bind-key" (bind-key :type git :flavor melpa :files ("bind-key.el" "bind-key-pkg.el") :host github :repo "jwiegley/use-package") "vterm" (vterm :type git :flavor melpa :files ("*" (:exclude ".dir-locals.el" ".gitignore" ".clang-format" ".travis.yml") "vterm-pkg.el") :host github :repo "akermu/emacs-libvterm") "hyperbole" nil "projectile" (projectile :type git :flavor melpa :files ("projectile.el" "projectile-pkg.el") :host github :repo "bbatsov/projectile") "pkg-info" (pkg-info :type git :flavor melpa :host github :repo "emacsorphanage/pkg-info") "epl" (epl :type git :flavor melpa :host github :repo "cask/epl") "cl-lib" nil "ido-vertical-mode" (ido-vertical-mode :type git :flavor melpa :host github :repo "creichert/ido-vertical-mode.el") "all-the-icons" (all-the-icons :type git :flavor melpa :files (:defaults "data" "all-the-icons-pkg.el") :host github :repo "domtronn/all-the-icons.el") "general" (general :type git :flavor melpa :host github :repo "noctuid/general.el") "god-mode" (god-mode :type git :flavor melpa :host github :repo "emacsorphanage/god-mode") "neotree" (neotree :type git :flavor melpa :files (:defaults "icons" "neotree-pkg.el") :host github :repo "jaypei/emacs-neotree") "jazz-theme" (jazz-theme :type git :flavor melpa :host github :repo "donderom/jazz-theme") "smex" (smex :type git :flavor melpa :host github :repo "nonsequitur/smex") "amx" (amx :type git :flavor melpa :host github :repo "DarwinAwardWinner/amx") "s" (s :type git :flavor melpa :files ("s.el" "s-pkg.el") :host github :repo "magnars/s.el") "flx-ido" (flx-ido :type git :flavor melpa :files ("flx-ido.el" "flx-ido-pkg.el") :host github :repo "lewang/flx") "flx" (flx :type git :flavor melpa :files ("flx.el" "flx-pkg.el") :host github :repo "lewang/flx") "ido-completing-read+" (ido-completing-read+ :type git :flavor melpa :files ("ido-completing-read+.el" "ido-completing-read+-pkg.el") :host github :repo "DarwinAwardWinner/ido-completing-read-plus") "seq" nil "memoize" (memoize :type git :flavor melpa :host github :repo "skeeto/emacs-memoize") "ido-grid-mode" (ido-grid-mode :type git :flavor melpa :host github :repo "larkery/ido-grid-mode.el") "idomenu" (idomenu :type git :flavor melpa :host github :repo "birkenfeld/idomenu") "imenu-anywhere" (imenu-anywhere :type git :flavor melpa :host github :repo "vspinu/imenu-anywhere") "selectrum" (selectrum :type git :flavor melpa :host github :repo "raxod502/selectrum") "rainbow-delimiters" (rainbow-delimiters :type git :flavor melpa :host github :repo "Fanael/rainbow-delimiters") "dired-rainbow" (dired-rainbow :type git :flavor melpa :files ("dired-rainbow.el" "dired-rainbow-pkg.el") :host github :repo "Fuco1/dired-hacks") "dash" (dash :type git :flavor melpa :files ("dash.el" "dash.texi" "dash-pkg.el") :host github :repo "magnars/dash.el") "dired-hacks-utils" (dired-hacks-utils :type git :flavor melpa :files ("dired-hacks-utils.el" "dired-hacks-utils-pkg.el") :host github :repo "Fuco1/dired-hacks") "ido" nil "shell-pop" (shell-pop :type git :flavor melpa :host github :repo "kyagi/shell-pop-el") "vterm-toggle" (vterm-toggle :type git :flavor melpa :host github :repo "jixiuf/vterm-toggle") "smartparens" (smartparens :type git :flavor melpa :host github :repo "Fuco1/smartparens") "which-key" (which-key :type git :flavor melpa :host github :repo "justbur/emacs-which-key") "pdf-tools" (pdf-tools :type git :flavor melpa :files ("lisp/*.el" "README" ("build" "Makefile") ("build" "server") (:exclude "lisp/tablist.el" "lisp/tablist-filter.el") "pdf-tools-pkg.el") :host github :repo "politza/pdf-tools") "tablist" (tablist :type git :flavor melpa :host github :repo "politza/tablist") "let-alist" nil "ripgrep" (ripgrep :type git :flavor melpa :files ("ripgrep.el" "ripgrep-pkg.el") :host github :repo "nlamirault/ripgrep.el") "undo-tree" nil "crux" (crux :type git :flavor melpa :host github :repo "bbatsov/crux") "feebleline" (feebleline :type git :flavor melpa :host github :repo "tautologyclub/feebleline") "helpful" (helpful :type git :flavor melpa :host github :repo "Wilfred/helpful") "f" (f :type git :flavor melpa :files ("f.el" "f-pkg.el") :host github :repo "rejeep/f.el") "elisp-refs" (elisp-refs :type git :flavor melpa :files (:defaults (:exclude "elisp-refs-bench.el") "elisp-refs-pkg.el") :host github :repo "Wilfred/elisp-refs") "key-chords" nil "key-chord" (key-chord :type git :flavor melpa :host github :repo "emacsorphanage/key-chord") "avy" (avy :type git :flavor melpa :host github :repo "abo-abo/avy") "selectrum-prescient" (selectrum-prescient :type git :flavor melpa :files ("selectrum-prescient.el" "selectrum-prescient-pkg.el") :host github :repo "raxod502/prescient.el") "prescient" (prescient :type git :flavor melpa :files ("prescient.el" "prescient-pkg.el") :host github :repo "raxod502/prescient.el") "popup" (popup :type git :flavor melpa :files ("popup.el" "popup-pkg.el") :host github :repo "auto-complete/popup-el") "posframe" (posframe :type git :flavor melpa :host github :repo "tumashu/posframe") "company" (company :type git :flavor melpa :host github :repo "company-mode/company-mode") "bm" (bm :type git :flavor melpa :host github :repo "joodland/bm") "free-keys" (free-keys :type git :flavor melpa :host github :repo "Fuco1/free-keys") "deft" (deft :type git :flavor melpa :host github :repo "jrblevin/deft") "outshine" (outshine :type git :flavor melpa :host github :repo "alphapapa/outshine") "outorg" (outorg :type git :flavor melpa :host github :repo "alphapapa/outorg") "outline-minor-faces" (outline-minor-faces :type git :flavor melpa :host github :repo "tarsius/outline-minor-faces") "backline" (backline :type git :flavor melpa :host github :repo "tarsius/backline") "bicycle" (bicycle :type git :flavor melpa :host github :repo "tarsius/bicycle") "outline-magic" (outline-magic :type git :flavor melpa :host github :repo "tj64/outline-magic") "outline-toc" (outline-toc :type git :flavor melpa :host github :repo "abingham/outline-toc.el") "doom-themes" (doom-themes :type git :flavor melpa :files (:defaults "themes/*.el" "doom-themes-pkg.el") :host github :repo "hlissner/emacs-doom-themes") "doom-neotree" nil "doom-modeline" (doom-modeline :type git :flavor melpa :host github :repo "seagle0128/doom-modeline") "shrink-path" (shrink-path :type git :flavor melpa :host gitlab :repo "bennya/shrink-path.el") "replace-colorthemes" nil "color-theme-modern" (color-theme-modern :type git :flavor melpa :host github :repo "emacs-jp/replace-colorthemes") "theme-looper" (theme-looper :type git :flavor melpa :host github :repo "myTerminal/theme-looper") "select-themes" (select-themes :type git :flavor melpa :host github :repo "jasonm23/emacs-select-themes") "kaolin-themes" (kaolin-themes :type git :flavor melpa :files (:defaults "themes/*.el" "kaolin-themes-pkg.el") :host github :repo "ogdenwebb/emacs-kaolin-themes") "autothemer" (autothemer :type git :flavor melpa :host github :repo "jasonm23/autothemer") "gruvbox-theme" (gruvbox-theme :type git :flavor melpa :host github :repo "greduan/emacs-theme-gruvbox") "dark-mint-theme" (dark-mint-theme :type git :flavor melpa :host github :repo "shaunvxc/dark-mint-theme") "zerodark-theme" (zerodark-theme :type git :flavor melpa :host github :repo "NicolasPetton/zerodark-theme") "suscolors-theme" (suscolors-theme :type git :flavor melpa :host github :repo "TheSuspiciousWombat/SusColors-emacs"))) gnu-elpa-mirror #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 3 "emacsmirror-mirror" nil "straight" nil "hyperbole" (hyperbole :type git :host github :repo "emacs-straight/hyperbole" :files ("*" (:exclude ".git"))) "cl-lib" nil "seq" nil "ido" nil "let-alist" (let-alist :type git :host github :repo "emacs-straight/let-alist" :files ("*" (:exclude ".git"))) "undo-tree" (undo-tree :type git :host github :repo "emacs-straight/undo-tree" :files ("*" (:exclude ".git"))) "key-chords" nil "doom-neotree" nil "replace-colorthemes" nil)) el-get #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 1 "emacsmirror-mirror" nil "straight" nil "cl-lib" nil "seq" nil "ido" nil "key-chords" nil "doom-neotree" nil "replace-colorthemes" nil)) emacsmirror-mirror #s(hash-table size 65 test equal rehash-size 1.5 rehash-threshold 0.8125 data (version 2 "straight" (straight :type git :host github :repo "emacsmirror/straight") "cl-lib" nil "seq" nil "ido" nil "key-chords" nil "doom-neotree" nil "replace-colorthemes" nil))))
+
+("org-elpa" "melpa" "gnu-elpa-mirror" "el-get" "emacsmirror-mirror" "straight" "emacs" "use-package" "bind-key" "shell-pop" "cl-lib" "vterm" "vterm-toggle" "org-plus-contrib" "deft" "hyperbole" "projectile" "pkg-info" "epl" "ido-vertical-mode" "jazz-theme" "all-the-icons" "general" "god-mode" "neotree" "smex" "amx" "s" "flx-ido" "flx" "ido-completing-read+" "seq" "memoize" "ido-grid-mode" "idomenu" "imenu-anywhere" "selectrum" "selectrum-prescient" "prescient" "rainbow-delimiters" "smartparens" "dash" "dired-rainbow" "dired-hacks-utils" "which-key" "pdf-tools" "tablist" "let-alist" "ripgrep" "undo-tree" "crux" "feebleline" "helpful" "f" "elisp-refs" "key-chord" "avy" "popup" "posframe" "company" "bm" "outshine" "outorg" "outline-minor-faces" "backline" "bicycle" "outline-magic" "outline-toc" "doom-themes" "doom-modeline" "shrink-path" "color-theme-modern" "kaolin-themes" "autothemer" "gruvbox-theme" "dark-mint-theme" "zerodark-theme" "suscolors-theme" "theme-looper" "select-themes")
 
 t

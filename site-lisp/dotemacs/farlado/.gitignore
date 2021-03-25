@@ -1,0 +1,17 @@
+.last-package-update-day
+.python-environments
+.org-id-locations
+auto-save-list
+dmenu-items
+smex-items
+nov-places
+emacs.pdmp
+transient
+ido.last
+recentf
+eshell
+*.elc
+tramp
+elpa
+emms
+url
